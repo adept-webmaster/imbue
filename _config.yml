@@ -8,7 +8,7 @@ collections:
   posts:
     title: News
     output: true
-baseurl:
+baseurl: /imbue
 url:
 markdown: kramdown
 img_dir: "/uploads/"
