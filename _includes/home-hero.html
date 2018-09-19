@@ -1,10 +1,10 @@
 <div
-  class="jumbotron container-fluid rounded-0
+  class="jumbotron container-fluid rounded-0 m-0
   {% if include.type %}{% if include.type == 'full' %} jumbotron-fluid{% endif %}{% endif %}
   {% if include.class %} {{ include.class }}{% endif %}
   lazyload js mb-md-5 mb-3"
   style="background: {% if include.overlay %}{% if include.overlay == 'true' %}linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)){% endif %}{% endif %}
-  {% if include.bg_image %}{% if include.overlay %},{% endif %}url('{{ site.img_dir }}{{ include.bg_image }}') no-repeat {{ include.bg_position }} / {{ include.bg_size }}{% endif %};
+  {% if include.bg_image %}{% if include.overlay %},{% endif %}url('{{ site.img_dir | absolute_url }}{{ include.bg_image }}') no-repeat {{ include.bg_position }} / {{ include.bg_size }}{% endif %};
       color: {% if include.text_color %}{{ include.text_color }};{% else %}#ffffff;{% endif %}">
   <div class="row d-flex flex-column jumbotron--content-box come-in-view come-in-left p-5
     {% if include.text_position %}
@@ -73,7 +73,7 @@
 <noscript>
   <div class="jumbotron rounded-0{% if include.type %}{% if include.type == 'full' %} jumbotron-fluid{% endif %}{% endif %}{% if include.class %} {{ include.class }}{% endif %}"
   style="background: {% if include.overlay %}{% if include.overlay == 'true' %}linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)){% endif %}{% endif %}
-                      {% if include.bg_image %},url('{{ site.img_dir }}{{ include.bg_image }}') no-repeat {{ include.bg_position }} / {{ include.bg_size }}{% endif %};
+                      {% if include.bg_image %},url('{{ site.img_dir | absolute_url }}{{ include.bg_image }}') no-repeat {{ include.bg_position }} / {{ include.bg_size }}{% endif %};
         color: {% if include.text_color %}{{ include.text_color }};{% else %}#ffffff;{% endif %}">
     <div class="d-flex flex-column jumbotron--content-box p-5
       {% if include.text_position %}
