@@ -8,8 +8,8 @@ collections:
   posts:
     title: News
     output: true
-baseurl: /imbue
-url:
+baseurl:
+url: https://liam-cooper.github.io/imbue/
 markdown: kramdown
 img_dir: "/uploads/"
 linkedin: https://www.linkedin.com/
