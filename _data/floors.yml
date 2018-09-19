@@ -1,0 +1,318 @@
+floors:
+  - floor: 1
+    isAvailable: true
+    rooms:
+        north:
+          top:
+            - room_number: 1
+              title: N1A
+              isAvailable: true
+              description: This is room N1A
+            - room_number: 2
+              title: N1B
+              isAvailable: true
+              description: This is room N1B
+            - room_number: 3
+              title: N1C
+              isAvailable: true
+              description: This is room N1C
+            - room_number: 4
+              title: N1D
+              isAvailable: true
+              description: This is room N1D
+            - room_number: 5
+              title: N1E
+              isAvailable: false
+              description: This is room N1E
+            - room_number: 6
+              title: N1F
+              isAvailable: true
+              description: This is room N1F
+          bottom:
+            - room_number: 7
+              title: N1G
+              isAvailable: false
+              description: This is room N1G
+            - room_number: 8
+              title: N1H
+              isAvailable: true
+              description: This is room N1H
+            - room_number: 9
+              title: N1I
+              isAvailable: true
+              description: This is room N1I
+            - room_number: 10
+              title: N1J
+              isAvailable: false
+              description: This is room N1J
+            - room_number: 11
+              title: N1K
+              isAvailable: false
+              description: This is room N1K
+            - room_number: 12
+              title: N1L
+              isAvailable: true
+              description: This is room N1L
+        south:
+          top:
+            - room_number: 13
+              title: S1A
+              isAvailable: false
+              description: This is room S1A
+            - room_number: 14
+              title: S1B
+              isAvailable: false
+              description: This is room S1B
+            - room_number: 15
+              title: S1C
+              isAvailable: true
+              description: This is room S1C
+            - room_number: 16
+              title: S1D
+              isAvailable: false
+              description: This is room S1D
+            - room_number: 17
+              title: S1E
+              isAvailable: false
+              description: This is room S1E
+            - room_number: 18
+              title: S1F
+              isAvailable: false
+              description: This is room S1F
+          bottom:
+            - room_number: 19
+              title: S1G
+              isAvailable: false
+              description: This is room S1G
+            - room_number: 20
+              title: S1H
+              isAvailable: true
+              description: This is room S1H
+            - room_number: 21
+              title: S1I
+              isAvailable: true
+              description: This is room S1I
+            - room_number: 22
+              title: S1J
+              isAvailable: false
+              description: This is room S1J
+            - room_number: 23
+              title: S1K
+              isAvailable: false
+              description: This is room S1K
+            - room_number: 24
+              title: S1L
+              isAvailable: false
+              description: This is room S1L
+
+  - floor: 2
+    isAvailable: true
+    rooms:
+      north:
+        top:
+          - room_number: 1
+            title: N2A
+            isAvailable: true
+            description: This is room N2A
+          - room_number: 2
+            title: N2B
+            isAvailable: true
+            description: This is room N2B
+          - room_number: 3
+            title: N2C
+            isAvailable: true
+            description: This is room N2C
+          - room_number: 4
+            title: N2D
+            isAvailable: true
+            description: This is room N2D
+          - room_number: 5
+            title: N2E
+            isAvailable: false
+            description: This is room N2E
+          - room_number: 6
+            title: N2F
+            isAvailable: true
+            description: This is room N2F
+        bottom:
+          - room_number: 7
+            title: N2G
+            isAvailable: true
+            description: This is room N2G
+          - room_number: 8
+            title: N2H
+            isAvailable: true
+            description: This is room N2H
+          - room_number: 9
+            title: N2I
+            isAvailable: true
+            description: This is room N2I
+          - room_number: 10
+            title: N2J
+            isAvailable: true
+            description: This is room N2J
+          - room_number: 11
+            title: N2K
+            isAvailable: false
+            description: This is room N2K
+          - room_number: 12
+            title: N2L
+            isAvailable: true
+            description: This is room N2L
+      south:
+        top:
+          - room_number: 13
+            title: S2A
+            isAvailable: false
+            description: This is room S2A
+          - room_number: 14
+            title: S2B
+            isAvailable: true
+            description: This is room S2B
+          - room_number: 15
+            title: S2C
+            isAvailable: true
+            description: This is room S2C
+          - room_number: 16
+            title: S2D
+            isAvailable: false
+            description: This is room S2D
+          - room_number: 17
+            title: S2E
+            isAvailable: false
+            description: This is room S2E
+          - room_number: 18
+            title: S2F
+            isAvailable: false
+            description: This is room S2F
+        bottom:
+          - room_number: 19
+            title: S2G
+            isAvailable: false
+            description: This is room S2G
+          - room_number: 20
+            title: S2H
+            isAvailable: true
+            description: This is room S2H
+          - room_number: 21
+            title: S2I
+            isAvailable: true
+            description: This is room S2I
+          - room_number: 22
+            title: S2J
+            isAvailable: false
+            description: This is room S2J
+          - room_number: 23
+            title: S2K
+            isAvailable: false
+            description: This is room S2K
+          - room_number: 24
+            title: S2L
+            isAvailable: false
+            description: This is room S2L
+
+  - floor: 3
+    isAvailable: false
+    rooms:
+      north:
+        top:
+          - room_number: 1
+            title: N3A
+            isAvailable: true
+            description: This is room N3A
+          - room_number: 2
+            title: N3B
+            isAvailable: true
+            description: This is room N3B
+          - room_number: 3
+            title: N3C
+            isAvailable: true
+            description: This is room N3C
+          - room_number: 4
+            title: N3D
+            isAvailable: true
+            description: This is room N3D
+          - room_number: 5
+            title: N3E
+            isAvailable: false
+            description: This is room N3E
+          - room_number: 6
+            title: N3F
+            isAvailable: true
+            description: This is room N3F
+        bottom:
+          - room_number: 7
+            title: N3G
+            isAvailable: true
+            description: This is room N3G
+          - room_number: 8
+            title: N3H
+            isAvailable: true
+            description: This is room N3H
+          - room_number: 9
+            title: N3I
+            isAvailable: true
+            description: This is room N3I
+          - room_number: 10
+            title: N3J
+            isAvailable: true
+            description: This is room N3J
+          - room_number: 11
+            title: N3K
+            isAvailable: false
+            description: This is room N3K
+          - room_number: 12
+            title: N3L
+            isAvailable: true
+            description: This is room N3L
+      south:
+        top:
+          - room_number: 13
+            title: S3A
+            isAvailable: false
+            description: This is room S3A
+          - room_number: 14
+            title: S3B
+            isAvailable: true
+            description: This is room S3B
+          - room_number: 15
+            title: S3C
+            isAvailable: true
+            description: This is room S3C
+          - room_number: 16
+            title: S3D
+            isAvailable: false
+            description: This is room S3D
+          - room_number: 17
+            title: S3E
+            isAvailable: false
+            description: This is room S3E
+          - room_number: 18
+            title: S3F
+            isAvailable: false
+            description: This is room S3F
+        bottom:
+          - room_number: 19
+            title: S3G
+            isAvailable: false
+            description: This is room S3G
+          - room_number: 20
+            title: S3H
+            isAvailable: true
+            description: This is room S3H
+          - room_number: 21
+            title: S3I
+            isAvailable: true
+            description: This is room S3I
+          - room_number: 22
+            title: S3J
+            isAvailable: false
+            description: This is room S3J
+          - room_number: 23
+            title: S3K
+            isAvailable: false
+            description: This is room S3K
+          - room_number: 24
+            title: S3L
+            isAvailable: false
+            description: This is room S3L

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300"
+	 style="enable-background:new 0 0 300 300;" xml:space="preserve">
+	<style type="text/css">
+		.st0{fill:#FFFFFF;}
+		.st1{fill:none;stroke:#FFFFFF;stroke-width:7;stroke-miterlimit:10;}
+		.st2{fill:none;stroke:#FFFFFF;stroke-width:12;stroke-miterlimit:10;}
+		.st3{fill:none;stroke:#FFFFFF;stroke-width:15;stroke-miterlimit:10;}
+	</style>
+	<switch>
+		<g>
+			<g>
+				<polygon class="st0" points="255.1,157.3 44.9,157.3 44.9,184 81.8,184 91.3,276 208.7,276 218.2,184 255.1,184 			"/>
+				<path class="st0" d="M107.9,89.4H193c8.8,0,16,7.2,16,16V148H91.9v-42.5C91.9,96.6,99.1,89.4,107.9,89.4z"/>
+				<circle class="st0" cx="150.4" cy="51" r="32"/>
+			</g>
+		</g>
+	</switch>
+</svg>

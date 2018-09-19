@@ -1,0 +1,93 @@
+<header class="site-header" role="banner">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom p-0">
+    <div class="container">
+      <div class="row w-100 m-0">
+        <div class="col-lg-3 col-6 d-flex align-items-center">
+          <a class="navbar-brand p-0 m-0" rel="author" href="{{ "/" | relative_url }}">
+            {% include noscript-image.html name="imbue-logo.png" class="m-0" alt="3ADV Logo" %}
+          </a>
+        </div>
+
+        <div class="col-6 d-lg-none d-flex justify-content-end pr-0">
+          <button class="hamburger hamburger--spring navbar-toggler
+            d-flex d-lg-none align-items-center"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+              <span class="navbar-text pl-1 text-logo">Menu</span>
+          </button>
+        </div>
+
+        <div class="col-xs-12 col-lg-9 w-100 d-flex pr-0">
+          <div class="flex-column align-items-start collapse navbar-collapse d-lg-flex justify-content-end"
+            id="navbarSupportedContent">
+            <ul class="navbar-nav pt-4 px-2 px-lg-0 pb-lg-0 pt-lg-2 align-self-end">
+              {% assign top-links = site.data.navigation-2 %}
+              {% for link in top-links %}
+                <li class="nav-item top-nav-item
+                  {% if page.url contains link.url %} active{% endif %}">
+                  <a class="nav-link text-primary px-0 px-lg-4" title="{{ link.title }}" href="{{ site.baseurl }}{{ link.url }}">
+                    {{ link.title }}
+                    {% if page.url contains link.url %}
+                      <!-- For screen readers -->
+                      <span class="sr-only">(current)</span>
+                    {% endif %}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+            <ul class="navbar-nav py-4 px-2 px-lg-0 pt-lg-0 pb-lg-2">
+              {% assign links = site.data.navigation %}
+                {% for link in links %}
+                {% if link.sublinks %}
+                  <li class="nav-item dropdown
+                  {% if page.url contains link.url %} active{% endif %}">
+                    <a class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                      {{ link.title }}
+                      <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      {% for sublink in link.sublinks %}
+                        {% if sublink.title == 'separator' %}
+                          <div class="divider"></div>
+                        {% else %}
+                          <a class="dropdown-item"
+                          href="{{ site.baseurl }}{{ sublink.url }}">
+                            {{ sublink.title }}
+                          </a>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                  </li>
+                {% else %}
+                  <li class="nav-item main-nav-item
+                  {% if page.url contains link.url %} active{% endif %}">
+                    <a class="nav-link" title="{{ link.title }}" href="{{ site.baseurl }}{{ link.url }}">
+                      {{ link.title }}
+                      {% if page.url contains link.url %}
+                        <!-- For screen readers -->
+                        <span class="sr-only">(current)</span>
+                      {% endif %}
+                    </a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

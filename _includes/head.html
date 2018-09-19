@@ -1,0 +1,39 @@
+<head>
+  <title>
+    {% if page.title %}
+      {% unless page.title contains site.title %}
+        {{ page.title }} &ndash; {{ site.title }}
+      {% endunless %}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#136677">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-config" content="{{ site.img_dir }}browserconfig.xml">
+  <meta name="description" content="{{ site.description | escape }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html',''}}">
+  <meta name="google-site-verification" content="KAn1JUPDvlFVVroy6hz-qbTB-3nbViSAdHX9fDkpLho" />
+
+  {% include fav.html %}
+  {%- include opengraph.html -%}
+
+  <script src="{{ "/assets/scripts/lazysizes.min.js" | relative_url }}"></script>
+
+  <link rel="preload" href="{{ "assets/stylesheets/main.css" | relative_url }}" as="style">
+  <link rel="preload" as="font" type="font/woff2" href="{{ "assets/stylesheets/webfonts/fa-solid-900.woff2" | relative_url }}">
+
+  <link
+    rel="stylesheet"
+    href="{{ "/assets/stylesheets/main.css" | relative_url }}"
+  >
+
+  {%- include scripts.html -%}
+
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+</head>

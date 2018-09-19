@@ -1,0 +1,33 @@
+{% capture picture_image %}{{ post.thumb }}{% endcapture %}
+{% capture picture_alt %}{{ post.title }}{% endcapture %}
+{% capture picture_class %}img-fluid img-cover h-100{% endcapture %}
+
+<a href="{{ post.url }}" class="
+{% if post.top_story == true %}col-lg
+{% elsif forloop.index < 6 %}col-md-6
+{% else %} col-md-6 col-lg-3 {% endif %}
+d-flex p-0">
+  <div class="
+  come-in-view come-in-up p-2 w-100">
+    <div class="h-100 w-100 position-relative news-image-container">
+      {% include image.html name=picture_image alt=picture_alt class=picture_class %}
+      <noscript>
+        {% include noscript-image.html name=picture_image alt=picture_alt class=picture_class %}
+      </noscript>
+    </div>
+    {% if post.top_story == true %}
+      <p class="news-post__top-story
+      position-absolute
+      h3
+      text-center text-uppercase
+      rounded-circle
+      d-flex align-items-center
+      border-primary bg-dark text-light">Top Story</p>
+    {% endif %}
+    <h2 class="h5
+    d-flex justify-content-end align-items-center
+    w-100 bg-dark text-light border-top position-relative pr-3">
+      {{ post.title }}
+    </h2>
+  </div>
+</a>

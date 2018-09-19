@@ -1,0 +1,39 @@
+.site-header {
+  @include media-breakpoint-down(md) {
+    .navbar {
+      padding: 0;
+    }
+
+    .navbar-brand {
+      img {
+        max-height: 75px;
+      }
+    }
+  }
+
+  li.nav-item {
+    text-transform: uppercase;
+
+    .dropdown-menu {
+      left: -100px;
+    }
+  }
+
+  li.main-nav-item {
+    font-weight: bold;
+    &:first-child > .nav-link {
+      padding-left: 0;
+    }
+  }
+
+  li.top-nav-item {
+    .nav-link {
+      font-weight: 300;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    &:last-child > .nav-link {
+      padding-right: 0;
+    }
+  }
+}

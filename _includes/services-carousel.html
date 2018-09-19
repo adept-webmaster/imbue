@@ -1,0 +1,28 @@
+<div id="servicesCarouselControls" class="carousel text-center text-light bg-primary slide mb-5 animated fadeInUp" data-ride="false" data-interval="false">
+  <h2 class="py-4"><a class="text-light" href="/services" title="Services">Services</a></h2>
+  <div class="carousel-inner container px-0">
+    {%- assign services = site.data.services -%}
+    {% for service in services %}
+      <div class="carousel-item text-center pb-5 px-2 px-sm-5 {% if forloop.first == true %} active{% endif %}">
+        <a class="text-white" href="/services#{{ service.title | slugify }}" title="{{ service.title }}">
+          <h3 class="h4 m-0">
+            {{ service.title }}
+          </h3>
+        </a>
+        <p class="mt-0 mx-sm-5">
+          {{- service.content -}}
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+
+  <a
+  class="carousel-control-prev pb-3" title="Previous" href="#servicesCarouselControls" role="button" data-slide="prev">
+    <i class="carousel-prev-icon fas fa-angle-left"></i>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next pb-3" title="Next" href="#servicesCarouselControls" role="button" data-slide="next">
+    <i class="carousel-next-icon fas fa-angle-right"></i>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

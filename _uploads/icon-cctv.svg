@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300"
+	 style="enable-background:new 0 0 300 300;" xml:space="preserve">
+	<style type="text/css">
+		.st0{fill:#FFFFFF;}
+		.st1{fill:none;stroke:#FFFFFF;stroke-width:7;stroke-miterlimit:10;}
+		.st2{fill:none;stroke:#FFFFFF;stroke-width:12;stroke-miterlimit:10;}
+		.st3{fill:none;stroke:#FFFFFF;stroke-width:15;stroke-miterlimit:10;}
+	</style>
+	<switch>
+		<g>
+			<path class="st0" d="M208,242.3l76.4-38.1c4.2-2.1,5.1-7.7,1.8-11L135.9,43c-2.8-2.8-7.4-2.8-10.2,0L68.8,99.8
+				c-2.8,2.8-2.8,7.4,0,10.2l19.4,19.4H49.8V107c0-5.4-4.4-9.8-9.8-9.8H17.2v97.5H40c5.4,0,9.8-4.4,9.8-9.8v-22.8h71l78.8,78.8
+				C201.8,243.1,205.2,243.6,208,242.3z M134.2,72.5c4.1-4.1,10.8-4.1,15,0c4.1,4.1,4.1,10.8,0,15c-4.1,4.1-10.8,4.1-15,0
+				C130,83.3,130,76.6,134.2,72.5z M96.4,109l5.3-5.3c1.7-1.7,4.5-1.7,6.2,0l94.2,94.2c1.7,1.7,1.7,4.5,0,6.2l-5.3,5.3
+				c-1.7,1.7-4.5,1.7-6.2,0l-94.2-94.2C94.7,113.5,94.7,110.7,96.4,109z"/>
+		</g>
+	</switch>
+</svg>

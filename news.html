@@ -1,0 +1,53 @@
+---
+title: News
+permalink: "/news/"
+position: 6
+layout: static-page
+show: true
+---
+
+{% include hero.html
+  bg_image="board-room-2.jpg"
+  bg_position="center"
+  bg_size="cover"
+  heading="What is going on in Imbue?"
+  lead="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+  nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  Ut wisi enim ad Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+  diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+  volutpat."
+  type="full"
+  text_align="left"
+%}
+
+<div class="container pt-md-5 mb-md-5">
+  <div class="row news d-flex justify-content-center">
+    {% for post in site.posts %}
+      {% if post.top_story == true %}
+        <div class="row w-50 m-0">
+          {% include news-grid.html %}
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="row w-50 m-0">
+      {% for post in site.posts %}
+        {% capture modulo %}{{ forloop.index | modulo: 5 }}{% endcapture %}
+
+        {% if modulo == '1' %}
+          <div class="row w-100 m-0">
+        {% endif %}
+        {% unless post.top_story == true %}
+          {% include news-grid.html %}
+        {% endunless %}
+        {% if modulo == '0' or forloop.last %}
+          </div>
+        {% endif %}
+
+        {% if forloop.index == 5 %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
+
+a,
+button,
+[role="button"],
+input,
+label,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+a {
+  transition: opacity .2s ease;
+
+  &:hover {
+    text-decoration: none !important;
+    opacity: 0.75;
+  }
+}
+
+.w-20 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+  max-width: 20%;
+
+  @include media-breakpoint-only(md) {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  @include media-breakpoint-down(sm) {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.container-fluid {
+  max-width: 2560px;
+}
+
+// Only show when JS is not supported
+.no-js:not(html) {
+  display: none;
+
+  .no-js & {
+    display: block;
+  }
+}
+
+// Only show when JS is supported
+.js {
+  .no-js & {
+    display: none;
+  }
+}
+
+.lazyload {
+	opacity: 0;
+}
+
+.lazyloading {
+  opacity: 1 !important;
+  z-index: 2 !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+}
+
+.come-in-view.come-in-left.come-in {
+  @include fadeInLeft(
+    $function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+  );
+}
+
+.come-in-view.come-in-up.come-in {
+  @include fadeInUp(
+    $function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+  );
+}

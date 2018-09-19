@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row bg-dark text-light mb-md-3">
+    {% include full-width-title.html title="Tenants" %}
+  </div>
+
+  <div class="row">
+    <div class="container">
+      <div class="row align-items-center justify-content-between pt-md-3 pb-md-3">
+        {%- assign tenants = site.data.tenants -%}
+        {% for tenant in tenants %}
+          {% capture tenant_logo %}{{ tenant.logo }}{% endcapture %}
+          {% capture tenant_title %}{{ tenant.title }}{% endcapture %}
+          <div class="tenant-grid__item w-20 d-flex flex-wrap justify-content-center align-items-center py-md-0 py-4">
+            {% if tenant_title == 'House of Mooshki' %}
+              {% include image.html name=tenant_logo alt=tenant_title class="img-fluid tenant-mooshki" %}
+            {% else %}
+            {% include image.html name=tenant_logo alt=tenant_title class="img-fluid" %}
+            {% endif %}
+            <noscript>
+              {% include noscript-image.html name=tenant_logo alt=tenant_title class="img-fluid" %}
+            </noscript>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% comment %}
+      <div class="row align-items-center justify-content-between pt-md-3 pb-md-3">
+        {% for tenant in tenants offset: 5 limit: 5 %}
+          {% capture tenant_logo %}{{ tenant.logo }}{% endcapture %}
+          {% capture tenant_title %}{{ tenant.title }}{% endcapture %}
+          <div class="col-md-2 d-flex justify-content-center align-items-center py-md-0 py-4">
+            {% include image.html name=tenant_logo alt=tenant_title class="img-fluid" %}
+            <noscript>
+              {% include noscript-image.html name=tenant_logo alt=tenant_title class="img-fluid" %}
+            </noscript>
+          </div>
+        {% endfor %}
+      </div>
+      {% endcomment %}
+
+      <div class="testimonials row align-items-center justify-content-between pt-md-3 pb-md-3">
+        {% include noscript-image.html name="testimonials.png" class="img-fluid" %}
+      </div>
+    </div>
+  </div>
+</div>

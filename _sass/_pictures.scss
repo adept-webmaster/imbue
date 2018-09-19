@@ -1,0 +1,30 @@
+.pictures--grid-item {
+  &.lazyloaded {
+    @include fadeIn();
+  }
+  &-image {
+    height: 180px;
+    object-position: left;
+  }
+}
+
+.pictures--row-item {
+  &.come-in-view.come-in-up {
+    @include fadeIn(
+      $delay: 0.5s
+    );
+  }
+
+  &-image {
+    height: 300px;
+  }
+}
+
+.hero-icon {
+  border-style: solid;
+  border-width: 4px;
+}
+
+.home-hero-icon {
+  width: 100%;
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300"
+	 style="enable-background:new 0 0 300 300;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:7;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:12;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#FFFFFF;stroke-width:15;stroke-miterlimit:10;}
+</style>
+<switch>
+	<g>
+		<path class="st0" d="M242.6,161.4H25.3v-22.8h180c0,0,0-0.1,0-0.1H241c0.5,0,1.1,0.1,1.7,0.1c10.7,0,19.3-8.7,19.3-19.3
+			c0-10.7-8.7-19.3-19.3-19.3c-10.7,0-19.3,8.7-19.3,19.3h-22.8c0-23.2,18.9-42.1,42.1-42.1s42.1,18.9,42.1,42.1
+			S265.9,161.4,242.6,161.4z"/>
+		<path class="st0" d="M154.8,119.2H25.3V96.5h92.2c0,0,0-0.1,0-0.1h35.8c0.5,0,1.1,0.1,1.7,0.1c10.7,0,19.3-8.7,19.3-19.3
+			s-8.7-19.3-19.3-19.3c-10.7,0-19.3,8.7-19.3,19.3h-22.8c0-23.2,18.9-42.1,42.1-42.1S197,53.9,197,77.1S178.1,119.2,154.8,119.2z"
+			/>
+		<path class="st0" d="M194.7,178.9H25.3v22.8h132.1c0,0,0,0.1,0,0.1h35.8c0.5,0,1.1-0.1,1.7-0.1c10.7,0,19.3,8.7,19.3,19.3
+			c0,10.7-8.7,19.3-19.3,19.3s-19.3-8.7-19.3-19.3h-22.8c0,23.2,18.9,42.1,42.1,42.1s42.1-18.9,42.1-42.1S217.9,178.9,194.7,178.9z"
+			/>
+	</g>
+</switch>
+</svg>

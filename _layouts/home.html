@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+{% include home-hero.html
+  class="mb-0 bg-dark"
+  heading="FULLY SERVICED"
+  lead="Office Space"
+  link="Contact us"
+  url="/contact"
+  type="full"
+  bg_image="office-reception.jpg"
+  bg_position="center"
+  bg_size="cover"
+  text_position="left"
+  text_align="right"
+%}
+
+{% assign office_pictures = site.data.office-pictures %}
+{% include home-2x2-pictures.html
+  pictures=office_pictures %}
+
+{% include services-icons.html %}
+
+{% include tenants.html %}

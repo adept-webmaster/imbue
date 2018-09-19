@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300"
+	 style="enable-background:new 0 0 300 300;" xml:space="preserve">
+	<style type="text/css">
+		.st0{fill:#9DCA3B;}
+		.st1{fill:none;stroke:#9DCA3B;stroke-width:7;stroke-miterlimit:10;}
+		.st2{fill:none;stroke:#9DCA3B;stroke-width:12;stroke-miterlimit:10;}
+		.st3{fill:none;stroke:#9DCA3B;stroke-width:15;stroke-miterlimit:10;}
+	</style>
+	<switch>
+		<g>
+			<g>
+				<g>
+					<polygon class="st0" points="135.4,14.6 170.3,21.4 227.2,21.4 227.2,273.5 196.8,273.5 161.9,280.2 234,280.2 234,14.6 				"/>
+					<polygon class="st0" points="91.8,273.5 72.8,273.5 72.8,21.4 91.8,21.4 91.8,14.6 66,14.6 66,280.2 91.8,280.2 				"/>
+				</g>
+				<path class="st0" d="M97.8,13v274l120.7-23.4V36.4L97.8,13z M128.9,152.6l-14.4,0.3c-1.4,0-2.6-1.2-2.6-2.6s1.2-2.6,2.6-2.6
+					l14.4-0.3c1.4,0,2.6,1.2,2.6,2.6C131.5,151.4,130.3,152.6,128.9,152.6z"/>
+			</g>
+		</g>
+	</switch>
+</svg>

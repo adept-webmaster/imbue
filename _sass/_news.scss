@@ -1,0 +1,20 @@
+.news {
+  .row.w-50 {
+    @include media-breakpoint-down(md) {
+      width: 100% !important;
+    }
+  }
+
+  .news-post__top-story {
+    width: 150px;
+    height: 150px;
+
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+
+    transform: rotate(339deg);
+    border-width: 7px;
+    border-style: solid;
+  }
+}

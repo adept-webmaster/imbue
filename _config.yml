@@ -1,0 +1,20 @@
+---
+title: Imbue
+timezone: UTC
+collections:
+  uploads:
+    title: Uploads
+    output: true
+  posts:
+    title: News
+    output: true
+baseurl:
+url:
+markdown: kramdown
+img_dir: "/uploads/"
+linkedin: https://www.linkedin.com/
+exclude:
+- vendor
+sass:
+  sass_dir: _sass
+  style: compressed

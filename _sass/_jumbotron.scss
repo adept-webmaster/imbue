@@ -1,0 +1,57 @@
+.jumbotron {
+  &.jumbotron-fluid {
+    h2, .h2 {
+      text-transform: none;
+    }
+    &.static-page-hero {
+      .jumbotron--content-box {
+        padding-top: 10rem !important;
+        padding-bottom: 10rem !important;
+        background-color: rgba(theme-color("primary"), 0.8) !important;
+      }
+
+    }
+    padding: 4rem 0 0;
+
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+    }
+
+    .jumbotron__icons {
+      margin-top: 15vw;
+      @include media-breakpoint-down(sm) {
+        margin-top: 0;
+      }
+      .container {
+        @include media-breakpoint-down(md) {
+          text-align: center;
+          margin-top: 0;
+        }
+
+        .icon-container {
+          border-width: 4px;
+          border-style: solid;
+          width: 100%;
+          @include media-breakpoint-down(md) {
+            width: auto;
+          }
+
+          .hero-icon {
+            width: 100%;
+            @include media-breakpoint-down(sm) {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .jumbotron.lazyloaded {
+    & > .come-in-view.come-in-left.come-in {
+      @include fadeInLeft(
+        $delay: 0.5s
+      );
+    }
+  }
+}

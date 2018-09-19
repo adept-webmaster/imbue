@@ -1,0 +1,27 @@
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+<!-- Async Google font load -->
+<script async>
+  WebFont.load({
+    google: {
+      families: ['Montserrat:300,400,700']
+    }
+  });
+</script>
+
+<noscript>
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700"
+    rel="stylesheet"
+  >
+</noscript>
+
+<script src="{{ "/assets/scripts/jquery-3.3.1.slim.min.js" | relative_url }}"></script>
+<script async src="{{ "/assets/scripts/modernizr-custom.js" | relative_url }}"></script>
+<script defer src="{{ "/assets/scripts/popper.min.js" | relative_url }}"></script>
+<script defer src="{{ "/assets/scripts/bootstrap.min.js" | relative_url }}"></script>
+<script defer src="{{ "/assets/scripts/ofi.min.js" | relative_url }}"></script>
+<script defer src="{{ "/assets/scripts/main.js" | relative_url }}"></script>
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+</script>

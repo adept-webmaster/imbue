@@ -1,0 +1,36 @@
+---
+title: About Us
+permalink: "/about/"
+position: 1
+layout: static-page
+show: true
+---
+
+{% include hero.html
+  bg_image="board-room-2.jpg"
+  bg_position="center"
+  bg_size="cover"
+  heading="What do we offer?"
+  type="full"
+  text_align="left"
+%}
+
+{% assign about_pictures = site.data.about-pictures %}
+{% include 2x2-pictures-with-content.html
+  title="About Imbue"
+  content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+  nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  Ut wisi enim ad Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+  diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+  volutpat. Ut wisi enim ad Lorem ipsum dolor sit amet, consectetuer adipiscing
+  elit, sed diam nonummy nibh
+
+  euismod tincidunt ut laoreet dolore magna aliquam
+  erat volutpat. Ut wisi enim ad Lorem ipsum dolor sit amet, consectetuer
+  adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+  magna aliquam erat volutpat. Ut wisi enim ad Lorem ipsum dolor sit amet,
+  consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+  laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad Lorem ipsum dolor
+  sit amet,"
+  pictures=about_pictures
+%}

@@ -1,0 +1,26 @@
+---
+title: Whats in the area
+permalink: "/area/"
+position: 4
+layout: static-page
+show: true
+---
+
+{% include hero.html
+  bg_image="board-room-2.jpg"
+  bg_position="center"
+  bg_size="cover"
+  heading="What the area has to offer?"
+  lead="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+  nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  Ut wisi enim ad Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+  diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+  volutpat."
+  type="full"
+  text_align="left"
+%}
+
+{% assign amenities_pictures = site.data.amenities-pictures %}
+{% include amenities-grid.html
+  pictures=amenities_pictures
+%}

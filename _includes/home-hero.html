@@ -1,0 +1,109 @@
+<div
+  class="jumbotron container-fluid rounded-0
+  {% if include.type %}{% if include.type == 'full' %} jumbotron-fluid{% endif %}{% endif %}
+  {% if include.class %} {{ include.class }}{% endif %}
+  lazyload js mb-md-5 mb-3"
+  style="background: {% if include.overlay %}{% if include.overlay == 'true' %}linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)){% endif %}{% endif %}
+  {% if include.bg_image %}{% if include.overlay %},{% endif %}url('{{ site.img_dir }}{{ include.bg_image }}') no-repeat {{ include.bg_position }} / {{ include.bg_size }}{% endif %};
+      color: {% if include.text_color %}{{ include.text_color }};{% else %}#ffffff;{% endif %}">
+  <div class="row d-flex flex-column jumbotron--content-box come-in-view come-in-left p-5
+    {% if include.text_position %}
+      {% if include.text_position == 'center' %} mx-auto
+      {% elsif include.text_position == 'left' %} mr-auto ml-0 col-md-5
+      {% endif %}
+    {% endif %}
+    {% unless include.type == 'full' %} px-4{% endunless %}
+    {% if include.text_align %}
+      {% if include.text_align == 'center' %} text-center{% endif %}
+      {% if include.text_align == 'right' %} text-right{% endif %}
+    {% endif %}"
+    {% if include.type %}
+      {% if include.type == 'full' %}
+        style="background: rgba(43,43,43,0.73);"
+      {% endif %}
+    {% endif %}>
+    <h1 class="h2 {% if include.type %}{% if include.type == 'full' %}m-0{% endif %}{% endif %}">{{ include.heading }}<br><span class="text-primary font-weight-normal">{{ include.lead }}</span></h1>
+    <p class="lead">
+      {% if include.button_label %}
+        <a class="btn btn-cta btn-lg text-uppercase font-weight-bold"
+        href="{% if include.button_link %}{{ include.button_link }}{% else %}#{% endif %}"
+        role="button">
+          {{ include.button_label }}
+        </a>
+      {% endif %}
+    </p>
+  </div>
+  {% if include.link %}
+    <div class="col-md-5 bg-primary text-right px-0">
+      <a href="{{ include.url }}" class="row m-0 px-5 py-1">
+        <span class="w-100 text-light font-weight-normal {% if include.type %}{% if include.type == 'full' %}lead m-0{% endif %}{% endif %}">
+          {{ include.link }}   <i class="fas fa-angle-right"></i><i class="fas fa-angle-right"></i><i class="fas fa-angle-right"></i>
+        </span>
+      </a>
+    </div>
+  {% endif %}
+  <div class="row jumbotron__icons jumbotron--content-box come-in-view come-in-left p-md-5 p-2 pt-3 mx-0"
+    {% if include.type %}
+      {% if include.type == 'full' %}
+        style="background: rgba(49,49,49,0.89);"
+      {% endif %}
+    {% endif %}>
+
+    <div class="container row mx-auto">
+      {% for service in site.data.hero-services %}
+      {% assign service_icon = service.image %}
+        <div class="row m-0 col-lg-4 col-md-12">
+          <div class="col-lg-4 col-md-3 d-flex justify-content-center align-items-start">
+            <div class="d-inline-block icon-container img-fluid border-primary rounded-circle">
+              {% include noscript-image.html name=service_icon class="img-fluid home-hero-icon p-xl-3 p-2" %}
+            </div>
+          </div>
+
+          <div class="col">
+            <h2 class="h3 text-uppercase">{{ service.title }}</h2>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut.</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<noscript>
+  <div class="jumbotron rounded-0{% if include.type %}{% if include.type == 'full' %} jumbotron-fluid{% endif %}{% endif %}{% if include.class %} {{ include.class }}{% endif %}"
+  style="background: {% if include.overlay %}{% if include.overlay == 'true' %}linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)){% endif %}{% endif %}
+                      {% if include.bg_image %},url('{{ site.img_dir }}{{ include.bg_image }}') no-repeat {{ include.bg_position }} / {{ include.bg_size }}{% endif %};
+        color: {% if include.text_color %}{{ include.text_color }};{% else %}#ffffff;{% endif %}">
+    <div class="d-flex flex-column jumbotron--content-box p-5
+      {% if include.text_position %}
+        {% if include.text_position == 'center' %} mx-auto
+        {% elsif include.text_position == 'left' %} mr-auto ml-0 col-md-4 col-lg-5
+        {% endif %}
+      {% endif %}
+      container
+      {% unless include.type == 'full' %} px-4{% endunless %}
+      {% if include.text_align %}
+        {% if include.text_align == 'center' %} text-center{% endif %}
+        {% if include.text_align == 'right' %} text-right{% endif %}
+      {% endif %}" {% if include.type %}
+                    {% if include.type == 'full' %}
+                      style="background: rgba(0,0,0,0.5);"
+                    {% endif %}
+                  {% endif %}>
+      <h1 class="h2 {% if include.type %}{% if include.type == 'full' %}m-0{% endif %}{% endif %}">{{ include.heading }}</h1>
+      <p class="{% if include.type %}{% if include.type == 'full' %}lead m-0{% endif %}{% endif %}">
+        {{ include.lead }}
+      </p>
+      <p class="lead">
+        {% if include.button_label %}
+          <a class="btn btn-cta btn-lg text-uppercase font-weight-bold"
+          href="{% if include.button_link %}{{ include.button_link }}{% else %}#{% endif %}"
+          role="button">
+            {{ include.button_label }}
+          </a>
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</noscript>

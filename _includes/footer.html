@@ -1,0 +1,28 @@
+<footer class="footer bg-dark text-light mt-5 py-5">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="container">
+    <div class="row text-center justify-content-center">
+      {% for item in site.data.navigation %}
+        <a class="col-2 font-weight-bold text-light" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endfor %}
+    </div>
+
+    <div class="row pt-4 text-center justify-content-center">
+      {% for item in site.data.navigation-2 %}
+        {% if item.title == 'Location' %}
+          {% continue %}
+        {% endif %}
+        <a class="col-1 text-light" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endfor %}
+    </div>
+
+    <div class="row pt-4 text-center justify-content-center">
+      {% include social.html %}
+    </div>
+
+    <div class="row pt-4 text-center justify-content-center">
+      {% include image.html name="imbue-logo.png" class="img-fluid" alt="Imbue Logo" %}
+    </div>
+  </div>
+</footer>

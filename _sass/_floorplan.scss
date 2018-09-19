@@ -1,0 +1,132 @@
+.floorplan {
+
+  .nav-tabs, .tab-content {
+    border-width: 3px;
+  }
+
+  #floorplanTabContent2 .tab-pane.show.active {
+    display: flex;
+    justify-content: flex-end;
+    & > img {
+      border-bottom: 3px solid map-get($theme-colors, "primary");
+    }
+  }
+
+  &__floor {
+    height: 100%;
+
+    .d-flex nav {
+      z-index: 0;
+    }
+
+    & > .d-flex {
+      margin-top: -100px;
+    }
+
+    .d-flex svg {
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    &-title {
+      color: #D6D6D6;
+      padding-left: 85px !important;
+      padding-right: 85px !important;
+    }
+
+    &-wrapper {
+      height: 38.5%;
+      width: 100%;
+      top: 13.96%;
+      left: 0;
+      padding-left: 7.1% !important;
+      padding-right: 7.1% !important;
+      z-index: 10;
+
+      .row {
+        .row:last-child {
+          top: 6.4%;
+          left: 0;
+
+          .floorplan__room {
+            height: 57%;
+          }
+        }
+
+        &:last-child {
+          .row {
+            .floorplan__room {
+              &:first-child {
+                width: 15.9% !important;
+              }
+
+              &:last-child {
+                width: 18.9% !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__room {
+    //border: 1px solid map-get($theme-colors, "primary");
+    //border-right-width: 0;
+    color: #000;
+    height: 86%;
+    width: 16.3% !important;
+    flex-basis: auto !important;
+
+    &:first-of-type {
+      width: 18.5% !important;
+    }
+
+    &.active {
+      background: map-get($theme-colors, "muted");
+    }
+
+    &--divider {
+      position: absolute;
+      top: 43.8%;
+      background: white;
+      height: 14%;
+      z-index: 1;
+      //border: 2px solid map-get($theme-colors, "primary");
+      width: 31.8%;
+
+      &-left {
+        left: 7%;
+        border-right-width: 0;
+        border-left-width: 0;
+      }
+      &-right {
+        right: 7%;
+        border-left-width: 0;
+        border-right-width: 0;
+      }
+    }
+
+    &--center {
+      height: 100% !important;
+      //border: 2px solid map-get($theme-colors, "primary");
+      width: 26.1%;
+    }
+
+    &--center + .floorplan__room {
+      border-left-width: 0;
+    }
+
+    &:hover {
+      background-color: map-get($theme-colors, "primary") !important;
+      color: #fff;
+
+      & > .floorplan__room-availability {
+        background-color: white;
+      }
+    }
+    &:last-child {
+      border-right-width: 2px;
+    }
+  }
+}
