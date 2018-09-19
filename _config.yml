@@ -9,7 +9,7 @@ collections:
     title: News
     output: true
 baseurl:
-url: https://liam-cooper.github.io/imbue
+url:
 markdown: kramdown
 img_dir: "/uploads/"
 linkedin: https://www.linkedin.com/
