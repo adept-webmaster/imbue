@@ -8,6 +8,10 @@
         padding-top: 10rem !important;
         padding-bottom: 10rem !important;
         background-color: rgba(theme-color("primary"), 0.8) !important;
+
+        @include media-breakpoint-down(lg) {
+          text-align: center;
+        }
       }
 
     }
