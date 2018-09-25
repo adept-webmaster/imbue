@@ -10,7 +10,7 @@
         {% capture service_image %}{{ service.image }}{% endcapture %}
         <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center align-items-start come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %}">
           <div class="icon-container img-fluid border-primary rounded-circle">
-            {% include noscript-image.html name=service_image class="img-fluid rounded-circle border-light w-100 hero-icon p-4" %}
+            {% include noscript-image.html name=service_image class="img-fluid rounded-circle border-light w-75 d-block mx-auto hero-icon p-4" %}
             <h2 class="h6 my-3 text-capitalize text-center">{{ service.title }}</h2>
           </div>
         </div>
