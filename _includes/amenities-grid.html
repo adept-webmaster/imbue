@@ -22,7 +22,7 @@
 
         {% if forloop.index == 5 %} pl-lg-2 {% endif %}
         {% if forloop.index == 2 %} pr-lg-2 {% endif %}
-        come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %}">
+        {% if forloop.index < 4 %}come-in come-in-view{% else %}come-in-view{% endif %} come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %}">
 
         <div class="w-100 position-relative amenities-image-container">
           {% include image.html name=picture_image alt=picture_alt class=picture_class %}
