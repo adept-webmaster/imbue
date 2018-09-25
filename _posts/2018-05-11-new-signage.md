@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "New Signage"
+title:  "Building"
 date:   2018-08-29
 thumb: beamish.jpg
 ---
