@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "New Signage"
+title:  "Media Studios"
 date:   2018-08-29
 thumb: beamish.jpg
 ---
