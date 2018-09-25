@@ -1,16 +1,74 @@
 - title: Location
+  subtitle: Coast
+  content: |
+    Seaham is home to a number of striking beaches which even made it on to the
+    silver screen in Hollywood blockbuster ‘Alien 3’. The town is also the start
+    of the Durham Heritage coast which is an 11-mile walking route from Seaham
+    to Crimdon across spectacular grasslands, dazzling denes and a coastline
+    that is a true treasure.
   image: seaham-beach.jpg
 - title: Hotels
+  subtitle: Seaham Hall
+  content: |
+    Seaham Hall Hotel and Spa is Seaham’s luxurious 5-star bubble rate spa and
+    hotel. The spa even has its own delicious Asian fusion restaurant, which
+    serves up an array of incredible dishes! Seaham Hall and Spa is also a celeb
+    hotspot, with many a famous face making an appearance there over the years.
   image: seaham-hall.jpg
 - title: Sights
+  subtitle: Tommy
+  content: |
+    Tommy is a statue of a First World War soldier by artist Ray Lonsdale which
+    is located on Seaham’s Seafront, next to the cenotaph war memorial. Tommy is
+    a hugely popular and emotively powerful sculpture that people travel from
+    all around to see and have done since he was first displayed in 2014.
   image: seaham-tommy.jpg
 - title: Restaurants
+  subtitle: Seaham Marina
+  content: |
+    Seaham’s Marina is home to a fantastic range of cafes, restaurants and shops
+    as well as a fascinating heritage centre where you can learn all about the
+    town’s history, with a special focus on the George Elmy Lifeboat Disaster of
+    1962.
   image: seaham-restaurants.jpg
 - title: Shopping
+  subtitle: Dalton Park
+  content: |
+    Dalton Park is the biggest outlet shopping centre in the North East with
+    over 60 shops selling over 200 different brands and designer labels. The
+    centre also has a 7-screen cinema and a load of restaurants!
   image: dalton-park.jpg
 - title: Attractions
+  subtitle: Beamish
+  content: |
+    Beamish is a living working museum that uses its collections to connect
+    people from all works of life and tells the story of everyday life in the
+    North East of England in the 1820s, 1900s and 1940s.
   image: beamish.jpg
 - title: Heritage
+  subtitle: Durham Cathedral
+  content: |
+    The monumental Durham Cathedral is the definitive structure of the
+    Anglo-Norman Romanesque style of architecture. The building is steeping with
+    history and the surrounding streets of Durham are equally beautiful with
+    cobbled wandering roads and stone bridges that stand high above the River
+    Wear.
   image: east-durham-heritage-&-lifeboat-centre.jpg
 - title: Harbour
+  subtitle: Hadrian's Wall
+  content: |
+    Hadrian’s wall was a defensive fortification in the Roman province of
+    Britannia, built back in AD122 in the reign of Roman Emperor Hadrian and it
+    still stands proudly today. You can even Walk the 84 miles from coast to
+    coast following the World Heritage Site of Hadrian’s Wall, past Roman
+    settlements and forts.
   image: coxswain-statue.jpg
+- title: Location
+  subtitle: Coast
+  content: |
+    Seaham is home to a number of striking beaches which even made it on to the
+    silver screen in Hollywood blockbuster ‘Alien 3’. The town is also the start
+    of the Durham Heritage coast which is an 11-mile walking route from Seaham
+    to Crimdon across spectacular grasslands, dazzling denes and a coastline
+    that is a true treasure.
+  image: seaham-beach.jpg

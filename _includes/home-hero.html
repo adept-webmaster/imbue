@@ -6,7 +6,7 @@
   style="background: {% if include.overlay %}{% if include.overlay == 'true' %}linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)){% endif %}{% endif %}
   {% if include.bg_image %}{% if include.overlay %},{% endif %}url('{{ site.img_dir | absolute_url }}{{ include.bg_image }}') no-repeat {{ include.bg_position }} / {{ include.bg_size }}{% endif %};
       color: {% if include.text_color %}{{ include.text_color }};{% else %}#ffffff;{% endif %}">
-  <div class="row d-flex flex-column jumbotron--content-box come-in-view come-in-left p-5
+  <div class="row d-flex flex-column jumbotron--content-box p-5
     {% if include.text_position %}
       {% if include.text_position == 'center' %} mx-auto
       {% elsif include.text_position == 'left' %} mr-auto ml-0 col-md-5
@@ -15,7 +15,7 @@
     {% unless include.type == 'full' %} px-4{% endunless %}
     {% if include.text_align %}
       {% if include.text_align == 'center' %} text-center{% endif %}
-      {% if include.text_align == 'right' %} text-right{% endif %}
+      {% if include.text_align == 'right' %} text-md-right text-center{% endif %}
     {% endif %}"
     {% if include.type %}
       {% if include.type == 'full' %}
@@ -42,7 +42,7 @@
       </a>
     </div>
   {% endif %}
-  <div class="row jumbotron__icons jumbotron--content-box come-in-view come-in-left p-md-5 p-2 pt-3 mx-0"
+  <div class="row jumbotron__icons jumbotron--content-box p-md-5 p-2 pt-3 mx-0"
     {% if include.type %}
       {% if include.type == 'full' %}
         style="background: rgba(49,49,49,0.89);"
@@ -51,9 +51,9 @@
 
     <div class="container row mx-auto">
       {% for service in site.data.hero-services %}
-      {% assign service_icon = service.image %}
-        <div class="row m-0 col-lg-4 col-md-12">
-          <div class="col-lg-4 col-md-3 d-flex justify-content-center align-items-start">
+        {% assign service_icon = service.image %}
+        <div class="row mx-0 mb-lg-0 {% unless forloop.last %}mb-3{% endunless %} col-lg-4 col-md-12">
+          <div class="col-lg-4 col-md-3 col-sm-4 mb-3 mb-md-0 d-flex justify-content-center align-items-start">
             <div class="d-inline-block icon-container img-fluid border-primary rounded-circle">
               {% include noscript-image.html name=service_icon class="img-fluid home-hero-icon p-xl-3 p-2" %}
             </div>
@@ -61,8 +61,7 @@
 
           <div class="col">
             <h2 class="h3 text-uppercase">{{ service.title }}</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut.</p>
+            <p>{{ service.content }}</p>
           </div>
         </div>
       {% endfor %}
