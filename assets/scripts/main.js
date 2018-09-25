@@ -4,7 +4,7 @@ $('.hamburger').click(function() {
 
 window.lazySizesConfig = window.lazySizesConfig || {};
 
-lazySizesConfig.expand = -20;
+lazySizesConfig.expand = 300;
 
 //page is optimized for fast onload event
 lazySizesConfig.loadMode = 1;
@@ -36,9 +36,8 @@ lazySizesConfig.loadMode = 1;
    };
 
    objectFitImages();
-   $('.floorplan__room').popover({
-     trigger: "hover",
-     html: true
+   $('.floorplan__room a').popover({
+     trigger: "hover"
    });
 
 })(jQuery);
@@ -55,11 +54,29 @@ allMods.each(function(i, el) {
   }
 });
 
-win.scroll(function(event) {
-  allMods.each(function(i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      el.addClass("come-in");
+// win.scroll(function(event) {
+//   allMods.each(function(i, el) {
+//     var el = $(el);
+//     if (el.visible(true)) {
+//       el.addClass("come-in");
+//     }
+//   });
+// });
+
+$(window).on('scroll', function() {
+  allMods.each(function() {
+    if (isScrolledIntoView($(this))) {
+      $(this).addClass("come-in");
     }
   });
 });
+
+function isScrolledIntoView(elem) {
+  var docViewTop = $(window).scrollTop();
+  var docViewBottom = docViewTop + $(window).height();
+
+  var elemTop = $(elem).offset().top;
+  var elemBottom = elemTop + $(elem).height();
+
+  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}

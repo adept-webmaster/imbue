@@ -12,3 +12,11 @@
   background: theme-color("dark");
   padding: 20px;
 }
+
+.testimonial-container {
+  overflow: hidden;
+
+  &.theo img, &.emily img {
+    right: 10px;
+  }
+}

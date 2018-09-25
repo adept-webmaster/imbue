@@ -2,10 +2,16 @@
   <div class="row pictures">
     <div class="row m-0 px-md-0 col-md align-self-start">
       {%- assign pictures = include.pictures -%}
+      {% assign delay = 0 %}
       {% for picture in pictures %}
         {% capture picture_image %}{{ picture.image }}{% endcapture %}
         {% capture picture_alt %}{{ picture.title }}{% endcapture %}
         {% capture picture_class %}img-fluid img-cover h-100{% endcapture %}
+
+          {% assign delay = delay | plus: 1 %}
+          {% if delay == 4 %}
+           {% assign delay = 1 %}
+         {% endif %}
 
         <div class="col-md-6 col-lg-4
         pl-2 py-2 pr-2
@@ -16,7 +22,7 @@
 
         {% if forloop.index == 5 %} pl-lg-2 {% endif %}
         {% if forloop.index == 2 %} pr-lg-2 {% endif %}
-        come-in-view come-in-up">
+        come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %}">
 
         <div class="w-100 position-relative amenities-image-container">
           {% include image.html name=picture_image alt=picture_alt class=picture_class %}
@@ -26,14 +32,8 @@
           <div class="amenities-overlay
           d-flex flex-column justify-content-center
           position-absolute h-100 w-100 text-light px-xl-4 px-3 pb-5">
-            <span class="h5">{{ picture.title }}</span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat. Ut wisi enim ad Lorem ipsum dolor sit amet,
-              consectetuer adipiscing elit, sed diam nonummy nibh euismod
-              tincidunt ut laoreet dolore magna aliquam erat volutpat.
-            </p>
+            <span class="h5">{{ picture.subtitle }}</span>
+            <p>{{ picture.content }}</p>
           </div>
         </div>
           <h2 class="h5

@@ -11,6 +11,8 @@ collections:
 baseurl:
 url:
 markdown: kramdown
+phone: "0191 3778358"
+email: "info@imbueoffices.co.uk"
 img_dir: "/uploads/"
 linkedin: https://www.linkedin.com/
 exclude:

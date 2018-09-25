@@ -1,18 +1,20 @@
-<div class="container-fluid px-0 pt-5">
-  <div class="row bg-primary text-light py-4">
-    <div class="container">
-      <div class="row">
-        {%- assign services = site.data.services -%}
-        {% for service in services %}
-          {% capture service_image %}{{ service.image }}{% endcapture %}
-          <div class="col-lg-2 col-md-4 col-sm-6 d-flex justify-content-center align-items-start">
-            <div class="d-inline-block icon-container img-fluid border-primary rounded-circle">
-              {% include noscript-image.html name=service_image class="img-fluid rounded-circle border-light w-100 hero-icon p-xl-4 p-2" %}
-              <h2 class="h6 my-3 text-capitalize text-center">{{ service.title }}</h2>
-            </div>
+<div class="row bg-primary text-light m-0 py-4">
+  <div class="container">
+    <div class="row">
+      {%- assign services = site.data.services -%}
+      {% assign delay = 0 %}
+      {% for service in services %}
+        {% unless forloop.first %}
+          {% assign delay = delay | plus: 1 %}
+        {% endunless %}
+        {% capture service_image %}{{ service.image }}{% endcapture %}
+        <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center align-items-start come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %}">
+          <div class="icon-container img-fluid border-primary rounded-circle">
+            {% include noscript-image.html name=service_image class="img-fluid rounded-circle border-light w-100 hero-icon p-4" %}
+            <h2 class="h6 my-3 text-capitalize text-center">{{ service.title }}</h2>
           </div>
-        {% endfor %}
-      </div>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </div>
