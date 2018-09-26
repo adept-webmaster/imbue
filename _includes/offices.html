@@ -306,13 +306,18 @@
   <div class="row">
     {% assign delay = 0 %}
     {% for item in site.data.floorplan-images %}
-      {% capture item_image %}{{ item.image }}{% endcapture %}
-      {% capture item_alt %}{{ item.title }}{% endcapture %}
-      {% capture item_class %}img-fluid img-cover come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %}{% endcapture %}
 
       {% unless forloop.first %}
         {% assign delay = delay | plus: 1 %}
       {% endunless %}
+
+      {% if delay == 3 %}
+        {% assign delay = 0 %}
+      {% endif %}
+
+      {% capture item_image %}{{ item.image }}{% endcapture %}
+      {% capture item_alt %}{{ item.title }}{% endcapture %}
+      {% capture item_class %}img-fluid img-cover come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %}{% endcapture %}
 
         <div class="col-lg-4 col-md-6 pb-3 px-2">
           {% include image.html name=item_image alt=item_alt class=item_class %}
