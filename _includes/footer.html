@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row text-center justify-content-center">
       {% for item in site.data.navigation %}
-        <a class="col-2 font-weight-bold text-light" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        <a class="col-md-2 font-weight-bold text-light" href="{{ item.url | relative_url }}">{{ item.title }}</a>
       {% endfor %}
     </div>
 
@@ -13,7 +13,7 @@
         {% if item.title == 'Location' %}
           {% continue %}
         {% endif %}
-        <a class="col-1 text-light" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        <a class="col-md-1 text-light" href="{{ item.url | relative_url }}">{{ item.title }}</a>
       {% endfor %}
     </div>
 
