@@ -29,6 +29,11 @@
         <div class="col-lg-12 col-xl-10 pr-md-5 come-in come-in-view come-in-right">
           <h2 class="pb-3">{{ include.title }}</h2>
           <p>{{ include.content | markdownify }}</p>
+          <ul>
+            {% for service in site.data.services %}
+              <li>{{ service.title }}</li>
+            {% endfor %}
+          </ul>
         </div>
       </div>
     </div>
