@@ -10,15 +10,13 @@ layout: default
   url="/contact"
   type="full"
   bg_image="office-reception.jpg"
-  bg_position="center"
+  bg_position="bottom"
   bg_size="cover"
   text_position="left"
   text_align="right"
 %}
 
-{% assign office_pictures = site.data.office-pictures %}
-{% include home-2x2-pictures.html
-  pictures=office_pictures %}
+{% include picture-with-content.html picture="Lighthouse.jpg" alt="Lighthouse" %}
 
 {% include services-icons.html %}
 

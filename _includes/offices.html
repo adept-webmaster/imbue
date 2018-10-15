@@ -26,7 +26,7 @@
             style="bottom: {% if forloop.first %}25{% elsif forloop.index == 2 %}41{% else %}57{% endif %}%"></div>
           </div>
 
-          <div class="col d-flex flex-column justify-content-center">
+          <div class="col d-flex flex-column h-100 justify-content-center">
             <span>Floor {{ floor.floor }} total space <span class="font-weight-bold">15,000sq</span></span>
             <span>Floor {{ floor.floor }} available space <span class="font-weight-bold">9,500sq</span></span>
           </div>
@@ -34,7 +34,7 @@
       {% endfor %}
     </div>
   </div>
-  <div class="row tab-content h-100 px-2 pb-3" id="floorplanTabContent">
+  <div class="row tab-content h-100 px-0 pb-1" id="floorplanTabContent">
     {% for floor in site.data.floors.floors %}
       <div
       class="col px-0 floorplan__floor tab-pane fade in {% if forloop.first %}show active{% endif %}"
@@ -170,9 +170,9 @@
           </div>
         </div>
 
-        <div class="row floorplan__room-content tab-content" id="content-floor-{{ floor.floor }}">
+        <div class="row m-0 floorplan__room-content tab-content" id="content-floor-{{ floor.floor }}">
           {% for room in floor.rooms.south.top %}
-            <div class="col-12 row m-0 w-100 tab-pane room-tab-pane {% if forloop.first %}show active{% endif %}" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
+            <div class="col-12 row m-0 px-1 w-100 tab-pane room-tab-pane {% if forloop.first %}show active{% endif %}" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
               <div class="col-lg-5 p-0">
                 {% include image.html name="board-room-1.jpg" class="h-100 img-fluid img-cover" %}
               </div>
@@ -204,7 +204,7 @@
           {% endfor %}
 
           {% for room in floor.rooms.south.bottom %}
-            <div class="col-12 row m-0 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
+            <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
               <div class="col-lg-5 p-0">
                 {% include image.html name="board-room-1.jpg" class="h-100 img-fluid img-cover" %}
               </div>
@@ -236,7 +236,7 @@
           {% endfor %}
 
           {% for room in floor.rooms.north.top %}
-            <div class="col-12 row m-0 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
+            <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
               <div class="col-lg-5 p-0">
                 {% include image.html name="board-room-1.jpg" class="h-100 img-fluid img-cover" %}
               </div>
@@ -268,7 +268,7 @@
           {% endfor %}
 
           {% for room in floor.rooms.north.bottom %}
-          <div class="col-12 row m-0 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
+          <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
             <div class="col-lg-5 p-0">
               {% include image.html name="board-room-1.jpg" class="h-100 img-fluid img-cover" %}
             </div>
@@ -319,7 +319,7 @@
       {% capture item_alt %}{{ item.title }}{% endcapture %}
       {% capture item_class %}img-fluid img-cover come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %}{% endcapture %}
 
-        <div class="col-lg-4 col-md-6 pb-3 px-2">
+        <div class="col-lg-4 col-md-6 p-1">
           {% include image.html name=item_image alt=item_alt class=item_class %}
         </div>
     {% endfor %}

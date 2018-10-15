@@ -9,11 +9,11 @@
         {% capture picture_class %}img-fluid img-cover h-100{% endcapture %}
 
           {% assign delay = delay | plus: 1 %}
-          {% if delay == 4 %}
+          {% if delay == 5 %}
            {% assign delay = 1 %}
          {% endif %}
 
-        <div class="col-md-6 col-lg-4
+        <div class="col-md-6 col-lg-3
         pl-2 py-2 pr-2
         {% if forloop.index == 1 or forloop.index == 5 %} pr-md-2 pr-lg-2 pr-xl-2 {% endif %}
         {% if forloop.index == 2 or forloop.index == 6 %} pl-md-2 pl-lg-2 pl-xl-2 pr-xl-2{% endif %}
@@ -22,7 +22,7 @@
 
         {% if forloop.index == 5 %} pl-lg-2 {% endif %}
         {% if forloop.index == 2 %} pr-lg-2 {% endif %}
-        {% if forloop.index < 4 %}come-in come-in-view{% else %}come-in-view{% endif %} come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %}">
+        {% if forloop.index < 5 %}come-in come-in-view{% else %}come-in-view{% endif %} come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %}">
 
         <div class="w-100 position-relative amenities-image-container">
           {% include image.html name=picture_image alt=picture_alt class=picture_class %}

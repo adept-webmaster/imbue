@@ -12,6 +12,39 @@ body {
   -webkit-perspective: 1000;
 }
 
+@include media-breakpoint-down(md) {
+
+  $mobile-font-ratio: 0.95;
+
+  body {
+    font-size: $font-size-base * $mobile-font-ratio !important;
+  }
+
+  .h1, h1 {
+    font-size: $h1-font-size * $mobile-font-ratio !important;
+  }
+
+  .h2, h2 {
+    font-size: $h2-font-size * $mobile-font-ratio !important;
+  }
+
+  .h3, h3 {
+    font-size: $h3-font-size * $mobile-font-ratio !important;
+  }
+
+  .h4, h4 {
+    font-size: $h4-font-size * $mobile-font-ratio !important;
+  }
+
+  .h5, h5 {
+    font-size: $h5-font-size * $mobile-font-ratio !important;
+  }
+
+  .h6, h6 {
+    font-size: $h6-font-size * $mobile-font-ratio !important;
+  }
+}
+
 a,
 button,
 [role="button"],
@@ -126,5 +159,11 @@ a {
     .delay-#{$i} {
       animation-delay: .25s * $i !important;
     }
+  }
+}
+
+.embed-responsive-16by9::before {
+  @include media-breakpoint-down(lg) {
+    padding-top: 100% !important;
   }
 }

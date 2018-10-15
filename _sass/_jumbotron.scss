@@ -6,10 +6,12 @@
     &.static-page-hero {
       .jumbotron--content-box {
         @include media-breakpoint-up(sm) {
-          padding-top: 10rem !important;
-          padding-bottom: 10rem !important;
+          padding-top: 4rem !important;
+          padding-bottom: 4rem !important;
         }
-        background-color: rgba(theme-color("primary"), 0.8) !important;
+        background-color: rgba(theme-color("dark"), 0.8) !important;
+        border-bottom-style: solid;
+        border-bottom-width: 7px;
 
         @include media-breakpoint-down(lg) {
           text-align: center;
@@ -21,6 +23,10 @@
 
     @include media-breakpoint-down(sm) {
       padding: 0;
+    }
+
+    .fas.fa-angle-right {
+      vertical-align: middle;
     }
 
     .jumbotron__icons {
@@ -37,7 +43,7 @@
         .icon-container {
           border-width: 4px;
           border-style: solid;
-          width: 100%;
+          width: 87%;
           @include media-breakpoint-down(md) {
             width: auto;
           }

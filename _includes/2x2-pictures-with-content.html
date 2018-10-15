@@ -13,11 +13,7 @@
         {% endunless %}
 
         <div class="col-lg-{% if forloop.index == 1 or forloop.index == 4 %}12 col-xl-6{% else %}6{% endif %}
-        pl-2 py-2 pr-2
-        {% if forloop.index == 1 %} pr-xl-2{% endif %}
-        {% if forloop.index == 2 %} pr-lg-2 pl-xl-2{% endif %}
-        {% if forloop.index == 3 %} pl-lg-2 pr-xl-2{% endif %}
-        {% if forloop.index == 4 %} pl-xl-2 {% endif %}
+        p-1
         come-in come-in-view come-in-left
         {% unless forloop.first %}delay-{{ delay }}{% endunless %}">
           {% include image.html name=picture_image alt=picture_alt class=picture_class %}

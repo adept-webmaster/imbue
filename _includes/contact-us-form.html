@@ -1,0 +1,63 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-9 pt-3 mx-auto">
+      <h2>Contact Us Form</h2>
+      <form action="https://formspree.io/liam.cooper@andrewjamesworldwide.com" method="POST">
+        <div class="form-row">
+          <div class="col">
+            <label class="form-group has-float-label">
+              <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              id="name"
+              class="form-control form-control-lg rounded-0"
+              autocomplete="name"
+              >
+              <span>Name</span>
+            </label>
+          </div>
+          <div class="col">
+            <label class="form-group has-float-label">
+              <input
+              type="tel"
+              placeholder="Phone"
+              name="phone"
+              id="phone"
+              class="form-control form-control-lg rounded-0"
+              autocomplete="tel"
+              aria-describedby="phoneHelpBlock"
+              >
+              <span>Phone</span>
+              <small id="phoneHelpBlock" class="form-text text-muted">
+                If you would like us to contact you via phone, please input your phone number above, including the area code.
+              </small>
+            </label>
+          </div>
+        </div>
+
+          <label class="form-group has-float-label">
+            <input type="email"
+            placeholder="Email address"
+            name="email"
+            id="email"
+            class="form-control form-control-lg rounded-0"
+            autocomplete="email"
+            >
+            <span>Email address</span>
+          </label>
+
+          <label class="form-group has-float-label">
+            <textarea class="form-control form-control-lg rounded-0" placeholder="Your message" name="message" id="message" rows="3" class="form-control"></textarea>
+            <span>Message</span>
+          </label>
+
+          <button type="submit" class="btn btn-lg btn-block btn-primary rounded-0" value="Send">Submit</button>
+          <span class="mt-3 d-block">Please be aware that your details will be sent through Formspree, which
+          is a service used by us to send enquiries through to the correct people.
+          <a href="http://docs.formspree.io/files/privacy.pdf" target="_blank">Please view their privacy policy by clicking here for more information.</a></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

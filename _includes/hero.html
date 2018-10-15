@@ -1,8 +1,8 @@
-<div class="static-page-hero jumbotron m-0 p-0 rounded-0{% if include.type %}{% if include.type == 'full' %} jumbotron-fluid{% endif %}{% endif %}{% if include.class %} {{ include.class }}{% endif %} lazyload js"
+<div class="static-page-hero jumbotron m-0 p-0 py-lg-5 rounded-0{% if include.type %}{% if include.type == 'full' %} jumbotron-fluid{% endif %}{% endif %}{% if include.class %} {{ include.class }}{% endif %} lazyload js"
 style="background: {% if include.overlay %}{% if include.overlay == 'true' %}linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),{% endif %}{% endif %}
                     url('{{ site.img_dir | absolute_url }}{{ include.bg_image }}') no-repeat {{ include.bg_position }} / {{ include.bg_size }};
       color: {% if include.text_color %}{{ include.text_color }};{% else %}#ffffff;{% endif %}">
-  <div class="col-xl-6 col-lg-12 d-flex align-items-center flex-column jumbotron--content-box py-5
+  <div class="col-xl-6 col-lg-12 d-flex align-items-center flex-column jumbotron--content-box py-5 border-primary
     {% if include.text_position %}
       {% if include.text_position == 'center' %} mx-auto
       {% elsif include.text_position == 'right' %} ml-auto mr-0 col-md-6
@@ -17,8 +17,8 @@ style="background: {% if include.overlay %}{% if include.overlay == 'true' %}lin
         bg-primary
       {% endif %}
     {% endif %}">
-    <h2 class="col-md-9 h1 {% if include.type %}{% if include.type == 'full' %}m-0{% endif %}{% endif %}">{{ include.heading }}</h2>
-    <p class="col-md-9 {% if include.type %}{% if include.type == 'full' %}lead m-0{% endif %}{% endif %}">
+    <h2 class="col-md-9 h1">{{ include.heading }}</h2>
+    <p class="col-md-9 text-primary {% if include.type %}{% if include.type == 'full' %}lead m-0{% endif %}{% endif %}">
       {{ include.lead }}
     </p>
   </div>
