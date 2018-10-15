@@ -36,7 +36,7 @@ $label-color: #D6D6D6;
       z-index: 0;
     }
 
-    & > .d-flex {
+    & > .container > .d-flex {
       margin-top: -100px;
 
       @include media-breakpoint-only(lg) {

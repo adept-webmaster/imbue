@@ -44,6 +44,7 @@
           border-width: 4px;
           border-style: solid;
           width: 87%;
+
           @include media-breakpoint-down(md) {
             width: auto;
           }

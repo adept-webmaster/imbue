@@ -2,7 +2,7 @@
 layout: post
 title:  "New Signage"
 date:   2018-08-29
-thumb: beamish.jpg
+thumb: new-signage.jpg
 top_story: true
 ---
 

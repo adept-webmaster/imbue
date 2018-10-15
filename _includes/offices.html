@@ -1,39 +1,42 @@
-<div class="container floorplan pt-5">
-  <div class="row px-2">
-    <ul class="nav nav-tabs border-primary align-items-end pt-5 col-5" id="floorplanTab" role="tablist">
-      {% for floor in site.data.floors.floors %}
-      <li class="nav-item">
-        <a
-        class="nav-link floor-tabs border-0 font-weight-bold text-dark {% if forloop.first %}active{% endif %}"
-        id="floor-{{ floor.floor }}-tab"
-        data-toggle="tab"
-        href="#Floor-{{ floor.floor }}"
-        role="tab"
-        aria-controls="Floor {{ floor.floor }}"
-        aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">
-          Floor {{ floor.floor }}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
+<div class="container-fluid floorplan pt-5">
+  <div class="container">
+    <div class="row px-2">
+      <ul class="nav nav-tabs border-primary align-items-end pt-5 col-5" id="floorplanTab" role="tablist">
+        {% for floor in site.data.floors.floors %}
+        <li class="nav-item">
+          <a
+          class="nav-link floor-tabs border-0 font-weight-bold text-dark {% if forloop.first %}active{% endif %}"
+          id="floor-{{ floor.floor }}-tab"
+          data-toggle="tab"
+          href="#Floor-{{ floor.floor }}"
+          role="tab"
+          aria-controls="Floor {{ floor.floor }}"
+          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">
+            Floor {{ floor.floor }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
 
-    <div class="tab-content col-7 px-0 d-flex" id="floorplanTabContent2">
-      {% for floor in site.data.floors.floors %}
-        <div id="Floor-{{ floor.floor }}-img" class="tab-pane col p-0 justify-content-end align-items-end fade {% if forloop.first %}show active{% endif %}">
-          <div class="col-5 p-0 building-status position-relative">
-            {% include noscript-image.html name="Building.svg" class="building-vector img-fluid position-relative" %}
-            <div class="position-absolute bg-primary building-floor-indicator"
-            style="bottom: {% if forloop.first %}25{% elsif forloop.index == 2 %}41{% else %}57{% endif %}%"></div>
-          </div>
+      <div class="tab-content col-7 px-0 d-flex" id="floorplanTabContent2">
+        {% for floor in site.data.floors.floors %}
+          <div id="Floor-{{ floor.floor }}-img" class="tab-pane col p-0 justify-content-end align-items-end fade {% if forloop.first %}show active{% endif %}">
+            <div class="col-5 p-0 building-status position-relative">
+              {% include noscript-image.html name="Building.svg" class="building-vector img-fluid position-relative" %}
+              <div class="position-absolute bg-primary building-floor-indicator"
+              style="bottom: {% if forloop.first %}25{% elsif forloop.index == 2 %}41{% else %}57{% endif %}%"></div>
+            </div>
 
-          <div class="col d-flex flex-column h-100 justify-content-center">
-            <span>Floor {{ floor.floor }} total space <span class="font-weight-bold">15,000sq</span></span>
-            <span>Floor {{ floor.floor }} available space <span class="font-weight-bold">9,500sq</span></span>
+            <div class="col d-flex flex-column h-100 justify-content-center">
+              <span>Floor {{ floor.floor }} total space <span class="font-weight-bold">15,000sq</span></span>
+              <span>Floor {{ floor.floor }} available space <span class="font-weight-bold">9,500sq</span></span>
+            </div>
           </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
   </div>
+
   <div class="row tab-content h-100 px-0 pb-1" id="floorplanTabContent">
     {% for floor in site.data.floors.floors %}
       <div
@@ -41,132 +44,134 @@
       id="Floor-{{ floor.floor }}"
       role="tabpanel"
       aria-labelledby="floor-{{ floor.floor }}-tab">
+      <div class="container">
         <div class="floorplan__floor-title text-label col-12 w-100 pt-5">
           <h1>Floor {{ floor.floor }}</h1>
         </div>
 
-        <div class="d-flex flex-column position-relative">
-          {% include Lighthouse_Building_Rooms.html %}
-          <nav class="col d-flex position-absolute" style="height: 0; padding-bottom: 54%;">
-            <ul class="floorplan__floor-wrapper col-12 w-100 position-absolute d-flex justify-content-center nav nav-tabs border-0" id="room-tabs" role="tablist">
+          <div class="d-flex flex-column position-relative">
+            {% include Lighthouse_Building_Rooms.html %}
+            <nav class="col d-flex position-absolute" style="height: 0; padding-bottom: 54%;">
+              <ul class="floorplan__floor-wrapper col-12 w-100 position-absolute d-flex justify-content-center nav nav-tabs border-0" id="room-tabs" role="tablist">
 
-              <div class="row col w-100 m-0 p-0">
-                <div class="row w-100 m-0">
-                  {% for room in floor.rooms.south.top %}
-                    <li class="nav-item floorplan__room">
-                      <a
-                      class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}{% if forloop.first %}active{% endif %}"
-                      id="{{ floor.floor }}-{{ room.room_number }}"
-                      data-toggle="tab"
-                      href="#content-{{ floor.floor }}-{{ room.room_number }}"
-                      role="tab"
-                      aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
-                      aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-                      title="{{ room.title }}"
-                      data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
-                      data-placement="top">
-                      <span class="text-center text-light position-absolute">{{ room.title }}</span>
-                      </a>
-                    </li>
-                  {% endfor %}
+                <div class="row col w-100 m-0 p-0">
+                  <div class="row w-100 m-0">
+                    {% for room in floor.rooms.south.top %}
+                      <li class="nav-item floorplan__room">
+                        <a
+                        class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}{% if forloop.first %}active{% endif %}"
+                        id="{{ floor.floor }}-{{ room.room_number }}"
+                        data-toggle="tab"
+                        href="#content-{{ floor.floor }}-{{ room.room_number }}"
+                        role="tab"
+                        aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
+                        aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                        title="{{ room.title }}"
+                        data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
+                        data-placement="top">
+                        <span class="text-center text-light position-absolute">{{ room.title }}</span>
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </div>
+
+                  <span class="h4 m-0 font-weight-normal text-center text-uppercase text-label position-absolute wing-label">South Wing</span>
+
+                  <div class="row w-100 m-0 position-relative">
+                    {% for room in floor.rooms.south.bottom %}
+                      <li class="nav-item floorplan__room">
+                        <a
+                        class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}"
+                        id="{{ floor.floor }}-{{ room.room_number }}"
+                        data-toggle="tab"
+                        href="#content-{{ floor.floor }}-{{ room.room_number }}"
+                        role="tab"
+                        aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
+                        aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                        title="{{ room.title }}"
+                        data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
+                        data-placement="bottom">
+                        <span class="text-center text-light position-absolute">{{ room.title }}</span>
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </div>
                 </div>
 
-                <span class="h4 m-0 font-weight-normal text-center text-uppercase text-label position-absolute wing-label">South Wing</span>
+                <div class="floorplan__room--center" href="#"></div>
 
-                <div class="row w-100 m-0 position-relative">
-                  {% for room in floor.rooms.south.bottom %}
-                    <li class="nav-item floorplan__room">
-                      <a
-                      class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}"
-                      id="{{ floor.floor }}-{{ room.room_number }}"
-                      data-toggle="tab"
-                      href="#content-{{ floor.floor }}-{{ room.room_number }}"
-                      role="tab"
-                      aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
-                      aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-                      title="{{ room.title }}"
-                      data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
-                      data-placement="bottom">
-                      <span class="text-center text-light position-absolute">{{ room.title }}</span>
-                      </a>
-                    </li>
-                  {% endfor %}
+                <div class="row col w-100 m-0 p-0">
+                  <div class="row w-100 m-0">
+                    {% for room in floor.rooms.north.top %}
+                      <li class="nav-item floorplan__room">
+                        <a
+                        class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}"
+                        id="{{ floor.floor }}-{{ room.room_number }}"
+                        data-toggle="tab"
+                        href="#content-{{ floor.floor }}-{{ room.room_number }}"
+                        role="tab"
+                        aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
+                        aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                        title="{{ room.title }}"
+                        data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
+                        data-placement="top">
+                        <span class="text-center text-light position-absolute">{{ room.title }}</span>
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </div>
+
+                  <span class="h4 m-0 font-weight-normal text-center text-uppercase text-label position-absolute wing-label">North Wing</span>
+
+                  <div class="row w-100 m-0 position-relative">
+                    {% for room in floor.rooms.north.bottom %}
+                      <li class="nav-item floorplan__room">
+                        <a
+                        class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}"
+                        id="{{ floor.floor }}-{{ room.room_number }}"
+                        data-toggle="tab"
+                        href="#content-{{ floor.floor }}-{{ room.room_number }}"
+                        role="tab"
+                        aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
+                        aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                        title="{{ room.title }}"
+                        data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
+                        data-placement="bottom">
+                        <span class="text-center text-light position-absolute">{{ room.title }}</span>
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </div>
                 </div>
-              </div>
-
-              <div class="floorplan__room--center" href="#"></div>
-
-              <div class="row col w-100 m-0 p-0">
-                <div class="row w-100 m-0">
-                  {% for room in floor.rooms.north.top %}
-                    <li class="nav-item floorplan__room">
-                      <a
-                      class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}"
-                      id="{{ floor.floor }}-{{ room.room_number }}"
-                      data-toggle="tab"
-                      href="#content-{{ floor.floor }}-{{ room.room_number }}"
-                      role="tab"
-                      aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
-                      aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-                      title="{{ room.title }}"
-                      data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
-                      data-placement="top">
-                      <span class="text-center text-light position-absolute">{{ room.title }}</span>
-                      </a>
-                    </li>
-                  {% endfor %}
-                </div>
-
-                <span class="h4 m-0 font-weight-normal text-center text-uppercase text-label position-absolute wing-label">North Wing</span>
-
-                <div class="row w-100 m-0 position-relative">
-                  {% for room in floor.rooms.north.bottom %}
-                    <li class="nav-item floorplan__room">
-                      <a
-                      class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}"
-                      id="{{ floor.floor }}-{{ room.room_number }}"
-                      data-toggle="tab"
-                      href="#content-{{ floor.floor }}-{{ room.room_number }}"
-                      role="tab"
-                      aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
-                      aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-                      title="{{ room.title }}"
-                      data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
-                      data-placement="bottom">
-                      <span class="text-center text-light position-absolute">{{ room.title }}</span>
-                      </a>
-                    </li>
-                  {% endfor %}
-                </div>
-              </div>
-            </ul>
-          </nav>
-        </div>
-        <div class="row w-100 col-12 mx-0 pb-5 availability">
-          <div class="col-xl-2 col-lg-3 col-md-3 d-md-block d-none p-0">
-            {% for room in floor.rooms.south.top %}
-              <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Unavailable{% endif %}</span>
-            {% endfor %}
+              </ul>
+            </nav>
           </div>
+          <div class="row w-100 col-12 mx-0 pb-5 availability">
+            <div class="col-xl-2 col-lg-3 col-md-3 d-md-block d-none p-0">
+              {% for room in floor.rooms.south.top %}
+                <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Unavailable{% endif %}</span>
+              {% endfor %}
+            </div>
 
-          <div class="col-xl-2 col-lg-3 col-md-3 d-md-block d-none p-0">
-            {% for room in floor.rooms.south.bottom %}
-              <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Unavailable{% endif %}</span>
-            {% endfor %}
-          </div>
+            <div class="col-xl-2 col-lg-3 col-md-3 d-md-block d-none p-0">
+              {% for room in floor.rooms.south.bottom %}
+                <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Unavailable{% endif %}</span>
+              {% endfor %}
+            </div>
 
-          <div class="availability-center d-sm-none d-xl-flex"></div>
+            <div class="availability-center d-sm-none d-xl-flex"></div>
 
-          <div class="col-xl-2 col-lg-3 col-md-3 d-md-block d-none p-0">
-            {% for room in floor.rooms.north.top %}
-              <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Unavailable{% endif %}</span>
-            {% endfor %}
-          </div>
+            <div class="col-xl-2 col-lg-3 col-md-3 d-md-block d-none p-0">
+              {% for room in floor.rooms.north.top %}
+                <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Unavailable{% endif %}</span>
+              {% endfor %}
+            </div>
 
-          <div class="col-xl-2 col-lg-3 col-md-3 d-md-block d-none p-0">
-            {% for room in floor.rooms.north.bottom %}
-              <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Unavailable{% endif %}</span>
-            {% endfor %}
+            <div class="col-xl-2 col-lg-3 col-md-3 d-md-block d-none p-0">
+              {% for room in floor.rooms.north.bottom %}
+                <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Unavailable{% endif %}</span>
+              {% endfor %}
+            </div>
           </div>
         </div>
 

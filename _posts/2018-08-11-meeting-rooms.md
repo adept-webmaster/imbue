@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "New Signage"
+title:  "Meeting Rooms"
 date:   2018-08-29
-thumb: beamish.jpg
+thumb: Glass-Meeting-Room.jpg
 ---
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and

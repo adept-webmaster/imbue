@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Media Studios"
+title:  "New fit outs"
 date:   2018-08-29
-thumb: beamish.jpg
+thumb: new-fitouts.jpg
 ---
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and
