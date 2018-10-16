@@ -338,6 +338,7 @@
     //i tried a simpler toggle approach however there is a bug on page load
     //where a state would stick when the mouse is already over the element.
     $(".floorplan__room a").hover(
+      //mouse enter
       function() {
         let id = '#availability-' + this.id;
         if ($(this).hasClass("bg-muted")) {
@@ -346,7 +347,8 @@
          $(id).addClass("text-primary font-weight-bold");
        }
       },
-
+      
+      //mouse leave
       function() {
         let id = '#availability-' + this.id;
         if ($(this).hasClass("bg-muted")) {
