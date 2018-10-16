@@ -54,15 +54,6 @@ allMods.each(function(i, el) {
   }
 });
 
-// win.scroll(function(event) {
-//   allMods.each(function(i, el) {
-//     var el = $(el);
-//     if (el.visible(true)) {
-//       el.addClass("come-in");
-//     }
-//   });
-// });
-
 $(window).on('scroll', function() {
   allMods.each(function() {
     if (isScrolledIntoView($(this))) {
@@ -77,6 +68,6 @@ function isScrolledIntoView(elem) {
 
   var elemTop = $(elem).offset().top;
   var elemBottom = elemTop + $(elem).height();
-
-  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+  
+  return ((elemBottom <= docViewBottom + 500) && (elemTop >= docViewTop - 500));
 }
