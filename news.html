@@ -8,7 +8,7 @@ show: true
 
 {% include hero.html
   bg_image="aj-desks-2.jpg"
-  bg_position="center"
+  bg_position="center 70%"
   bg_size="cover"
   heading="What is going on in Imbue?"
   lead="Imbue is home to 7 business tenants, we encourage and play host to a
@@ -19,7 +19,7 @@ show: true
   text_align="left"
 %}
 
-<div class="container py-md-5">
+<div class="container-fluid py-md-1">
   <div class="row news d-flex justify-content-center">
     {% for post in site.posts %}
       {% if post.top_story == true %}

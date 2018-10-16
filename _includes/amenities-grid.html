@@ -1,4 +1,4 @@
-<div class="container-fluid py-md-5">
+<div class="container-fluid py-md-1">
   <div class="row pictures">
     <div class="row m-0 px-md-0 col-md align-self-start">
       {%- assign pictures = include.pictures -%}
@@ -14,14 +14,14 @@
          {% endif %}
 
         <div class="col-md-6 col-lg-3
-        pl-2 py-2 pr-2
-        {% if forloop.index == 1 or forloop.index == 5 %} pr-md-2 pr-lg-2 pr-xl-2 {% endif %}
-        {% if forloop.index == 2 or forloop.index == 6 %} pl-md-2 pl-lg-2 pl-xl-2 pr-xl-2{% endif %}
-        {% if forloop.index == 3 or forloop.index == 7 %} pr-md-2 pl-lg-2 pl-xl-2 pr-xl-2{% endif %}
-        {% if forloop.index == 4 or forloop.index == 8 %} pl-md-2 pr-lg-2 pl-xl-2 {% endif %}
+        pl-1 py-1 pr-1
+        {% if forloop.index == 1 or forloop.index == 5 %} pr-md-1 pr-lg-1 pr-xl-1 {% endif %}
+        {% if forloop.index == 2 or forloop.index == 6 %} pl-md-1 pl-lg-1 pl-xl-1 pr-xl-1{% endif %}
+        {% if forloop.index == 3 or forloop.index == 7 %} pr-md-1 pl-lg-1 pl-xl-1 pr-xl-1{% endif %}
+        {% if forloop.index == 4 or forloop.index == 8 %} pl-md-1 pr-lg-1 pl-xl-1 {% endif %}
 
-        {% if forloop.index == 5 %} pl-lg-2 {% endif %}
-        {% if forloop.index == 2 %} pr-lg-2 {% endif %}
+        {% if forloop.index == 5 %} pl-lg-1 {% endif %}
+        {% if forloop.index == 2 %} pr-lg-1 {% endif %}
         {% if forloop.index < 5 %}come-in come-in-view{% else %}come-in-view{% endif %} come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %}">
 
         <div class="w-100 position-relative amenities-image-container">
