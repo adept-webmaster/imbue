@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <div class="row pictures">
-    <div class="row m-0 pl-md-0 col-xl-6 col-md-6">
+    <div class="row m-0 pl-md-0 pr-md-2 px-0 col-xl-6 col-md-6">
       {%- assign picture = include.picture -%}
       {%- assign alt = include.alt -%}
 
-      <div class="col-lg px-2 py-0 px-md-0 come-in-view come-in-left">
+      <div class="col-lg pr-md-2 pl-md-0 px-0 py-0 come-in-view come-in-left">
         {% include image.html name=picture alt=alt class="img-fluid img-cover h-100 w-100" %}
         <noscript>
           {% include noscript-image.html name=picture alt=alt class="img-fluid img-cover h-100 w-100" %}
