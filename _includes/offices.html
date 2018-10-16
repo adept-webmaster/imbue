@@ -1,7 +1,7 @@
 <div class="container-fluid floorplan pt-5">
   <div class="container">
     <div class="row px-2">
-      <ul class="nav nav-tabs border-primary align-items-end pt-5 col-5" id="floorplanTab" role="tablist">
+      <ul class="nav nav-tabs border-primary align-items-end pt-5 col-md-5" id="floorplanTab" role="tablist">
         {% for floor in site.data.floors.floors %}
         <li class="nav-item">
           <a
@@ -18,16 +18,16 @@
         {% endfor %}
       </ul>
 
-      <div class="tab-content col-7 px-0 d-flex" id="floorplanTabContent2">
+      <div class="tab-content col-md-7 px-0 pt-3 pt-md-0 d-flex" id="floorplanTabContent2">
         {% for floor in site.data.floors.floors %}
           <div id="Floor-{{ floor.floor }}-img" class="tab-pane col p-0 justify-content-end align-items-end fade {% if forloop.first %}show active{% endif %}">
-            <div class="col-5 p-0 building-status position-relative">
+            <div class="col-md-5 p-0 building-status position-relative">
               {% include noscript-image.html name="Building.svg" class="building-vector img-fluid position-relative" %}
               <div class="position-absolute bg-primary building-floor-indicator"
               style="bottom: {% if forloop.first %}25{% elsif forloop.index == 2 %}41{% else %}57{% endif %}%"></div>
             </div>
 
-            <div class="col d-flex flex-column h-100 justify-content-center">
+            <div class="col-md d-flex flex-column h-100 justify-content-center">
               <span>Floor {{ floor.floor }} total space <span class="font-weight-bold">15,000sq</span></span>
               <span>Floor {{ floor.floor }} available space <span class="font-weight-bold">9,500sq</span></span>
             </div>
@@ -46,7 +46,7 @@
       aria-labelledby="floor-{{ floor.floor }}-tab">
       <div class="container">
         <div class="floorplan__floor-title text-label col-12 w-100 pt-5">
-          <h1>Floor {{ floor.floor }}</h1>
+          <h2>Floor {{ floor.floor }}</h2>
         </div>
 
           <div class="d-flex flex-column position-relative">
@@ -69,7 +69,7 @@
                         title="{{ room.title }}"
                         data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
                         data-placement="top">
-                        <span class="text-center text-light position-absolute">{{ room.title }}</span>
+                        <span class="floorplan__room--label text-center text-light position-absolute floorplan__">{{ room.title }}</span>
                         </a>
                       </li>
                     {% endfor %}
@@ -91,7 +91,7 @@
                         title="{{ room.title }}"
                         data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
                         data-placement="bottom">
-                        <span class="text-center text-light position-absolute">{{ room.title }}</span>
+                        <span class="floorplan__room--label text-center text-light position-absolute">{{ room.title }}</span>
                         </a>
                       </li>
                     {% endfor %}
@@ -115,7 +115,7 @@
                         title="{{ room.title }}"
                         data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
                         data-placement="top">
-                        <span class="text-center text-light position-absolute">{{ room.title }}</span>
+                        <span class="floorplan__room--label text-center text-light position-absolute">{{ room.title }}</span>
                         </a>
                       </li>
                     {% endfor %}
@@ -137,7 +137,7 @@
                         title="{{ room.title }}"
                         data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
                         data-placement="bottom">
-                        <span class="text-center text-light position-absolute">{{ room.title }}</span>
+                        <span class="floorplan__room--label text-center text-light position-absolute">{{ room.title }}</span>
                         </a>
                       </li>
                     {% endfor %}
@@ -334,16 +334,28 @@
 <script async>
   $(document).ready(function() {
 
-    //get id of hovered room and match it with the available text id for hover
-    $(".floorplan__room a").hover(function(e) {
-      var id = '#availability-' + this.id;
+    //get id of hovered room and match it with the available text id for hover.
+    //i tried a simpler toggle approach however there is a bug on page load
+    //where a state would stick when the mouse is already over the element.
+    $(".floorplan__room a").hover(
+      function() {
+        let id = '#availability-' + this.id;
+        if ($(this).hasClass("bg-muted")) {
+          $(id).addClass("text-danger font-weight-bold");
+        } else {
+         $(id).addClass("text-primary font-weight-bold");
+       }
+      },
 
-      if ($(this).hasClass("bg-muted")) {
-        $(id).toggleClass("text-danger font-weight-bold");
-      } else {
-        $(id).toggleClass("text-primary font-weight-bold");
+      function() {
+        let id = '#availability-' + this.id;
+        if ($(this).hasClass("bg-muted")) {
+          $(id).removeClass("text-danger font-weight-bold");
+        } else {
+          $(id).removeClass("text-primary font-weight-bold");
+        }
       }
-    });
+    );
 
     //use Bootstrap nav tabs api to tap into current/previous selected tabs
     $('.floor-tabs').on('shown.bs.tab', function (e) {
