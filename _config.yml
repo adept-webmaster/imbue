@@ -24,3 +24,4 @@ plugins:
 - jekyll-feed
 - github-pages
 github: [metadata]
+repository: liam-cooper/imbue
