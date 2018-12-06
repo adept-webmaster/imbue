@@ -3,76 +3,12 @@ floors:
     isAvailable: true
     rooms:
         south:
-          top:
-            - room_number: 13
-              title: S1A
-              isAvailable: false
-              description: |
-                This unit has a very generous 3000 square foot of office space
-                with an incredible sea view of the magnificent heritage coast
-                and North Sea. The space is fully air conditioned and
-                temperature controlled; providing perfect working conditions for
-                tenants. There are a number of amenities close by from Dalton
-                Park Outlet shopping centre to Seaham town centre. The office
-                space also grants you access to Imbue’s photography studio,
-                which tenants of the building are able to hire.
-              area: "599"
-            - room_number: 14
-              title: S1B
-              isAvailable: false
-              description: This is room S1B
-              area: "599"
-            - room_number: 15
-              title: S1C
-              isAvailable: true
-              description: This is room S1C
-              area: "599"
-            - room_number: 16
-              title: S1D
-              isAvailable: false
-              description: This is room S1D
-              area: "599"
-            - room_number: 17
-              title: S1E
-              isAvailable: false
-              description: This is room S1E
-              area: "599"
-            - room_number: 18
-              title: S1F
-              isAvailable: false
-              description: This is room S1F
-              area: "599"
-          bottom:
-            - room_number: 19
-              title: S1G
-              isAvailable: false
-              description: This is room S1G
-              area: "599"
-            - room_number: 20
-              title: S1H
-              isAvailable: true
-              description: This is room S1H
-              area: "599"
-            - room_number: 21
-              title: S1I
-              isAvailable: true
-              description: This is room S1I
-              area: "599"
-            - room_number: 22
-              title: S1J
-              isAvailable: false
-              description: This is room S1J
-              area: "599"
-            - room_number: 23
-              title: S1K
-              isAvailable: false
-              description: This is room S1K
-              area: "599"
-            - room_number: 24
-              title: S1L
-              isAvailable: false
-              description: This is room S1L
-              area: "599"
+          title: South Wing
+          room_number: 13
+          fullWing: true
+          isAvailable: false
+          description: This is the south wing on floor 1
+          area: "7,198"
         north:
           top:
             - room_number: 1
@@ -192,56 +128,11 @@ floors:
             isAvailable: true
             description: This is room N2L
       south:
-        top:
-          - room_number: 13
-            title: S2A
-            isAvailable: false
-            description: This is room S2A
-          - room_number: 14
-            title: S2B
-            isAvailable: true
-            description: This is room S2B
-          - room_number: 15
-            title: S2C
-            isAvailable: true
-            description: This is room S2C
-          - room_number: 16
-            title: S2D
-            isAvailable: false
-            description: This is room S2D
-          - room_number: 17
-            title: S2E
-            isAvailable: false
-            description: This is room S2E
-          - room_number: 18
-            title: S2F
-            isAvailable: false
-            description: This is room S2F
-        bottom:
-          - room_number: 19
-            title: S2G
-            isAvailable: false
-            description: This is room S2G
-          - room_number: 20
-            title: S2H
-            isAvailable: true
-            description: This is room S2H
-          - room_number: 21
-            title: S2I
-            isAvailable: true
-            description: This is room S2I
-          - room_number: 22
-            title: S2J
-            isAvailable: false
-            description: This is room S2J
-          - room_number: 23
-            title: S2K
-            isAvailable: false
-            description: This is room S2K
-          - room_number: 24
-            title: S2L
-            isAvailable: false
-            description: This is room S2L
+        isAvailable: true
+        fullWing: true
+        title: South Wing
+        description: This is the south wing on floor 2
+        area: "7,198"
 
   - floor: 3
     isAvailable: false

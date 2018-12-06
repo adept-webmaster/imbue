@@ -85,6 +85,7 @@ $label-color: #D6D6D6;
       .row {
         .wing-label {
           top: 44%;
+          pointer-events: none;
 
           @include media-breakpoint-only(lg) {
             font-size: 1.2rem !important;
@@ -139,6 +140,11 @@ $label-color: #D6D6D6;
         width: 32%;
       }
     }
+  }
+
+  li.floorplan__wing {
+    width: 100% !important;
+    height: 85% !important;
   }
 
   &__room {

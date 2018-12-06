@@ -50,53 +50,81 @@
         </div>
 
           <div class="d-flex flex-column position-relative">
-            {% include Lighthouse_Building_Rooms.html %}
+            {% if floor.rooms.south.fullWing == true %}
+                {% include Lighthouse_Building_Rooms_South_Wing_Empty.html %}
+            {% else %}
+              {% include Lighthouse_Building_Rooms.html %}
+            {% endif %}
             <nav class="col d-flex position-absolute" style="height: 0; padding-bottom: 54%;">
               <ul class="floorplan__floor-wrapper col-12 w-100 position-absolute d-flex justify-content-center nav nav-tabs border-0" id="room-tabs" role="tablist">
 
-                <div class="row col w-100 m-0 p-0">
-                  <div class="row w-100 m-0">
-                    {% for room in floor.rooms.south.top %}
-                      <li class="nav-item floorplan__room">
+                {% if floor.rooms.south.fullWing == true %}
+                  {% assign room = floor.rooms.south %}
+                  <div class="row col w-100 m-0 p-0">
+                    <div class="row w-100 m-0">
+                      <li class="nav-item floorplan__room floorplan__wing">
                         <a
-                        class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}{% if forloop.first %}active{% endif %}"
+                        class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}active"
                         id="{{ floor.floor }}-{{ room.room_number }}"
                         data-toggle="tab"
                         href="#content-{{ floor.floor }}-{{ room.room_number }}"
                         role="tab"
                         aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
-                        aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                        aria-selected="true"
                         title="{{ room.title }}"
                         data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
                         data-placement="top">
-                        <span class="floorplan__room--label text-center text-light position-absolute floorplan__">{{ room.title }}</span>
+                        <span class="floorplan__room--label text-center text-light position-absolute floorplan__">{% if room.isAvailable %}Available{% else %}Unavailable{% endif %}</span>
                         </a>
                       </li>
-                    {% endfor %}
+                    </div>
+                    <span class="h4 m-0 font-weight-normal text-center text-uppercase text-label position-absolute wing-label">South Wing</span>
                   </div>
+                {% else %}
+                  <div class="row col w-100 m-0 p-0">
+                    <div class="row w-100 m-0">
+                      {% for room in floor.rooms.south.top %}
+                        <li class="nav-item floorplan__room">
+                          <a
+                          class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}{% if forloop.first %}active{% endif %}"
+                          id="{{ floor.floor }}-{{ room.room_number }}"
+                          data-toggle="tab"
+                          href="#content-{{ floor.floor }}-{{ room.room_number }}"
+                          role="tab"
+                          aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
+                          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                          title="{{ room.title }}"
+                          data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
+                          data-placement="top">
+                          <span class="floorplan__room--label text-center text-light position-absolute floorplan__">{{ room.title }}</span>
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </div>
 
-                  <span class="h4 m-0 font-weight-normal text-center text-uppercase text-label position-absolute wing-label">South Wing</span>
+                    <span class="h4 m-0 font-weight-normal text-center text-uppercase text-label position-absolute wing-label">South Wing</span>
 
-                  <div class="row w-100 m-0 position-relative">
-                    {% for room in floor.rooms.south.bottom %}
-                      <li class="nav-item floorplan__room">
-                        <a
-                        class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}"
-                        id="{{ floor.floor }}-{{ room.room_number }}"
-                        data-toggle="tab"
-                        href="#content-{{ floor.floor }}-{{ room.room_number }}"
-                        role="tab"
-                        aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
-                        aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-                        title="{{ room.title }}"
-                        data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
-                        data-placement="bottom">
-                        <span class="floorplan__room--label text-center text-light position-absolute">{{ room.title }}</span>
-                        </a>
-                      </li>
-                    {% endfor %}
+                    <div class="row w-100 m-0 position-relative">
+                      {% for room in floor.rooms.south.bottom %}
+                        <li class="nav-item floorplan__room">
+                          <a
+                          class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}"
+                          id="{{ floor.floor }}-{{ room.room_number }}"
+                          data-toggle="tab"
+                          href="#content-{{ floor.floor }}-{{ room.room_number }}"
+                          role="tab"
+                          aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
+                          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                          title="{{ room.title }}"
+                          data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
+                          data-placement="bottom">
+                          <span class="floorplan__room--label text-center text-light position-absolute">{{ room.title }}</span>
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </div>
                   </div>
-                </div>
+                {% endif %}
 
                 <div class="floorplan__room--center" href="#"></div>
 
@@ -148,9 +176,14 @@
           </div>
           <div class="row w-100 col-12 mx-0 pb-5 availability">
             <div class="col-xl-2 col-lg-3 col-md-3 d-md-block d-none p-0">
-              {% for room in floor.rooms.south.top %}
+              {% if floor.rooms.south.fullWing == true %}
+                {% assign room = floor.rooms.south %}
                 <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Unavailable{% endif %}</span>
-              {% endfor %}
+              {% else %}
+                {% for room in floor.rooms.south.top %}
+                  <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Unavailable{% endif %}</span>
+                {% endfor %}
+              {% endif %}
             </div>
 
             <div class="col-xl-2 col-lg-3 col-md-3 d-md-block d-none p-0">
@@ -176,37 +209,70 @@
         </div>
 
         <div class="row m-0 floorplan__room-content tab-content" id="content-floor-{{ floor.floor }}">
-          {% for room in floor.rooms.south.top %}
-            <div class="col-12 row m-0 px-1 w-100 tab-pane room-tab-pane {% if forloop.first %}show active{% endif %}" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
-              <div class="col-lg-5 p-0">
-                {% include image.html name="board-room-1.jpg" class="h-100 img-fluid img-cover" %}
-              </div>
-              <div class="col row m-0 w-100 text-label bg-dark p-5">
-                <div class="col-lg-4 font-weight-bold text-uppercase">
-                  <span>Ref: <span class="text-primary">{{ room.title }}</span></span>
-                  <br>
-                  <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+          {% if floor.rooms.south.fullWing == true %}
+            {% assign room = floor.rooms.south %}
+            <div class="col-12 row m-0 px-1 w-100 tab-pane room-tab-pane show active" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
+                <div class="col-lg-5 p-0">
+                  {% include image.html name="board-room-1.jpg" class="h-100 img-fluid img-cover" %}
                 </div>
-                <div class="col-lg text-lg-right font-weight-bold text-uppercase">
-                  <span>Contact: <a href="tel:{{ site.phone | remove: ' ' }}" class="text-primary">{{ site.phone }}</a></span>
-                  <br>
-                  <span>Email: <a href="mailto:{{ site.email }}" class="text-primary">{{ site.email }}</a></span>
-                </div>
+                <div class="col row m-0 w-100 text-label bg-dark p-5">
+                  <div class="col-lg-4 font-weight-bold text-uppercase">
+                    <span>Ref: <span class="text-primary">{{ room.title }}</span></span>
+                    <br>
+                    <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                  </div>
+                  <div class="col-lg text-lg-right font-weight-bold text-uppercase">
+                    <span>Contact: <a href="tel:{{ site.phone | remove: ' ' }}" class="text-primary">{{ site.phone }}</a></span>
+                    <br>
+                    <span>Email: <a href="mailto:{{ site.email }}" class="text-primary">{{ site.email }}</a></span>
+                  </div>
 
-                <div class="row w-100">
-                  <div class="col p-4">
-                    <p>{{ room.description }}</p>
+                  <div class="row w-100">
+                    <div class="col p-4">
+                      <p>{{ room.description }}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <a href="/contact" class="room-contact-strip row m-0 p-0 bg-primary text-uppercase d-flex justify-content-center align-items-center">
-                <div class="font-weight-bold text-light">
-                  Contact
+                <a href="/contact" class="room-contact-strip row m-0 p-0 bg-primary text-uppercase d-flex justify-content-center align-items-center">
+                  <div class="font-weight-bold text-light">
+                    Contact
+                  </div>
+                </a>
+              </div>
+          {% else %}
+            {% for room in floor.rooms.south.top %}
+              <div class="col-12 row m-0 px-1 w-100 tab-pane room-tab-pane {% if forloop.first %}show active{% endif %}" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
+                <div class="col-lg-5 p-0">
+                  {% include image.html name="board-room-1.jpg" class="h-100 img-fluid img-cover" %}
                 </div>
-              </a>
-            </div>
-          {% endfor %}
+                <div class="col row m-0 w-100 text-label bg-dark p-5">
+                  <div class="col-lg-4 font-weight-bold text-uppercase">
+                    <span>Ref: <span class="text-primary">{{ room.title }}</span></span>
+                    <br>
+                    <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                  </div>
+                  <div class="col-lg text-lg-right font-weight-bold text-uppercase">
+                    <span>Contact: <a href="tel:{{ site.phone | remove: ' ' }}" class="text-primary">{{ site.phone }}</a></span>
+                    <br>
+                    <span>Email: <a href="mailto:{{ site.email }}" class="text-primary">{{ site.email }}</a></span>
+                  </div>
+
+                  <div class="row w-100">
+                    <div class="col p-4">
+                      <p>{{ room.description }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <a href="/contact" class="room-contact-strip row m-0 p-0 bg-primary text-uppercase d-flex justify-content-center align-items-center">
+                  <div class="font-weight-bold text-light">
+                    Contact
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+          {% endif %}
 
           {% for room in floor.rooms.south.bottom %}
             <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
@@ -273,35 +339,35 @@
           {% endfor %}
 
           {% for room in floor.rooms.north.bottom %}
-          <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
-            <div class="col-lg-5 p-0">
-              {% include image.html name="board-room-1.jpg" class="h-100 img-fluid img-cover" %}
-            </div>
-            <div class="col row m-0 w-100 text-label bg-dark p-5">
-              <div class="col-lg-4 font-weight-bold text-uppercase">
-                <span>Ref: <span class="text-primary">{{ room.title }}</span></span>
-                <br>
-                <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+            <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
+              <div class="col-lg-5 p-0">
+                {% include image.html name="board-room-1.jpg" class="h-100 img-fluid img-cover" %}
               </div>
-              <div class="col-lg text-lg-right font-weight-bold text-uppercase">
-                <span>Contact: <a href="tel:{{ site.phone | remove: ' ' }}" class="text-primary">{{ site.phone }}</a></span>
-                <br>
-                <span>Email: <a href="mailto:{{ site.email }}" class="text-primary">{{ site.email }}</a></span>
-              </div>
+              <div class="col row m-0 w-100 text-label bg-dark p-5">
+                <div class="col-lg-4 font-weight-bold text-uppercase">
+                  <span>Ref: <span class="text-primary">{{ room.title }}</span></span>
+                  <br>
+                  <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                </div>
+                <div class="col-lg text-lg-right font-weight-bold text-uppercase">
+                  <span>Contact: <a href="tel:{{ site.phone | remove: ' ' }}" class="text-primary">{{ site.phone }}</a></span>
+                  <br>
+                  <span>Email: <a href="mailto:{{ site.email }}" class="text-primary">{{ site.email }}</a></span>
+                </div>
 
-              <div class="row w-100">
-                <div class="col p-4">
-                  <p>{{ room.description }}</p>
+                <div class="row w-100">
+                  <div class="col p-4">
+                    <p>{{ room.description }}</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <a href="/contact" class="room-contact-strip row m-0 p-0 bg-primary text-uppercase d-flex justify-content-center align-items-center">
-              <div class="font-weight-bold text-light">
-                Contact
-              </div>
-            </a>
-          </div>
+              <a href="/contact" class="room-contact-strip row m-0 p-0 bg-primary text-uppercase d-flex justify-content-center align-items-center">
+                <div class="font-weight-bold text-light">
+                  Contact
+                </div>
+              </a>
+            </div>
           {% endfor %}
         </div>
       </div>
