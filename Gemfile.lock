@@ -263,6 +263,7 @@ DEPENDENCIES
   hamburgers (~> 0.9.3)
   jekyll (~> 3.7.4)
   jekyll-feed
+  jekyll-redirect-from
   tzinfo-data
   wdm (~> 0.1.0)
 

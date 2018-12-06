@@ -16,12 +16,15 @@ email: "info@imbueoffices.co.uk"
 img_dir: "/uploads/"
 linkedin: https://www.linkedin.com/
 exclude:
-- vendor
+  - vendor
 sass:
   sass_dir: _sass
   style: compressed
 plugins:
-- jekyll-feed
-- github-pages
+  - jekyll-feed
+  - github-pages
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-redirect-from
 github: [metadata]
 repository: liam-cooper/imbue
