@@ -22,7 +22,7 @@
         {% for floor in site.data.floors.floors %}
           <div id="Floor-{{ floor.floor }}-img" class="tab-pane col p-0 justify-content-end align-items-end fade {% if forloop.first %}show active{% endif %}">
             <div class="col-md-5 p-0 building-status position-relative">
-              {% include noscript-image.html name="Building.svg" class="building-vector img-fluid position-relative" %}
+              {% include noscript-image.html name="Building.svg" class="building-vector img-fluid position-relative" alt="Building" %}
               <div class="position-absolute bg-primary building-floor-indicator"
               style="bottom: {% if forloop.first %}25{% elsif forloop.index == 2 %}41{% else %}57{% endif %}%"></div>
             </div>
@@ -213,25 +213,34 @@
                 {% endfor %}
               {% endif %}
             </div>
-
+          
             <div class="col-xl-2 col-lg-3 col-md-3 d-md-block d-none p-0">
-              {% for room in floor.rooms.south.bottom %}
-                <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Occupied{% endif %}</span>
-              {% endfor %}
+              {% unless floor.rooms.south.fullWing == true %}
+                {% for room in floor.rooms.south.bottom %}
+                  <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Occupied{% endif %}</span>
+                {% endfor %}
+              {% endunless %}
             </div>
 
             <div class="availability-center d-sm-none d-xl-flex"></div>
 
             <div class="col-xl-2 col-lg-3 col-md-3 d-md-block d-none p-0">
-              {% for room in floor.rooms.north.top %}
+              {% if floor.rooms.north.fullWing == true %}
+                {% assign room = floor.rooms.north %}
                 <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Occupied{% endif %}</span>
-              {% endfor %}
+              {% else %}
+                {% for room in floor.rooms.north.top %}
+                  <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Occupied{% endif %}</span>
+                {% endfor %}
+              {% endif %}
             </div>
 
             <div class="col-xl-2 col-lg-3 col-md-3 d-md-block d-none p-0">
-              {% for room in floor.rooms.north.bottom %}
-                <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Occupied{% endif %}</span>
-              {% endfor %}
+              {% unless floor.rooms.north.fullWing == true %}
+                {% for room in floor.rooms.north.bottom %}
+                  <span id="availability-{{ floor.floor }}-{{ room.room_number }}" class="floorplan__room-availability d-block py-1">{{ room.title }} - {% if room.isAvailable %}Available{% else %}Occupied{% endif %}</span>
+                {% endfor %}
+              {% endunless %}
             </div>
           </div>
         </div>
@@ -300,7 +309,6 @@
                 </a>
               </div>
             {% endfor %}
-          {% endif %}
 
           {% for room in floor.rooms.south.bottom %}
             <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
@@ -333,9 +341,11 @@
               </a>
             </div>
           {% endfor %}
+        {% endif %}
 
-          {% for room in floor.rooms.north.top %}
-            <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
+        {% if floor.rooms.north.fullWing == true %}
+          {% assign room = floor.rooms.north %}
+          <div class="col-12 row m-0 px-1 w-100 tab-pane room-tab-pane show active" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
               <div class="col-lg-5 p-0">
                 {% include image.html name="board-room-1.jpg" class="h-100 img-fluid img-cover" %}
               </div>
@@ -364,39 +374,71 @@
                 </div>
               </a>
             </div>
-          {% endfor %}
-
-          {% for room in floor.rooms.north.bottom %}
-            <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
-              <div class="col-lg-5 p-0">
-                {% include image.html name="board-room-1.jpg" class="h-100 img-fluid img-cover" %}
-              </div>
-              <div class="col row m-0 w-100 text-label bg-dark p-5">
-                <div class="col-lg-4 font-weight-bold text-uppercase">
-                  <span>Ref: <span class="text-primary">{{ room.title }}</span></span>
-                  <br>
-                  <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+          {% else %}
+            {% for room in floor.rooms.north.top %}
+              <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
+                <div class="col-lg-5 p-0">
+                  {% include image.html name="board-room-1.jpg" class="h-100 img-fluid img-cover" %}
                 </div>
-                <div class="col-lg text-lg-right font-weight-bold text-uppercase">
-                  <span>Contact: <a href="tel:{{ site.phone | remove: ' ' }}" class="text-primary">{{ site.phone }}</a></span>
-                  <br>
-                  <span>Email: <a href="mailto:{{ site.email }}" class="text-primary">{{ site.email }}</a></span>
-                </div>
+                <div class="col row m-0 w-100 text-label bg-dark p-5">
+                  <div class="col-lg-4 font-weight-bold text-uppercase">
+                    <span>Ref: <span class="text-primary">{{ room.title }}</span></span>
+                    <br>
+                    <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                  </div>
+                  <div class="col-lg text-lg-right font-weight-bold text-uppercase">
+                    <span>Contact: <a href="tel:{{ site.phone | remove: ' ' }}" class="text-primary">{{ site.phone }}</a></span>
+                    <br>
+                    <span>Email: <a href="mailto:{{ site.email }}" class="text-primary">{{ site.email }}</a></span>
+                  </div>
 
-                <div class="row w-100">
-                  <div class="col p-4">
-                    <p>{{ room.description }}</p>
+                  <div class="row w-100">
+                    <div class="col p-4">
+                      <p>{{ room.description }}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <a href="/contact" class="room-contact-strip row m-0 p-0 bg-primary text-uppercase d-flex justify-content-center align-items-center">
-                <div class="font-weight-bold text-light">
-                  Contact
+                <a href="/contact" class="room-contact-strip row m-0 p-0 bg-primary text-uppercase d-flex justify-content-center align-items-center">
+                  <div class="font-weight-bold text-light">
+                    Contact
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+
+            {% for room in floor.rooms.north.bottom %}
+              <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
+                <div class="col-lg-5 p-0">
+                  {% include image.html name="board-room-1.jpg" class="h-100 img-fluid img-cover" %}
                 </div>
-              </a>
-            </div>
-          {% endfor %}
+                <div class="col row m-0 w-100 text-label bg-dark p-5">
+                  <div class="col-lg-4 font-weight-bold text-uppercase">
+                    <span>Ref: <span class="text-primary">{{ room.title }}</span></span>
+                    <br>
+                    <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                  </div>
+                  <div class="col-lg text-lg-right font-weight-bold text-uppercase">
+                    <span>Contact: <a href="tel:{{ site.phone | remove: ' ' }}" class="text-primary">{{ site.phone }}</a></span>
+                    <br>
+                    <span>Email: <a href="mailto:{{ site.email }}" class="text-primary">{{ site.email }}</a></span>
+                  </div>
+
+                  <div class="row w-100">
+                    <div class="col p-4">
+                      <p>{{ room.description }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <a href="/contact" class="room-contact-strip row m-0 p-0 bg-primary text-uppercase d-flex justify-content-center align-items-center">
+                  <div class="font-weight-bold text-light">
+                    Contact
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+          {% endif %}
         </div>
       </div>
     {% endfor %}
@@ -425,13 +467,13 @@
   </div>
 </div>
 
-<script async>
+<script>
   $(document).ready(function() {
 
     //get id of hovered room and match it with the available text id for hover.
     //i tried a simpler toggle approach however there is a bug on page load
     //where a state would stick when the mouse is already over the element.
-    $(".floorplan__room a").hover(
+    $(".floorplan__room a, .floorplan__wing a").hover(
       //mouse enter
       function() {
         let id = '#availability-' + this.id;

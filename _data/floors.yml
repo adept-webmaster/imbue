@@ -143,9 +143,11 @@ floors:
         title: North Wing
         description: This is the south wing on floor 3
         area: "7,198"
+        room_number: 2
       south:
         fullWing: true
         isAvailable: false
         title: South Wing
         description: This is the north wing on floor 3
         area: "7,198"
+        room_number: 1

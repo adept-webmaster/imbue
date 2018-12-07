@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Meeting Rooms"
-date:   2018-08-29
+date:   2018-08-29 12:34:27 +0000
 thumb: Glass-Meeting-Room.jpg
 ---
 
