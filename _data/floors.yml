@@ -13,22 +13,22 @@ floors:
           top:
             - room_number: 1
               title: N1A
-              isAvailable: true
+              isAvailable: false
               description: This is room N1A
               area: "599"
             - room_number: 2
               title: N1B
-              isAvailable: true
+              isAvailable: false
               description: This is room N1B
               area: "599"
             - room_number: 3
               title: N1C
-              isAvailable: true
+              isAvailable: false
               description: This is room N1C
               area: "599"
             - room_number: 4
               title: N1D
-              isAvailable: true
+              isAvailable: false
               description: This is room N1D
               area: "599"
             - room_number: 5
@@ -38,7 +38,7 @@ floors:
               area: "599"
             - room_number: 6
               title: N1F
-              isAvailable: true
+              isAvailable: false
               description: This is room N1F
               area: "599"
           bottom:
@@ -49,12 +49,12 @@ floors:
               area: "599"
             - room_number: 8
               title: N1H
-              isAvailable: true
+              isAvailable: false
               description: This is room N1H
               area: "599"
             - room_number: 9
               title: N1I
-              isAvailable: true
+              isAvailable: false
               description: This is room N1I
               area: "599"
             - room_number: 10
@@ -69,7 +69,7 @@ floors:
               area: "599"
             - room_number: 12
               title: N1L
-              isAvailable: true
+              isAvailable: false
               description: This is room N1L
               area: "599"
 
@@ -96,7 +96,7 @@ floors:
             description: This is room N2D
           - room_number: 5
             title: N2E
-            isAvailable: false
+            isAvailable: true
             description: This is room N2E
           - room_number: 6
             title: N2F
@@ -105,19 +105,19 @@ floors:
         bottom:
           - room_number: 7
             title: N2G
-            isAvailable: true
+            isAvailable: false
             description: This is room N2G
           - room_number: 8
             title: N2H
-            isAvailable: true
+            isAvailable: false
             description: This is room N2H
           - room_number: 9
             title: N2I
-            isAvailable: true
+            isAvailable: false
             description: This is room N2I
           - room_number: 10
             title: N2J
-            isAvailable: true
+            isAvailable: false
             description: This is room N2J
           - room_number: 11
             title: N2K
@@ -125,7 +125,7 @@ floors:
             description: This is room N2K
           - room_number: 12
             title: N2L
-            isAvailable: true
+            isAvailable: false
             description: This is room N2L
       south:
         isAvailable: true
@@ -138,104 +138,14 @@ floors:
     isAvailable: false
     rooms:
       north:
-        top:
-          - room_number: 1
-            title: N3A
-            isAvailable: true
-            description: This is room N3A
-          - room_number: 2
-            title: N3B
-            isAvailable: true
-            description: This is room N3B
-          - room_number: 3
-            title: N3C
-            isAvailable: true
-            description: This is room N3C
-          - room_number: 4
-            title: N3D
-            isAvailable: true
-            description: This is room N3D
-          - room_number: 5
-            title: N3E
-            isAvailable: false
-            description: This is room N3E
-          - room_number: 6
-            title: N3F
-            isAvailable: true
-            description: This is room N3F
-        bottom:
-          - room_number: 7
-            title: N3G
-            isAvailable: true
-            description: This is room N3G
-          - room_number: 8
-            title: N3H
-            isAvailable: true
-            description: This is room N3H
-          - room_number: 9
-            title: N3I
-            isAvailable: true
-            description: This is room N3I
-          - room_number: 10
-            title: N3J
-            isAvailable: true
-            description: This is room N3J
-          - room_number: 11
-            title: N3K
-            isAvailable: false
-            description: This is room N3K
-          - room_number: 12
-            title: N3L
-            isAvailable: true
-            description: This is room N3L
+        fullWing: true
+        isAvailable: false
+        title: North Wing
+        description: This is the south wing on floor 3
+        area: "7,198"
       south:
-        top:
-          - room_number: 13
-            title: S3A
-            isAvailable: false
-            description: This is room S3A
-          - room_number: 14
-            title: S3B
-            isAvailable: true
-            description: This is room S3B
-          - room_number: 15
-            title: S3C
-            isAvailable: true
-            description: This is room S3C
-          - room_number: 16
-            title: S3D
-            isAvailable: false
-            description: This is room S3D
-          - room_number: 17
-            title: S3E
-            isAvailable: false
-            description: This is room S3E
-          - room_number: 18
-            title: S3F
-            isAvailable: false
-            description: This is room S3F
-        bottom:
-          - room_number: 19
-            title: S3G
-            isAvailable: false
-            description: This is room S3G
-          - room_number: 20
-            title: S3H
-            isAvailable: true
-            description: This is room S3H
-          - room_number: 21
-            title: S3I
-            isAvailable: true
-            description: This is room S3I
-          - room_number: 22
-            title: S3J
-            isAvailable: false
-            description: This is room S3J
-          - room_number: 23
-            title: S3K
-            isAvailable: false
-            description: This is room S3K
-          - room_number: 24
-            title: S3L
-            isAvailable: false
-            description: This is room S3L
+        fullWing: true
+        isAvailable: false
+        title: South Wing
+        description: This is the north wing on floor 3
+        area: "7,198"

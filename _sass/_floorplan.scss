@@ -147,6 +147,7 @@ $label-color: #D6D6D6;
     height: 85% !important;
   }
 
+
   &__room {
     color: #000;
     height: 86%;
@@ -199,7 +200,7 @@ $label-color: #D6D6D6;
     }
 
     &:hover {
-      background-color: map-get($theme-colors, "primary") !important;
+      opacity: 0.75;
       color: #fff;
 
       & > .floorplan__room-availability {
