@@ -34,6 +34,7 @@
   "amenities",
   "news",
   "services",
+  "modal",
   "floorplan";
 //End custom imports
 
@@ -67,8 +68,10 @@ overrides*/
   "vendor/bootstrap/bootstrap/images",
   "vendor/bootstrap/bootstrap/grid",
   "vendor/bootstrap/bootstrap/buttons",
+  "vendor/bootstrap/bootstrap/close",
   "vendor/bootstrap/bootstrap/transitions",
   "vendor/bootstrap/bootstrap/dropdown",
+  "vendor/bootstrap/bootstrap/modal",
   "vendor/bootstrap/bootstrap/popover",
   "vendor/bootstrap/bootstrap/nav",
   "vendor/bootstrap/bootstrap/navbar",
@@ -78,3 +81,5 @@ overrides*/
   "vendor/bootstrap/bootstrap/print",
   "vendor/bootstrap/bootstrap/forms";
 //End vendor
+
+//@import "vendor/bootstrap/bootstrap";

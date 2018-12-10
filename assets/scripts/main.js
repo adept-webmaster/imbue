@@ -1,13 +1,13 @@
-$('.hamburger').click(function() {
-    $(this).toggleClass('is-active');
-});
-
 window.lazySizesConfig = window.lazySizesConfig || {};
 
 lazySizesConfig.expand = 300;
 
 //page is optimized for fast onload event
 lazySizesConfig.loadMode = 1;
+
+jQuery(document).ready(function($) {
+
+});
 
 (function ($) {
     /**
@@ -35,39 +35,43 @@ lazySizesConfig.loadMode = 1;
      return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
    };
 
+  // init object fit CSS polyfill
    objectFitImages();
+
    $('.floorplan__room a').popover({
      trigger: "hover"
    });
 
-})(jQuery);
+  var win = $(window);
+  var allMods = $(".come-in-view");
 
-
-var win = $(window);
-
-var allMods = $(".come-in-view");
-
-allMods.each(function(i, el) {
-  var el = $(el);
-  if (el.visible(true)) {
-    el.addClass("already-visible");
-  }
-});
-
-$(window).on('scroll', function() {
-  allMods.each(function() {
-    if (isScrolledIntoView($(this))) {
-      $(this).addClass("come-in");
+  allMods.each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("already-visible");
     }
   });
-});
 
-function isScrolledIntoView(elem) {
-  var docViewTop = $(window).scrollTop();
-  var docViewBottom = docViewTop + $(window).height();
+  win.on('scroll', function() {
+    allMods.each(function() {
+      if (isScrolledIntoView($(this))) {
+        $(this).addClass("come-in");
+      }
+    });
+  });
 
-  var elemTop = $(elem).offset().top;
-  var elemBottom = elemTop + $(elem).height();
+  function isScrolledIntoView(elem) {
+    var docViewTop = win.scrollTop();
+    var docViewBottom = docViewTop + win.height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+    
+    return ((elemBottom <= docViewBottom + 500) && (elemTop >= docViewTop - 500));
+  }
   
-  return ((elemBottom <= docViewBottom + 500) && (elemTop >= docViewTop - 500));
-}
+  $('.hamburger').click(function() {
+    $(this).toggleClass('is-active');
+  });
+
+})(jQuery);

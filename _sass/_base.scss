@@ -1,15 +1,12 @@
-html, body {
-  overflow-x: hidden;
-}
+// html, body {
+//   overflow-x: hidden;
+// }
 
 body {
-  transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000;
 
-  -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
 }
 
 @include media-breakpoint-down(md) {
