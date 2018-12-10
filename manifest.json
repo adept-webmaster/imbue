@@ -1,3 +1,6 @@
+---
+---
+
 {
   "name": "Imbue - Inspirational Office Space",
   "short_name": "Imbue",
@@ -6,7 +9,7 @@
   "background_color": "#313131",
   "theme_color": "#9DCA3B",
   "icons": [{
-    "src": "/uploads/icon-256.png",
+    "src": "{{ site.img_dir }}Imbue_Favicon.png",
     "sizes": "256x256",
     "type": "image/png"
   }]

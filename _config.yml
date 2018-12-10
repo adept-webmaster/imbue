@@ -1,5 +1,8 @@
 ---
-title: Imbue
+title: Imbue | Inspirational Office Space
+description: We are Imbue - fully serviced office space and room hire available for everyone.
+logo: /uploads/imbue-logo.png
+lang: en_GB
 timezone: UTC
 collections:
   uploads:
@@ -24,6 +27,7 @@ plugins:
   - jekyll-feed
   - github-pages
   - jekyll-redirect-from
+  - jekyll-seo-tag
 whitelist:
   - jekyll-redirect-from
 github: [metadata]

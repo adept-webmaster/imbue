@@ -16,6 +16,7 @@ gem 'bootstrap', '~> 4.1.3'
 # Vendor stuff
 gem 'hamburgers', "~> 0.9.3"
 gem 'jekyll-redirect-from'
+gem 'jekyll-seo-tag'
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
