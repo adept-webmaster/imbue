@@ -9,7 +9,7 @@
   "background_color": "#313131",
   "theme_color": "#9DCA3B",
   "icons": [{
-    "src": "{{ site.img_dir }}Imbue_Favicon.png",
+    "src": "{{ site.baseurl }}{{ site.img_dir }}Imbue_Favicon.png",
     "sizes": "256x256",
     "type": "image/png"
   }]
