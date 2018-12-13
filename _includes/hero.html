@@ -19,7 +19,7 @@ style="background: {% if include.overlay %}{% if include.overlay == 'true' %}lin
     {% endif %}">
     <h2 class="col-md-9 h1">{{ include.heading }}</h2>
     <p class="col-md-9 text-primary {% if include.type %}{% if include.type == 'full' %}lead m-0{% endif %}{% endif %}">
-      {{ include.lead }}
+      {{ include.lead | newline_to_br }}
     </p>
   </div>
 </div>

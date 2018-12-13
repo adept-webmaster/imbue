@@ -11,9 +11,13 @@ h2.position-relative {
     background-color: rgba(theme-color("dark"), 0.8);
     transition: opacity .3s ease;
     font-size: 0.85rem;
+
+    &.location-graphic {
+      opacity: 1;
+    }
   }
 
-  &:hover {
+  &:hover, &:focus {
     .amenities-overlay {
       opacity: 1;
     }

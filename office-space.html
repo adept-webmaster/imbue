@@ -7,3 +7,7 @@ show: true
 ---
 
 {% include offices.html %}
+
+{% assign offices_pictures = site.data.floorplan-images %}
+{% include offices-grid.html
+  pictures=offices_pictures %}

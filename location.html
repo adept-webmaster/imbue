@@ -14,20 +14,27 @@ show: true
   lead="Imbue is located in the North East of England within Spectrum Business
   Park in Seaham, County Durham. Located in a prime location with stunning sea
   views, Imbue is easily accessible by both the A19 which is just a 2-mile drive
-  away, and the A1 which is only 10 miles away. Imbue also has great transport
-  links; a bus stop is located within the business park and Seaham train station
-  is close by which runs a service from Middlesbrough through to Newcastle."
+  away, and the A1 which is only 10 miles away."
   type="full"
   text_align="left"
 %}
 
 <div class="container-fluid">
-  <div class="row py-2">
+  <div class="row py-0 py-md-2">
     <div class="col-lg px-0 px-lg-1">
-      {% include image.html name="Front-Reception.jpg" alt="Front Reception" class="img-fluid img-cover w-100 h-100" %}
-      <noscript>
-        {% include noscript-image.html name="Front-Reception.jpg" alt="Front Reception" class="img-fluid img-cover w-100 h-100" %}
-      </noscript>
+      <div class="w-100 position-relative amenities-image-container">
+        {% include image.html name="Front-Reception.jpg" alt="Front Reception" class="img-fluid img-cover w-100 h-100" %}
+        <noscript>
+          {% include noscript-image.html name="Front-Reception.jpg" alt="Front Reception" class="img-fluid img-cover w-100 h-100" %}
+        </noscript>
+        <div class="amenities-overlay location-graphic
+        d-flex flex-column justify-content-center
+        position-absolute h-100 w-100 text-light px-xl-4 px-3 py-5">
+          <p class="lead font-weight-light">Imbue also has great public transport links; a bus stop is located within the business park and Seaham train station is a mile away. Forming part of the regional network, services to Durham, Middlesbrough and Newcastle are available and, in turn, links to all major cities can be made, including Edinburgh, Leeds, Manchester, Birmingham and London King’s Cross.</p>
+
+          <p class="lead font-weight-light m-0">Imbue is also situated between two international airports, with Durham Tees Valley Airport located to the south and Newcastle International Airport is approximately 30 minutes away to the north.</p>
+        </div>
+      </div>
     </div>
     <div class="col-lg-7 mx-lg-1 embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" src="https://snazzymaps.com/embed/96671" style="border:none;"></iframe>

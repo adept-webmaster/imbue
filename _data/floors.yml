@@ -131,7 +131,10 @@ floors:
         isAvailable: true
         fullWing: true
         title: South Wing
-        description: This is the south wing on floor 2
+        description: |
+          Perfect for any business, regardless of its experience and revenue, the whole Left Wing of the second floor is currently available. Equalling 1,065sq.m (11,467sq.ft), the following terms are available:
+          <ul><li>1 year lease at £10.75 per sq. foot</li><li>2 years lease at £9.25 per sq. foot</li><li>3 years lease at £8.75 per sq. foot</li><li>5 years lease at £8.25 per sq. foot</li></ul>
+          Spacious enough to create a successful working environment, the South Wing of Imbue has the option to be split into 2 separate suites. 
         area: "7,198"
 
   - floor: 3

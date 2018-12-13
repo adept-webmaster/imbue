@@ -1,0 +1,40 @@
+<div class="container-fluid py-md-1">
+  <div class="row pictures">
+    {%- assign pictures = include.pictures -%}
+    {% assign delay = 0 %}
+    {% for picture in pictures %}
+      {% capture picture_image %}{{ picture.image }}{% endcapture %}
+      {% capture picture_alt %}{{ picture.title }}{% endcapture %}
+      {% capture picture_class %}img-fluid img-cover h-100{% endcapture %}
+
+        {% assign delay = delay | plus: 1 %}
+        {% if delay == 5 %}
+          {% assign delay = 1 %}
+        {% endif %}
+
+      <div class="col-md-6 col-lg-4
+      pl-1 py-1 pr-1
+      {% if forloop.index == 1 or forloop.index == 5 %} pr-md-1 pr-lg-1 pr-xl-1 {% endif %}
+      {% if forloop.index == 2 or forloop.index == 6 %} pl-md-1 pl-lg-1 pl-xl-1 pr-xl-1{% endif %}
+      {% if forloop.index == 3 or forloop.index == 7 %} pr-md-1 pl-lg-1 pl-xl-1 pr-xl-1{% endif %}
+      {% if forloop.index == 4 or forloop.index == 8 %} pl-md-1 pr-lg-1 pl-xl-1 {% endif %}
+
+      {% if forloop.index == 5 %} pl-lg-1 {% endif %}
+      {% if forloop.index == 2 %} pr-lg-1 {% endif %}
+      {% if forloop.index < 5 %}come-in come-in-view{% else %}come-in-view{% endif %} come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %}">
+
+        <div class="w-100 position-relative amenities-image-container">
+          {% include image.html name=picture_image alt=picture_alt class=picture_class %}
+          <noscript>
+            {% include noscript-image.html name=picture_image alt=picture_alt class=picture_class %}
+          </noscript>
+          <div class="amenities-overlay
+          d-flex flex-column justify-content-center
+          position-absolute h-100 w-100 text-light px-xl-4 px-3 pb-5">
+            <p class="lead">{{ picture.content }}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

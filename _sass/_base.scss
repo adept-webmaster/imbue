@@ -40,6 +40,10 @@ body {
   .h6, h6 {
     font-size: $h6-font-size * $mobile-font-ratio !important;
   }
+
+  .lead {
+    font-size: 0.85rem !important;
+  }
 }
 
 a,
