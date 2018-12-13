@@ -38,7 +38,7 @@ jQuery(document).ready(function($) {
   // init object fit CSS polyfill
    objectFitImages();
 
-   $('.floorplan__room a').popover({
+   $('.floorplan__room a, .floorplan__wing a').popover({
      trigger: "hover"
    });
 
