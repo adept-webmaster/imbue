@@ -101,7 +101,7 @@ a {
 // Only show when JS is supported
 .js {
   .no-js & {
-    display: none;
+    display: none !important;
   }
 }
 

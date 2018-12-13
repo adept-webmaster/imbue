@@ -1,0 +1,30 @@
+.cookie-banner {
+  &.appear {
+    -webkit-animation: appear 1s ease;
+    -moz-animation:    appear 1s ease;
+    -o-animation:      appear 1s ease;
+    animation:         appear 1s ease;
+  }
+
+  &.disappear {
+    transform: translateY(200px);
+    transition: transform 1s ease;
+  }
+}
+
+@-webkit-keyframes appear {
+  0%   { transform: translateY(200px); }
+  100% { transform: translateY(0); }
+}
+@-moz-keyframes appear {
+  0%   { transform: translateY(200px); }
+  100% { transform: translateY(0); }
+}
+@-o-keyframes appear {
+  0%   { transform: translateY(200px); }
+  100% { transform: translateY(0); }
+}
+@keyframes appear {
+  0%   { transform: translateY(200px); }
+  100% { transform: translateY(0); }
+}

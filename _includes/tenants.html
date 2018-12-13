@@ -15,17 +15,28 @@
 
           {% capture tenant_logo %}{{ tenant.logo }}{% endcapture %}
           {% capture tenant_title %}{{ tenant.title }}{% endcapture %}
-          <div class="tenant-grid__item w-20 d-flex flex-wrap justify-content-center align-items-center py-md-0 py-4 come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %}">
+          <div class="tenant-grid__item w-20 d-flex flex-wrap justify-content-center align-items-center py-md-0 py-4 come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %} js">
             {% if tenant_title == 'House of Mooshki' %}
               {% include image.html name=tenant_logo alt=tenant_title class="img-fluid tenant-mooshki" %}
             {% else %}
             {% include image.html name=tenant_logo alt=tenant_title class="img-fluid" %}
             {% endif %}
-            <noscript>
-              {% include noscript-image.html name=tenant_logo alt=tenant_title class="img-fluid" %}
-            </noscript>
           </div>
         {% endfor %}
+
+        <noscript class="row">
+          {% for tenant in tenants %}
+            {% capture tenant_logo %}{{ tenant.logo }}{% endcapture %}
+            {% capture tenant_title %}{{ tenant.title }}{% endcapture %}
+            <div class="tenant-grid__item w-20 d-flex flex-wrap justify-content-center align-items-center py-md-0 py-4">
+              {% if tenant_title == 'House of Mooshki' %}
+                {% include noscript-image.html name=tenant_logo alt=tenant_title class="img-fluid tenant-mooshki" %}
+              {% else %}
+              {% include noscript-image.html name=tenant_logo alt=tenant_title class="img-fluid" %}
+              {% endif %}
+            </div>
+          {% endfor %}
+        </noscript>
       </div>
 
       {% comment %}
@@ -52,9 +63,15 @@
           {% assign image = testimonial.image %}
           <div class="row m-0 col-lg-4 px-0 py-3 col-md-12">
             <div class="col-lg-4 col-md-3 mb-md-0 mb-3 d-flex justify-content-center align-items-start">
-              <div class="lazyload testimonial-container icon-container img-fluid border rounded-circle {{ testimonial.image | remove: '.jpg' }} come-in-view come-in-up {% unless forloop.first %}delay-{{ delay-tenant }}{% endunless %}">
-                {% include noscript-image.html name=image class="img-fluid home-hero-icon position-relative" %}
+              <div class="lazyload testimonial-container icon-container img-fluid border rounded-circle {{ testimonial.image | remove: '.jpg' }} come-in-view come-in-up {% unless forloop.first %}delay-{{ delay-tenant }}{% endunless %} js">
+                {% include image.html name=image class="img-fluid home-hero-icon position-relative" %}
               </div>
+
+              <noscript>
+                <div class="testimonial-container icon-container img-fluid border rounded-circle {{ testimonial.image | remove: '.jpg' }}">
+                  {% include noscript-image.html name=image class="img-fluid home-hero-icon position-relative" %}
+                </div>
+              </noscript>
             </div>
 
             <div class="col px-2">
