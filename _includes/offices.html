@@ -345,7 +345,7 @@
 
         {% if floor.rooms.north.fullWing == true %}
           {% assign room = floor.rooms.north %}
-          <div class="col-12 row m-0 px-1 w-100 tab-pane room-tab-pane show active" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
+          <div class="col-12 row m-0 px-1 w-100 tab-pane room-tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
               <div class="col-lg-5 p-0">
                 {% include image.html name="board-room-1.jpg" class="h-100 img-fluid img-cover" %}
               </div>
