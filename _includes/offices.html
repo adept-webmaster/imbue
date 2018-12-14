@@ -446,13 +446,13 @@
 </div>
 
 <script>
-  $(document).ready(function() {
+  window.addEventListener('DOMContentLoaded', function() {
 
-    //get id of hovered room and match it with the available text id for hover.
-    //i tried a simpler toggle approach however there is a bug on page load
-    //where a state would stick when the mouse is already over the element.
+    // get id of hovered room and match it with the available text id for hover.
+    // i tried a simpler toggle approach however there is a bug on page load
+    // where a state would stick when the mouse is already over the element.
     $(".floorplan__room a, .floorplan__wing a").hover(
-      //mouse enter
+      // mouse enter
       function() {
         let id = '#availability-' + this.id;
         if ($(this).hasClass("bg-muted")) {
@@ -462,7 +462,7 @@
        }
       },
       
-      //mouse leave
+      // mouse leave
       function() {
         let id = '#availability-' + this.id;
         if ($(this).hasClass("bg-muted")) {
@@ -473,10 +473,10 @@
       }
     );
 
-    //use Bootstrap nav tabs api to tap into current/previous selected tabs
+    // use Bootstrap nav tabs api to tap into current/previous selected tabs
     $('.floor-tabs').on('shown.bs.tab', function (e) {
       $('.floor-tabs').each(function(index) {
-        //start index from 1
+        // start index from 1
         index++;
         if (e.target.id == 'floor-'+index+'-tab') {
           $('#Floor-'+index+'-img').addClass("active show");
@@ -488,11 +488,18 @@
       });
     });
 
-    //force Bootstrap tabs to toggle active classes and accessibility attributes
-    //for rooms
+    // force Bootstrap tabs to toggle active classes and accessibility attributes
+    // for rooms
     $('.floorplan__floor-wrapper.nav-tabs li a').click(function (e) {
       $('.floorplan__floor-wrapper.nav-tabs li a.active').removeClass('show active').attr("aria-selected", "false");
       $(this).parent('a').addClass('show active').attr("aria-selected", "true");
+
+      var el = this; // allow setTimeout to use "this" element rather than window
+      setTimeout(function() {
+        $("html, body").animate({
+          scrollTop: $("#content-"+el.id).offset().top - 100 // just some extra padding
+        }, 500);
+      }, 200);
     });
   });
 </script>
