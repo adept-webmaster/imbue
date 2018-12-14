@@ -8,9 +8,10 @@
           {% assign delay = delay | plus: 1 %}
         {% endunless %}
         {% capture service_image %}{{ service.image }}{% endcapture %}
+        {% capture service_alt %}{{ service.alt }}{% endcapture %}
         <div class="col-lg-2 pt-3 col-md-4 col-sm-6 col-6 px-3 d-flex justify-content-center align-items-start come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %} js">
           <div class="icon-container img-fluid border-primary rounded-circle flex-grow-1">
-            {% include image.html name=service_image class="img-fluid rounded-circle border-light d-block mx-auto hero-icon p-4" %}
+            {% include image.html name=service_image class="img-fluid rounded-circle border-light d-block mx-auto hero-icon p-4" alt=service_alt %}
             <h2 class="h6 my-3 text-capitalize text-center">{{ service.title }}</h2>
           </div>
         </div>
@@ -19,9 +20,10 @@
       <noscript class="row">
         {% for service in services %}
         {% capture service_image %}{{ service.image }}{% endcapture %}
+        {% capture service_alt %}{{ service.title }}{% endcapture %}
           <div class="col-lg-2 pt-3 col-md-4 col-sm-6 col-6 px-3 d-flex justify-content-center align-items-start">
             <div class="icon-container img-fluid border-primary rounded-circle flex-grow-1">
-              {% include noscript-image.html name=service_image class="img-fluid rounded-circle border-light d-block mx-auto hero-icon p-4" %}
+              {% include noscript-image.html name=service_image class="img-fluid rounded-circle border-light d-block mx-auto hero-icon p-4" alt=service_alt %}
               <h2 class="h6 my-3 text-capitalize text-center">{{ service.title }}</h2>
             </div>
           </div>

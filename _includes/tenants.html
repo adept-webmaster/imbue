@@ -53,34 +53,37 @@
         {% endfor %}
       </div>
       {% endcomment %}
+      
+      
+      {% comment %}
+        <div id="tenants" class="testimonials row align-items-center justify-content-between pt-md-3 pb-md-3">
+          {% assign delay-tenant = 0 %}
+          {% for testimonial in site.data.tenant-testimonials %}
+            {% unless forloop.first %}
+              {% assign delay-tenant = delay-tenant | plus: 1 %}
+            {% endunless %}
+            {% assign image = testimonial.image %}
+            <div class="row m-0 col-lg-4 px-0 py-3 col-md-12">
+              <div class="col-lg-4 col-md-3 mb-md-0 mb-3 d-flex justify-content-center align-items-start">
+                <div class="lazyload testimonial-container icon-container img-fluid border rounded-circle {{ testimonial.image | remove: '.jpg' }} come-in-view come-in-up {% unless forloop.first %}delay-{{ delay-tenant }}{% endunless %} js">
+                  {% include image.html name=image class="img-fluid home-hero-icon position-relative" %}
+                </div>
 
-      <div id="tenants" class="testimonials row align-items-center justify-content-between pt-md-3 pb-md-3">
-        {% assign delay-tenant = 0 %}
-        {% for testimonial in site.data.tenant-testimonials %}
-          {% unless forloop.first %}
-            {% assign delay-tenant = delay-tenant | plus: 1 %}
-          {% endunless %}
-          {% assign image = testimonial.image %}
-          <div class="row m-0 col-lg-4 px-0 py-3 col-md-12">
-            <div class="col-lg-4 col-md-3 mb-md-0 mb-3 d-flex justify-content-center align-items-start">
-              <div class="lazyload testimonial-container icon-container img-fluid border rounded-circle {{ testimonial.image | remove: '.jpg' }} come-in-view come-in-up {% unless forloop.first %}delay-{{ delay-tenant }}{% endunless %} js">
-                {% include image.html name=image class="img-fluid home-hero-icon position-relative" %}
+                <noscript>
+                  <div class="testimonial-container icon-container img-fluid border rounded-circle {{ testimonial.image | remove: '.jpg' }}">
+                    {% include noscript-image.html name=image class="img-fluid home-hero-icon position-relative" %}
+                  </div>
+                </noscript>
               </div>
 
-              <noscript>
-                <div class="testimonial-container icon-container img-fluid border rounded-circle {{ testimonial.image | remove: '.jpg' }}">
-                  {% include noscript-image.html name=image class="img-fluid home-hero-icon position-relative" %}
-                </div>
-              </noscript>
+              <div class="col px-2">
+                <p class="font-weight-bold text-uppercase">{{ testimonial.title }}</p>
+                <p>{{ testimonial.content }}</p>
+              </div>
             </div>
-
-            <div class="col px-2">
-              <p class="font-weight-bold text-uppercase">{{ testimonial.title }}</p>
-              <p>{{ testimonial.content }}</p>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
+          {% endfor %}
+        </div>
+      {% endcomment %}
     </div>
   </div>
 </div>

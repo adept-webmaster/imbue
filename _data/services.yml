@@ -1,12 +1,18 @@
 - title: Onsite Parking Available
   image: icon-parking.svg
+  alt: Steering Wheel Icon
 - title: CCTV in Operation
   image: icon-cctv.svg
+  alt: Camera Icon
 - title: Reception
   image: icon-reception.svg
+  alt: Reception Icon
 - title: Fully Adjustable Air Conditioning
   image: icon-ac.svg
+  alt: Air Conditioning Icon
 - title: Meetings and Boardrooms Available
   image: icon-boardroom.svg
+  alt: Meeting Room Icon
 - title: LED Lighting System
   image: icon-lighting.svg
+  alt: Lightbulb Icon

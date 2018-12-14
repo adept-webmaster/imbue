@@ -15,14 +15,15 @@
   </div>
 </div>
 <script>
-  // if there is no modal_shown cookie then display modal popup after 5 secs
-  // this cookie expires in half a day if it does not already exist
-  if (Cookies.get('modal_shown') == null) {
-    var inHalfADay = 0.5;
-    setTimeout(function() {
-      Cookies.set('modal_shown', 'yes', { expires: inHalfADay, path: '/' });
-      $('#timeBasedPopup').modal();
-    }, 5000)
-
-  }
+  window.addEventListener('DOMContentLoaded', function() {
+    // if there is no modal_shown cookie then display modal popup after 5 secs
+    // this cookie expires in half a day if it does not already exist
+    if (Cookies.get('modal_shown') == null) {
+      var inHalfADay = 0.5;
+      setTimeout(function() {
+        Cookies.set('modal_shown', 'yes', { expires: inHalfADay, path: '/' });
+        $('#timeBasedPopup').modal();
+      }, 5000)
+    }
+  })
 </script>

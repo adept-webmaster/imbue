@@ -3,16 +3,19 @@
     We offer modern office spaces of up to 1000sqft, these are
     available to rent and are designed for your company to thrive.
   image: icon-chair.svg
+  alt: Desk Chair Icon
   link: /office-space
 - title: Room Hire
   content: |
     As well as offices, we have rooms available to hire for meetings and other
     business endeavours.
   image: icon-door.svg
+  alt: Door Icon
   link: /office-space
 - title: Virtual Office
   content: |
     If you require a business postal address, Imbue offers virtual office space
     to businesses.
   image: Location.svg
+  alt: Location Pin Icon
   link: /contact

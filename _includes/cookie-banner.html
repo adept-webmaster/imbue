@@ -5,7 +5,8 @@
     </div>
   </div>
 
-  <script>
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
     // if there is a cookies_acknowledged cookie then hide cookie banner
     if (Cookies.get('cookies_acknowledged')) {
       $('.cookie-banner').css('display', 'none');
@@ -18,4 +19,5 @@
       }
       $('.cookie-banner').removeClass('appear').addClass('disappear');
     })
-  </script>
+  })
+</script>

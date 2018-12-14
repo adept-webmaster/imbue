@@ -1,6 +1,6 @@
 floors:
   - floor: 1
-    isAvailable: true
+    isAvailable: false
     rooms:
         south:
           title: South Wing

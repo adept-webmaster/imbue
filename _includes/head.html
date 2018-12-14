@@ -12,15 +12,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#9DCA3B">
-  <meta name="msapplication-TileColor" content="#00aba9">
-  <meta name="msapplication-config" content="{{ site.img_dir }}browserconfig.xml">
-  <meta name="description" content="{{ site.description | escape }}">
-  <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html',''}}">
   
   {% include fav.html %}
-  {%- include opengraph.html -%}
 
-  <script src="{{ "/assets/scripts/lazysizes.min.js" | relative_url }}"></script>
+  <script async src="{{ "/assets/scripts/lazysizes.min.js" | relative_url }}"></script>
 
   <link rel="preload" href="{{ "assets/stylesheets/main.css" | relative_url }}" as="style">
 
