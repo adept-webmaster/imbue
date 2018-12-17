@@ -8,7 +8,7 @@
       {% capture picture_class %}img-fluid img-cover h-100{% endcapture %}
 
         {% assign delay = delay | plus: 1 %}
-        {% if delay == 5 %}
+        {% if delay == 4 %}
           {% assign delay = 1 %}
         {% endif %}
 
@@ -30,7 +30,7 @@
           </noscript>
           <div class="amenities-overlay
           d-flex flex-column justify-content-center
-          position-absolute h-100 w-100 text-light px-xl-4 px-3 pb-5">
+          position-absolute h-100 w-100 text-light px-xl-4 px-3 py-5">
             <p class="lead">{{ picture.content }}</p>
           </div>
         </div>

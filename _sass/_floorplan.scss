@@ -219,8 +219,16 @@ $label-color: #D6D6D6;
       .room-contact-strip {
         width: 30px;
 
+        @include media-breakpoint-down(sm) {
+          width: 100%;
+        }
+
         div {
           transform: rotate(-90deg);
+
+          @include media-breakpoint-down(sm) {
+            transform: rotate(0);
+          }
         }
       }
     }
