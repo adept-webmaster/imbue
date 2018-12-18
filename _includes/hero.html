@@ -1,4 +1,4 @@
-<div class="static-page-hero jumbotron m-0 p-0 py-lg-5 rounded-0{% if include.type %}{% if include.type == 'full' %} jumbotron-fluid{% endif %}{% endif %}{% if include.class %} {{ include.class }}{% endif %} lazyload js"
+<div class="static-page-hero jumbotron m-0 p-0 py-xl-5 rounded-0{% if include.type %}{% if include.type == 'full' %} jumbotron-fluid{% endif %}{% endif %}{% if include.class %} {{ include.class }}{% endif %} lazyload js"
 style="background: {% if include.overlay %}{% if include.overlay == 'true' %}linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),{% endif %}{% endif %}
                     url('{{ site.img_dir | absolute_url }}{{ include.bg_image }}') no-repeat {{ include.bg_position }} / {{ include.bg_size }};
       color: {% if include.text_color %}{{ include.text_color }};{% else %}#ffffff;{% endif %}">
@@ -25,7 +25,7 @@ style="background: {% if include.overlay %}{% if include.overlay == 'true' %}lin
 </div>
 
 <noscript>
-  <div class="static-page-hero jumbotron m-0 p-0 py-lg-5 rounded-0{% if include.type %}{% if include.type == 'full' %} jumbotron-fluid{% endif %}{% endif %}{% if include.class %} {{ include.class }}{% endif %}"
+  <div class="static-page-hero jumbotron m-0 p-0 py-xl-5 rounded-0{% if include.type %}{% if include.type == 'full' %} jumbotron-fluid{% endif %}{% endif %}{% if include.class %} {{ include.class }}{% endif %}"
   style="background: {% if include.overlay %}{% if include.overlay == 'true' %}linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),{% endif %}{% endif %}
                       url('{{ site.img_dir | absolute_url }}{{ include.bg_image }}') no-repeat {{ include.bg_position }} / {{ include.bg_size }};
         color: {% if include.text_color %}{{ include.text_color }};{% else %}#ffffff;{% endif %}">

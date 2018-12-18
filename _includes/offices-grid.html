@@ -23,7 +23,7 @@
       {% if forloop.index == 2 %} pr-lg-1 {% endif %}
       {% if forloop.index < 5 %}come-in come-in-view{% else %}come-in-view{% endif %} come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %}">
 
-        <div class="w-100 position-relative amenities-image-container">
+        <div class="w-100 h-100 position-relative amenities-image-container">
           {% include image.html name=picture_image alt=picture_alt class=picture_class %}
           <noscript>
             {% include noscript-image.html name=picture_image alt=picture_alt class=picture_class %}
