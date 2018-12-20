@@ -81,54 +81,41 @@ floors:
       north:
         top:
           - room_number: 1
-            title: N2A
+            title: North Wing Back
             isAvailable: true
-            description: This is room N2A
-          - room_number: 2
-            title: N2B
-            isAvailable: true
-            description: This is room N2B
-          - room_number: 3
-            title: N2C
-            isAvailable: true
-            description: This is room N2C
-          - room_number: 4
-            title: N2D
-            isAvailable: true
-            description: This is room N2D
-          - room_number: 5
-            title: N2E
-            isAvailable: true
-            description: This is room N2E
-          - room_number: 6
-            title: N2F
-            isAvailable: true
-            description: This is room N2F
+            description: The back of floor 2's north wing is currently available for lease.
+            area: "7,000"
         bottom:
           - room_number: 7
             title: N2G
             isAvailable: false
             description: This is room N2G
+            area: "599"
           - room_number: 8
             title: N2H
             isAvailable: false
             description: This is room N2H
+            area: "599"
           - room_number: 9
             title: N2I
             isAvailable: false
             description: This is room N2I
+            area: "599"
           - room_number: 10
             title: N2J
             isAvailable: false
             description: This is room N2J
+            area: "599"
           - room_number: 11
             title: N2K
             isAvailable: false
             description: This is room N2K
+            area: "599"
           - room_number: 12
             title: N2L
             isAvailable: false
             description: This is room N2L
+            area: "599"
       south:
         isAvailable: true
         fullWing: true

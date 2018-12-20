@@ -52,6 +52,8 @@
           <div class="d-flex flex-column position-relative">
             {% if floor.rooms.south.fullWing == true and floor.rooms.north.fullWing == true %}
               {% include Lighthouse_Building_Rooms_Both_Wing_Empty.html %}
+            {% elsif floor.floor == 2 %}
+              {% include Lighthouse_Building_Rooms_Floor2.html %}
             {% elsif floor.rooms.south.fullWing == true %}
               {% include Lighthouse_Building_Rooms_South_Wing_Empty.html %}
             {% else %}
@@ -157,7 +159,7 @@
                   <div class="row col w-100 m-0 p-0">
                     <div class="row w-100 m-0">
                       {% for room in floor.rooms.north.top %}
-                        <li class="nav-item floorplan__room">
+                        <li class="nav-item {% if forloop.length == 1 %}w-100 floorplan__wing {% else %}floorplan__room {% endif %}">
                           <a
                           class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}"
                           id="{{ floor.floor }}-{{ room.room_number }}"
