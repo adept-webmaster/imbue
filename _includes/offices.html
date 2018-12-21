@@ -258,7 +258,9 @@
                   <div class="col-lg-4 font-weight-bold text-uppercase">
                     <span>Ref: <span class="text-primary">{{ room.title }}</span></span>
                     <br>
-                    <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                    {% if room.area %}
+                      <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                    {% endif %}
                   </div>
                   <div class="col-lg text-lg-right font-weight-bold text-uppercase">
                     <span>Contact: <a href="tel:{{ site.phone | remove: ' ' }}" class="text-primary">{{ site.phone }}</a></span>
@@ -289,8 +291,10 @@
                   <div class="col-lg-4 font-weight-bold text-uppercase">
                     <span>Ref: <span class="text-primary">{{ room.title }}</span></span>
                     <br>
-                    <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
-                  </div>
+                    {% if room.area %}
+                      <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                    {% endif %}
+                    </div>
                   <div class="col-lg text-lg-right font-weight-bold text-uppercase">
                     <span>Contact: <a href="tel:{{ site.phone | remove: ' ' }}" class="text-primary">{{ site.phone }}</a></span>
                     <br>
@@ -330,7 +334,9 @@
                 <div class="col-lg-4 font-weight-bold text-uppercase">
                   <span>Ref: <span class="text-primary">{{ room.title }}</span></span>
                   <br>
-                  <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                  {% if room.area %}
+                    <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                  {% endif %}
                 </div>
                 <div class="col-lg text-lg-right font-weight-bold text-uppercase">
                   <span>Contact: <a href="tel:{{ site.phone | remove: ' ' }}" class="text-primary">{{ site.phone }}</a></span>
@@ -373,7 +379,9 @@
                 <div class="col-lg-4 font-weight-bold text-uppercase">
                   <span>Ref: <span class="text-primary">{{ room.title }}</span></span>
                   <br>
-                  <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                  {% if room.area %}
+                    <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                  {% endif %}
                 </div>
                 <div class="col-lg text-lg-right font-weight-bold text-uppercase">
                   <span>Contact: <a href="tel:{{ site.phone | remove: ' ' }}" class="text-primary">{{ site.phone }}</a></span>
@@ -404,7 +412,9 @@
                   <div class="col-lg-4 font-weight-bold text-uppercase">
                     <span>Ref: <span class="text-primary">{{ room.title }}</span></span>
                     <br>
-                    <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                    {% if room.area %}
+                      <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                    {% endif %}
                   </div>
                   <div class="col-lg text-lg-right font-weight-bold text-uppercase">
                     <span>Contact: <a href="tel:{{ site.phone | remove: ' ' }}" class="text-primary">{{ site.phone }}</a></span>
@@ -445,7 +455,9 @@
                   <div class="col-lg-4 font-weight-bold text-uppercase">
                     <span>Ref: <span class="text-primary">{{ room.title }}</span></span>
                     <br>
-                    <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span></span>
+                    {% if room.area %}
+                      <span>Area: <span class="text-primary text-lowercase">{{ room.area }} sqft</span>
+                    {% endif %}
                   </div>
                   <div class="col-lg text-lg-right font-weight-bold text-uppercase">
                     <span>Contact: <a href="tel:{{ site.phone | remove: ' ' }}" class="text-primary">{{ site.phone }}</a></span>
