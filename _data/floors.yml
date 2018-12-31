@@ -1,15 +1,17 @@
 floors:
   - floor: 1
     isAvailable: false
+    totalSpace: 23312
+    availableSpace: 0
     rooms:
         south:
           title: South Wing
           room_number: 13
           fullWing: true
           isAvailable: false
-          description: |
-            The First Floor can be separated into 2 units.
-            Equalling 323.15sq.m (3,500sq.ft), the first floor benefits from a communal kitchen area and WC facilities.
+          #description: |
+            #The First Floor can be separated into 2 units.
+            #Equalling 323.15sq.m (3,500sq.ft), the first floor benefits from a communal kitchen area and WC facilities.
         north:
           top:
             - room_number: 1
@@ -76,13 +78,15 @@ floors:
 
   - floor: 2
     isAvailable: true
+    totalSpace: 22248
+    availableSpace: 18850
     rooms:
       north:
         top:
           - room_number: 1
             title: North Wing Back
             isAvailable: true
-            description: The back of floor 2's north wing is currently available for lease.
+            description: Spacious enough to create a successful working environment, the North Wing of Imbue has the option to be split into 2 separate suites.
         bottom:
           - room_number: 7
             title: N2G
@@ -121,20 +125,19 @@ floors:
         description: |
           Perfect for any business, regardless of its experience and revenue, the whole Left Wing of the second floor is currently available. Equalling 1,065sq.m (11,467sq.ft), the following terms are available:
           <ul><li>1 year lease at £10.75 per sq. foot</li><li>2 years lease at £9.25 per sq. foot</li><li>3 years lease at £8.75 per sq. foot</li><li>5 years lease at £8.25 per sq. foot</li></ul>
-          Spacious enough to create a successful working environment, the South Wing of Imbue has the option to be split into 2 separate suites.
 
   - floor: 3
     isAvailable: false
+    totalSpace: 23312
+    availableSpace: 0
     rooms:
       north:
         fullWing: true
         isAvailable: false
-        title: North Wing
-        description: The North Wing is currently occupied by Andrew James UK.
+        description: This floor is currently occupied by Andrew James UK.
         room_number: 2
       south:
         fullWing: true
         isAvailable: false
-        title: South Wing
-        description: The South Wing is currently occupied by Andrew James UK.
+        description: This floor is currently occupied by Andrew James UK.
         room_number: 1
