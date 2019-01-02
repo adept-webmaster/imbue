@@ -17,7 +17,7 @@ markdown: kramdown
 phone: "0191 389 7062"
 email: "info@imbueoffices.co.uk"
 img_dir: "/uploads/"
-linkedin: https://www.linkedin.com/
+linkedin: https://www.linkedin.com/company/imbue-offices/
 exclude:
   - vendor
 sass:
