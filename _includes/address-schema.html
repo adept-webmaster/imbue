@@ -1,0 +1,17 @@
+<div vocab="http://schema.org/" typeof="Organization">
+  <span property="name" class="font-weight-bold">Imbue</span>
+  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="text-muted">
+    <span itemprop="streetAddress">
+    Floor 3 <br />
+    2 Lighthouse View <br />
+    Spectrum Business Park 
+    </span>
+    <br />
+    <span itemprop="addressLocality">Seaham</span>,
+    <span itemprop="addressRegion">County Durham</span><br />
+    <span itemprop="postalCode">SR7 7PR</span>
+  </div>
+  <span property="telephone"><a href="tel:{{ site.phone | remove: ' ' }}">{{ site.phone }}</a></span>
+  <br />
+  <span property="email"><a href="mailto:{{ site.email }}">info(at)imbueoffices.co.uk</a></span>
+</div>

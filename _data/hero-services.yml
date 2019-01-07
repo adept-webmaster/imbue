@@ -1,6 +1,6 @@
 - title: Office Space
   content: |
-    We offer modern office spaces of up to 1000sqft, these are
+    We offer modern office spaces of up to 2000sqft, these are
     available to rent and are designed for your company to thrive.
   image: icon-chair.svg
   alt: Desk Chair Icon
@@ -11,7 +11,7 @@
     business endeavours.
   image: icon-door.svg
   alt: Door Icon
-  link: /office-space
+  link: /about
 - title: Virtual Office
   content: |
     If you require a business postal address, Imbue offers virtual office space

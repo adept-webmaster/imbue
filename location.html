@@ -6,6 +6,8 @@ layout: static-page
 show: true
 ---
 
+{% include office-space-floating-widget.html %}
+
 {% include hero.html
   bg_image="board-room-2.jpg"
   bg_position="center"
@@ -19,7 +21,7 @@ show: true
 <div class="container-fluid">
   <div class="row py-0 py-md-2">
     <div class="col-lg px-0 px-lg-1">
-      <div class="w-100 position-relative amenities-image-container">
+      <div class="w-100 h-100 position-relative amenities-image-container">
         {% include image.html name="Front-Reception.jpg" alt="Front Reception" class="img-fluid img-cover w-100 h-100" %}
         <noscript>
           {% include noscript-image.html name="Front-Reception.jpg" alt="Front Reception" class="img-fluid img-cover w-100 h-100" %}
@@ -28,9 +30,11 @@ show: true
         d-flex flex-column justify-content-center
         position-absolute h-100 w-100 text-light px-xl-4 px-3 py-5">
           <h3>Transport Links</h3>
-          <p class="lead font-weight-light">Imbue also has great public transport links; a bus stop is located within the business park and Seaham train station is a mile away. Forming part of the regional network, services to Durham, Middlesbrough and Newcastle are available and, in turn, links to all major cities can be made, including Edinburgh, Leeds, Manchester, Birmingham and London King’s Cross.</p>
+          <p class="font-weight-light">Imbue also has great public transport links; a bus stop is located within the business park and Seaham train station is a mile away. Forming part of the regional network, services to Durham, Middlesbrough and Newcastle are available and, in turn, links to all major cities can be made, including Edinburgh, Leeds, Manchester, Birmingham and London King’s Cross.</p>
 
-          <p class="lead font-weight-light m-0">Imbue is also situated between two international airports, with Durham Tees Valley Airport located to the south and Newcastle International Airport is approximately 30 minutes away to the north.</p>
+          <p class="font-weight-light m-0">Imbue is also situated between two international airports, with Durham Tees Valley Airport located to the south and Newcastle International Airport is approximately 30 minutes away to the north.</p>
+
+          <a class="h4 mt-2 text-primary" href="{{ '/area' | absolute_url }}" title="What's in the area?">What&apos;s in the area? &gt;</a>
         </div>
       </div>
     </div>

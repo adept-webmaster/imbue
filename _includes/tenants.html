@@ -15,20 +15,28 @@
 
           {% capture tenant_logo %}{{ tenant.logo }}{% endcapture %}
           {% capture tenant_title %}{{ tenant.title }}{% endcapture %}
-          <div class="tenant-grid__item w-20 d-flex flex-wrap justify-content-center align-items-center py-md-0 py-4 come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %} js">
+          <a 
+          href="{{ tenant.link }}" 
+          title="{{ tenant.title }}'s Website" 
+          target="_blank" 
+          rel="noreferrer" 
+          class="tenant-grid__item w-20 d-flex flex-wrap justify-content-center align-items-center py-md-0 py-4 come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %} js">
             {% if tenant_title == 'House of Mooshki' %}
               {% include image.html name=tenant_logo alt=tenant_title class="img-fluid tenant-mooshki" %}
             {% else %}
             {% include image.html name=tenant_logo alt=tenant_title class="img-fluid" %}
             {% endif %}
-          </div>
+          </a>
         {% endfor %}
 
         <noscript class="row">
           {% for tenant in tenants %}
             {% capture tenant_logo %}{{ tenant.logo }}{% endcapture %}
             {% capture tenant_title %}{{ tenant.title }}{% endcapture %}
-            <div class="tenant-grid__item w-20 d-flex flex-wrap justify-content-center align-items-center py-md-0 py-4">
+            <a href="{{ tenant.link }}" 
+            rel="noreferrer" 
+            title="{{ tenant.title }}'s Website" 
+            class="tenant-grid__item w-20 d-flex flex-wrap justify-content-center align-items-center py-md-0 py-4">
               {% if tenant_title == 'House of Mooshki' %}
                 {% include noscript-image.html name=tenant_logo alt=tenant_title class="img-fluid tenant-mooshki" %}
               {% else %}

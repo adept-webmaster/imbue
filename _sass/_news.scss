@@ -17,4 +17,34 @@
     border-width: 7px;
     border-style: solid;
   }
+
+  .news-grid-post-title {
+
+    top: -48px;
+    transition: top .1s ease;
+
+    h2 {
+      bottom: 0;
+      margin-top: 15px;
+    }
+
+    span {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.news-grid-post-item {
+  overflow: hidden;
+
+  @include media-breakpoint-down(sm) {
+    height: 300px;
+  }
+
+  &:hover .news-grid-post-title {
+    top: -75px;
+  }
 }

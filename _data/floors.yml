@@ -9,9 +9,8 @@ floors:
           room_number: 13
           fullWing: true
           isAvailable: false
-          #description: |
-            #The First Floor can be separated into 2 units.
-            #Equalling 323.15sq.m (3,500sq.ft), the first floor benefits from a communal kitchen area and WC facilities.
+          description: |
+            This is the south wing of floor 1.
         north:
           top:
             - room_number: 1

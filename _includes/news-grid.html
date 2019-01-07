@@ -6,8 +6,8 @@
 {% if post.top_story == true %}col-lg
 {% elsif forloop.index < 6 %}col-md-6
 {% else %} col-md-6 col-lg-3 {% endif %}
-d-flex p-0">
-  <div class="
+d-flex px-0 pt-0 mb-1">
+  <div class="news-grid-post-item
   {% if forloop.index < 6 %}come-in come-in-view{% else %}come-in-view{% endif %} come-in-up p-1 w-100">
     <div class="h-100 w-100 position-relative news-image-container">
       {% include image.html name=picture_image alt=picture_alt class=picture_class %}
@@ -24,12 +24,14 @@ d-flex p-0">
       d-flex align-items-center
       border-primary bg-dark text-light">Top Story</p>
     {% endif %}
-    <h2 class="h5
-    d-flex
-    {% if post.top_story == true %}justify-content-end{% else %}justify-content-center{% endif %}
-    align-items-center w-100 bg-dark text-light border-top
-    position-relative px-3">
-      {{ post.title }}
-    </h2>
+
+    <div class="news-grid-post-title w-100 px-3 bg-dark text-light border-top position-relative 
+    d-flex justify-content-center flex-column
+    {% if post.top_story == true %}align-items-end{% else %}align-items-center{% endif %}">
+      <h2 class="h5 position-relative">
+        {{ post.title }}
+      </h2>
+      <span class="pb-2 {% if post.top_story %}text-right {% else %}text-center {% endif %}">{{ post.content | strip_html | truncatewords: 10 }}</span>
+    </div>
   </div>
 </a>

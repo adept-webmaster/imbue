@@ -1,42 +1,41 @@
 ---
 ---
 
-@charset "utf-8";
+@charset 'utf-8';
 
 //Important, this import must go here
 @import
-  "vendor/bootstrap/bootstrap/functions",
-  "vendor/bootstrap/bootstrap/variables",
-  "vendor/bootstrap/bootstrap/mixins";
+  'vendor/bootstrap/bootstrap/functions',
+  'vendor/bootstrap/bootstrap/variables',
+  'vendor/bootstrap/bootstrap/mixins';
 
 //animate
 @import
-  "vendor/animate/_properties";
+  'vendor/animate/_properties';
 
 @import
-  "vendor/animate/_fading-entrances/fading-entrances";
+  'vendor/animate/_fading-entrances/fading-entrances';
 
 @import
-  "variables",
-  "typography",
-  "images",
-  "forms",
-  "base";
+  'variables',
+  'typography',
+  'images',
+  'forms',
+  'base';
 
 /*===== COMPONENTS =====*/
 @import
-  "navbar",
-  "carousel",
-  "pictures",
-  "jumbotron",
-  "tenants",
-  "footer",
-  "amenities",
-  "news",
-  "services",
-  "modal",
-  "cookie-banner",
-  "floorplan";
+  'navbar',
+  'carousel',
+  'pictures',
+  'jumbotron',
+  'tenants',
+  'footer',
+  'amenities',
+  'news',
+  'services',
+  'widgets',
+  'floorplan';
 //End custom imports
 
 /*===== VENDOR STUFF =====*/
@@ -44,43 +43,48 @@
 overrides*/
 //Hamburgers
 @import
-  "vendor/hamburgers/hamburgers",
-  "vendor/hamburgers/base";
+  'vendor/hamburgers/hamburgers',
+  'vendor/hamburgers/base';
 
 //FontAwesome
 @import
-  "vendor/fontawesome/variables",
-  "vendor/fontawesome/path",
-  "vendor/fontawesome/core",
-  "vendor/fontawesome/larger",
-  "vendor/fontawesome/mixins";
+  'vendor/fontawesome/variables',
+  'vendor/fontawesome/path',
+  'vendor/fontawesome/core',
+  'vendor/fontawesome/larger',
+  'vendor/fontawesome/mixins';
 
 @import
-  "vendor/fontawesome/icons";
+  'vendor/fontawesome/icons';
 
 //Floating labels
 @import
-  "vendor/floating-labels/bootstrap-float-label";
+  'vendor/floating-labels/bootstrap-float-label';
 
 @import
-  "vendor/bootstrap/bootstrap/root",
-  "vendor/bootstrap/bootstrap/reboot",
-  "vendor/bootstrap/bootstrap/type",
-  "vendor/bootstrap/bootstrap/images",
-  "vendor/bootstrap/bootstrap/grid",
-  "vendor/bootstrap/bootstrap/buttons",
-  "vendor/bootstrap/bootstrap/close",
-  "vendor/bootstrap/bootstrap/transitions",
-  "vendor/bootstrap/bootstrap/dropdown",
-  "vendor/bootstrap/bootstrap/modal",
-  "vendor/bootstrap/bootstrap/popover",
-  "vendor/bootstrap/bootstrap/nav",
-  "vendor/bootstrap/bootstrap/navbar",
-  "vendor/bootstrap/bootstrap/jumbotron",
-  "vendor/bootstrap/bootstrap/carousel",
-  "vendor/bootstrap/bootstrap/utilities",
-  "vendor/bootstrap/bootstrap/print",
-  "vendor/bootstrap/bootstrap/forms";
+  'vendor/bootstrap/bootstrap/root',
+  'vendor/bootstrap/bootstrap/reboot',
+  'vendor/bootstrap/bootstrap/type',
+  'vendor/bootstrap/bootstrap/images',
+  'vendor/bootstrap/bootstrap/grid',
+  'vendor/bootstrap/bootstrap/buttons',
+  'vendor/bootstrap/bootstrap/close',
+  'vendor/bootstrap/bootstrap/transitions',
+  'vendor/bootstrap/bootstrap/dropdown',
+  'vendor/bootstrap/bootstrap/modal',
+  'vendor/bootstrap/bootstrap/popover',
+  'vendor/bootstrap/bootstrap/nav',
+  'vendor/bootstrap/bootstrap/navbar',
+  'vendor/bootstrap/bootstrap/jumbotron',
+  'vendor/bootstrap/bootstrap/carousel',
+  'vendor/bootstrap/bootstrap/utilities',
+  'vendor/bootstrap/bootstrap/print',
+  'vendor/bootstrap/bootstrap/forms';
 //End vendor
 
-//@import "vendor/bootstrap/bootstrap";
+//@import 'vendor/bootstrap/bootstrap';
+
+// this needs to be here to override text-muted variable
+.text-muted {
+  color: map-get($theme-colors, 'muted') !important;
+}

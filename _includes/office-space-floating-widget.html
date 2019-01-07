@@ -1,0 +1,15 @@
+<div class="d-none d-md-block text-light position-fixed office-space-widget js">
+  {% include noscript-image.html name="Contact-symbol.png" class="border border-border rounded-circle bg-dark img-fluid p-2 h-100" id="OfficeSpaceWidgetClickArea" %}
+  <div class="h-100 d-flex flex-column justify-content-center bg-dark position-absolute text-center office-space-widget-phone">
+      <span><a class="text-light" href="tel:{{ site.phone | remove: ' ' }}">{{ site.phone }}</a></span>
+      <span><a class="text-light" href="mailto:{{ site.email }}">{{ site.email }}</a></span>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    $("#OfficeSpaceWidgetClickArea").click(function() {
+      $(".office-space-widget-phone").toggleClass("show");
+    });
+  });
+</script>

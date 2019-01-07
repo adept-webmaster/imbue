@@ -1,13 +1,9 @@
 window.lazySizesConfig = window.lazySizesConfig || {};
 
-lazySizesConfig.expand = 300;
+lazySizesConfig.expand = 500;
 
 //page is optimized for fast onload event
 lazySizesConfig.loadMode = 1;
-
-jQuery(document).ready(function($) {
-
-});
 
 (function ($) {
     /**
@@ -21,26 +17,26 @@ jQuery(document).ready(function($) {
     *     only accounts for vertical position, not horizontal.
     */
 
-   $.fn.visible = function(partial) {
+    $.fn.visible = function(partial) {
 
-       var $t            = $(this),
-           $w            = $(window),
-           viewTop       = $w.scrollTop(),
-           viewBottom    = viewTop + $w.height(),
-           _top          = $t.offset().top,
-           _bottom       = _top + $t.height(),
-           compareTop    = partial === true ? _bottom : _top,
-           compareBottom = partial === true ? _top : _bottom;
+        var $t            = $(this),
+            $w            = $(window),
+            viewTop       = $w.scrollTop(),
+            viewBottom    = viewTop + $w.height(),
+            _top          = $t.offset().top,
+            _bottom       = _top + $t.height(),
+            compareTop    = partial === true ? _bottom : _top,
+            compareBottom = partial === true ? _top : _bottom;
 
-     return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-   };
+      return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+    };
 
-  // init object fit CSS polyfill
-   objectFitImages();
+    // init object fit CSS polyfill
+    objectFitImages();
 
-   $('.floorplan__room a, .floorplan__wing a').popover({
-     trigger: "hover"
-   });
+    $('.floorplan__room a, .floorplan__wing a').popover({
+      trigger: "hover"
+    });
 
   var win = $(window);
   var allMods = $(".come-in-view");

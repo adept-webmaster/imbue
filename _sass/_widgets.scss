@@ -1,0 +1,109 @@
+.mobile-phone-widget {
+  bottom: 15px;
+  right: 15px;
+
+  z-index: 2000;
+
+  min-width: 72px;
+  min-height: 72px;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.office-space-widget {
+
+  & > img {
+    cursor: pointer;
+  }
+  
+  min-height: 72px;
+  min-width: 72px;
+  right: 15px;
+  top: 100px;
+  z-index: 2000;
+
+  height: 72px;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .office-space-widget-phone {
+
+    & span {
+      transition: 0.4s all linear;
+      opacity: 0;
+      white-space: nowrap;
+    }
+
+    top: 0;
+    right: 36px;
+
+    transition: 0.4s all ease-in-out;
+
+    z-index: -1;
+
+    width: 0;
+
+    border-radius: 50px 0 0 50px;
+
+    visibility: hidden;
+    overflow: hidden;
+
+    &.show span {
+      opacity: 1;
+    }
+
+    &.show {
+      opacity: 1;
+      width: 300px;
+      visibility: visible;
+      overflow: initial;
+    }
+  }
+}
+
+.cookie-banner {
+  &.appear {
+    -webkit-animation: appear 1s ease;
+    -moz-animation:    appear 1s ease;
+    -o-animation:      appear 1s ease;
+    animation:         appear 1s ease;
+  }
+
+  &.disappear {
+    transform: translateY(200px);
+    transition: transform 1s ease;
+  }
+}
+
+.modal-header {
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.modal-body {
+  a:hover {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes appear {
+  0%   { transform: translateY(200px); }
+  100% { transform: translateY(0); }
+}
+@-moz-keyframes appear {
+  0%   { transform: translateY(200px); }
+  100% { transform: translateY(0); }
+}
+@-o-keyframes appear {
+  0%   { transform: translateY(200px); }
+  100% { transform: translateY(0); }
+}
+@keyframes appear {
+  0%   { transform: translateY(200px); }
+  100% { transform: translateY(0); }
+}

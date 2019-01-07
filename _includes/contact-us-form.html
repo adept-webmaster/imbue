@@ -1,7 +1,11 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-lg-8 pt-3 mx-auto">
-      <p class="h4 font-weight-normal mb-5">Call us on <a href="tel:{{ site.phone }}">{{ site.phone }}</a> or use the contact form below to get in touch.</p>
+<div class="container-fluid py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-5 mx-lg-1 embed-responsive embed-responsive-16by9 js">
+      <iframe class="embed-responsive-item" src="https://snazzymaps.com/embed/96671" style="border:none;"></iframe>
+    </div>
+
+    <div class="col-lg-5 pt-3">
+      <p class="h4 font-weight-normal mb-5">Call us on <a href="tel:{{ site.phone | remove: ' ' }}">{{ site.phone }}</a> or use the contact form below to get in touch.</p>
       <h3 class="font-weight-bold">Contact Us Form</h3>
       <form action="https://formspree.io/info@imbueoffices.co.uk" method="POST">
         <div class="form-row">
@@ -30,23 +34,36 @@
               aria-describedby="phoneHelpBlock"
               >
               <span>Phone</span>
-              <small id="phoneHelpBlock" class="form-text text-muted">
-                If you would like us to contact you via phone, please input your phone number above, including the area code.
-              </small>
             </label>
           </div>
         </div>
 
-        <label class="form-group has-float-label">
-          <input type="email"
-          placeholder="Email address"
-          name="email"
-          id="email"
-          class="form-control form-control-lg rounded-0"
-          autocomplete="email"
-          >
-          <span>Email address</span>
-        </label>
+        <div class="form-row">
+          <div class="col-lg">
+            <label class="form-group has-float-label">
+              <input type="email"
+              placeholder="Email address"
+              name="email"
+              id="email"
+              class="form-control form-control-lg rounded-0"
+              autocomplete="email"
+              >
+              <span>Email address</span>
+            </label>
+          </div>
+
+          <div class="col-lg">
+            <label class="form-group has-float-label">
+              <input type="text"
+              placeholder="Company"
+              name="company"
+              id="company"
+              class="form-control form-control-lg rounded-0"
+              >
+              <span>Company</span>
+            </label>
+          </div>
+        </div>
 
         <label class="form-group has-float-label">
           <textarea class="form-control form-control-lg rounded-0" placeholder="Your message" name="message" id="message" rows="3"></textarea>
@@ -57,7 +74,7 @@
         <span class="mt-3 d-block">Please be aware that your details will be sent through Formspree, which
         is a service used by us to send enquiries through to the correct people.
         <a href="http://docs.formspree.io/files/privacy.pdf" target="_blank">Please view their privacy policy by clicking here for more information.</a></span>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </div>

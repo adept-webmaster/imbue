@@ -1,6 +1,6 @@
-h2.position-relative {
+.news-grid-post-title {
   bottom: 50px;
-  height: 50px;
+  min-height: 50px;
   margin-bottom: -50px;
 }
 
@@ -10,8 +10,10 @@ h2.position-relative {
     opacity: 0;
     background-color: rgba(theme-color("dark"), 0.8);
     transition: opacity .3s ease;
-    font-size: 0.85rem;
-
+    @include media-breakpoint-down(md) {
+      font-size: .8rem;
+    }
+    
     &.location-graphic {
       opacity: 1;
     }
