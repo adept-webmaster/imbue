@@ -381,11 +381,9 @@
           {% assign room = floor.rooms.north %}
           <div class="col-12 row m-0 px-1 w-100 tab-pane room-tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
               <div class="col-lg-5 p-0">
-                  {% if room.image %}
+                {% if room.image %}
                   {% assign room_img = room.image %}
                   {% include image.html name=room_img class="h-100 img-fluid img-cover" %}
-                {% elsif floor.floor == 3 %}
-                  {% include image.html name="office-floor-3.jpg" class="h-100 img-fluid img-cover" %}
                 {% else %}
                   {% include image.html name="redu-office.jpg" class="h-100 img-fluid img-cover" %}
                 {% endif %}

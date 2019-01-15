@@ -118,11 +118,12 @@ img.lazyloading {
 
 .come-in-view {
   opacity: 0 !important;
-  backface-visibility: hidden;
 }
 
 .come-in {
   opacity: 1 !important;
+  visibility: visible;
+  backface-visibility: hidden;
 }
 
 .come-in-view.come-in-left.come-in .lazyloaded, .come-in-view.come-in-left.come-in.lazyloaded {
