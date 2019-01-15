@@ -3,6 +3,19 @@
     h1, .h1 {
       text-transform: none;
     }
+
+    @include media-breakpoint-up(md) {
+      &.lazyloaded {
+        .jumbotron--content-box:first-of-type, .hero-contact-slither {
+          @include fadeInLeft(
+            $function: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+            $duration: .8s
+          );
+        }
+      }
+    }
+
+
     &.static-page-hero {
       .jumbotron--content-box {
         @include media-breakpoint-up(sm) {

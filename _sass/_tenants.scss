@@ -6,6 +6,13 @@
 .tenant-grid__item {
   height: 160px;
   padding: 0 20px;
+
+  &:hover {
+    animation: bounce 0.4s ease-in;
+    -webkit-animation: bounce 0.4s ease-in;
+    animation-delay: 0s !important;
+    -webkit-animation-delay: 0s !important;
+  }
 }
 
 .tenant-mooshki {
@@ -18,5 +25,40 @@
 
   &.theo img, &.emily img {
     right: 10px;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(0px);
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(0px);
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }

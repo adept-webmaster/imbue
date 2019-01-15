@@ -1,3 +1,5 @@
+{% assign modal_img = "Imbue_space-available.jpg" %}
+
 <div class="modal fade" id="timeBasedPopup" tabindex="-1" role="dialog" aria-labelledby="timeBasedPopupLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -8,17 +10,24 @@
       </div>
       <div class="modal-body p-0">
         <a href="{{ '/office-space' | absolute_url }}">
-          {% include image.html name="Imbue_space-available.jpg" class="img-fluid" %}
+          {% include image.html name=modal_img class="img-fluid" %}
         </a>
       </div>
     </div>
   </div>
 </div>
+
 <script>
   window.addEventListener('DOMContentLoaded', function() {
     // if there is no modal_shown cookie then display modal popup after 5 secs
     // this cookie expires in half a day if it does not already exist
     if (Cookies.get('modal_shown') == null) {
+      var preloadTag = document.createElement("link");
+      preloadTag.rel = "preload";
+      preloadTag.href = "{{ site.img_dir | absolute_url }}{{ modal_img }}";
+      preloadTag.as = "image";
+
+      document.getElementsByTagName('head')[0].appendChild(preloadTag);
       var inHalfADay = 0.5;
       setTimeout(function() {
         Cookies.set('modal_shown', 'yes', { expires: inHalfADay, path: '/' });

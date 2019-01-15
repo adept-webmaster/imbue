@@ -1,6 +1,6 @@
 window.lazySizesConfig = window.lazySizesConfig || {};
 
-lazySizesConfig.expand = 500;
+lazySizesConfig.expand = 0;
 
 //page is optimized for fast onload event
 lazySizesConfig.loadMode = 1;
@@ -49,12 +49,20 @@ lazySizesConfig.loadMode = 1;
   });
 
   win.on('scroll', function() {
-    allMods.each(function() {
+    handleScrolledIntoView(allMods);
+  });
+
+  win.ready(function() {
+    handleScrolledIntoView(allMods);
+  })
+
+  function handleScrolledIntoView(elems) {
+    elems.each(function() {
       if (isScrolledIntoView($(this))) {
         $(this).addClass("come-in");
       }
     });
-  });
+  }
 
   function isScrolledIntoView(elem) {
     var docViewTop = win.scrollTop();
@@ -63,7 +71,7 @@ lazySizesConfig.loadMode = 1;
     var elemTop = $(elem).offset().top;
     var elemBottom = elemTop + $(elem).height();
     
-    return ((elemBottom <= docViewBottom + 500) && (elemTop >= docViewTop - 500));
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
   }
   
   $('.hamburger').click(function() {

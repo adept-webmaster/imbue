@@ -3,18 +3,18 @@
     <div class="row px-2">
       <ul class="nav nav-tabs border-primary align-items-end pt-5 col-md-5" id="floorplanTab" role="tablist">
         {% for floor in site.data.floors.floors %}
-        <li class="nav-item">
-          <a
-          class="nav-link floor-tabs border-0 font-weight-bold text-dark {% if forloop.index == 2 %}active{% endif %}"
-          id="floor-{{ floor.floor }}-tab"
-          data-toggle="tab"
-          href="#Floor-{{ floor.floor }}"
-          role="tab"
-          aria-controls="Floor {{ floor.floor }}"
-          aria-selected="{% if forloop.index == 2 %}true{% else %}false{% endif %}">
-            Floor {{ floor.floor }}
-          </a>
-        </li>
+          <li class="nav-item">
+            <a
+            class="nav-link floor-tabs border-0 font-weight-bold text-dark {% if forloop.index == 2 %}active{% endif %}"
+            id="floor-{{ floor.floor }}-tab"
+            data-toggle="tab"
+            href="#Floor-{{ floor.floor }}"
+            role="tab"
+            aria-controls="Floor {{ floor.floor }}"
+            aria-selected="{% if forloop.index == 2 %}true{% else %}false{% endif %}">
+              Floor {{ floor.floor }}
+            </a>
+          </li>
         {% endfor %}
       </ul>
 
@@ -54,6 +54,8 @@
               {% include Lighthouse_Building_Rooms_Both_Wing_Empty.html %}
             {% elsif floor.floor == 2 %}
               {% include Lighthouse_Building_Rooms_Floor2.html %}
+            {% elsif floor.floor == 3 %}
+              {% include Lighthouse_Building_Rooms_Floor3.html %}
             {% elsif floor.rooms.south.fullWing == true %}
               {% include Lighthouse_Building_Rooms_South_Wing_Empty.html %}
             {% else %}
@@ -90,13 +92,13 @@
                       {% for room in floor.rooms.south.top %}
                         <li class="nav-item floorplan__room">
                           <a
-                          class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}{% if forloop.index == 2 %}active{% endif %}"
+                          class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}{% if forloop.first %}active{% endif %}"
                           id="{{ floor.floor }}-{{ room.room_number }}"
                           data-toggle="tab"
                           href="#content-{{ floor.floor }}-{{ room.room_number }}"
                           role="tab"
                           aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
-                          aria-selected="{% if forloop.index == 2 %}true{% else %}false{% endif %}"
+                          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
                           title="{{ room.title }}"
                           data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
                           data-placement="top">
@@ -171,7 +173,7 @@
                           title="{{ room.title }}"
                           data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
                           data-placement="top">
-                          <span class="floorplan__room--label text-center text-light position-absolute">{{ room.title }}</span>
+                          <span class="{% if forloop.length == 1 %}floorplan__wing--label {% else %}floorplan__room--label {% endif %} text-center text-light position-absolute">{{ room.title }}</span>
                           </a>
                         </li>
                       {% endfor %}
@@ -252,7 +254,14 @@
             {% assign room = floor.rooms.south %}
             <div class="col-12 row m-0 px-1 w-100 tab-pane room-tab-pane show active" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
                 <div class="col-lg-5 p-0">
-                  {% include image.html name="redu-office.jpg" class="h-100 img-fluid img-cover" %}
+                  {% if room.image %}
+                    {% assign room_img = room.image %}
+                    {% include image.html name=room_img class="h-100 img-fluid img-cover" %}
+                  {% elsif floor.floor == 3 %}
+                    {% include image.html name="office-floor-3.jpg" class="h-100 img-fluid img-cover" %}
+                  {% else %}
+                    {% include image.html name="redu-office.jpg" class="h-100 img-fluid img-cover" %}
+                  {% endif %}
                 </div>
                 <div class="col row m-0 w-100 text-label bg-dark p-5">
                   <div class="col-lg-4 font-weight-bold text-uppercase">
@@ -284,9 +293,16 @@
               </div>
           {% else %}
             {% for room in floor.rooms.south.top %}
-              <div class="col-12 row m-0 px-1 w-100 tab-pane room-tab-pane {% if forloop.index == 2 %}show active{% endif %}" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
+              <div class="col-12 row m-0 px-1 w-100 tab-pane room-tab-pane {% if forloop.first %}show active{% endif %}" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
                 <div class="col-lg-5 p-0">
-                  {% include image.html name="redu-office.jpg" class="h-100 img-fluid img-cover" %}
+                  {% if room.image %}
+                    {% assign room_img = room.image %}
+                    {% include image.html name=room_img class="h-100 img-fluid img-cover" %}
+                  {% elsif floor.floor == 3 %}
+                    {% include image.html name="office-floor-3.jpg" class="h-100 img-fluid img-cover" %}
+                  {% else %}
+                    {% include image.html name="redu-office.jpg" class="h-100 img-fluid img-cover" %}
+                  {% endif %}
                 </div>
                 <div class="col row m-0 w-100 text-label bg-dark p-5">
                   <div class="col-lg-4 font-weight-bold text-uppercase">
@@ -304,16 +320,7 @@
 
                   <div class="row w-100">
                     <div class="col p-4">
-                      <p>{{ room.description }}</p>
-                      Imbue's facilities include:
-                      <ul>
-                        <li>Onsite Parking Available</li>
-                        <li>CCTV in Operation</li>
-                        <li>Reception</li>
-                        <li>Fully Adjustable Air Conditioning</li>
-                        <li>Meetings and Boardrooms Available</li>
-                        <li>LED Lighting System</li>
-                      </ul>
+                      <p>{{ room.description | markdownify }}</p>
                       <a href="{{ '/contact' | absolute_url }}" class="btn btn-primary" role="button">Contact Us</a>
                     </div>
                   </div>
@@ -330,7 +337,14 @@
           {% for room in floor.rooms.south.bottom %}
             <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
               <div class="col-lg-5 p-0">
-                {% include image.html name="redu-office.jpg" class="h-100 img-fluid img-cover" %}
+                {% if room.image %}
+                  {% assign room_img = room.image %}
+                  {% include image.html name=room_img class="h-100 img-fluid img-cover" %}
+                {% elsif floor.floor == 3 %}
+                  {% include image.html name="office-floor-3.jpg" class="h-100 img-fluid img-cover" %}
+                {% else %}
+                  {% include image.html name="redu-office.jpg" class="h-100 img-fluid img-cover" %}
+                {% endif %}
               </div>
               <div class="col row m-0 w-100 text-label bg-dark p-5">
                 <div class="col-lg-4 font-weight-bold text-uppercase">
@@ -348,16 +362,7 @@
 
                 <div class="row w-100">
                   <div class="col p-4">
-                    <p>{{ room.description }}</p>
-                    Imbue's facilities include:
-                      <ul>
-                        <li>Onsite Parking Available</li>
-                        <li>CCTV in Operation</li>
-                        <li>Reception</li>
-                        <li>Fully Adjustable Air Conditioning</li>
-                        <li>Meetings and Boardrooms Available</li>
-                        <li>LED Lighting System</li>
-                      </ul>
+                    <p>{{ room.description | markdownify }}</p>
                       <a href="{{ '/contact' | absolute_url }}" class="btn btn-primary" role="button">Contact Us</a>
                   </div>
                 </div>
@@ -376,7 +381,14 @@
           {% assign room = floor.rooms.north %}
           <div class="col-12 row m-0 px-1 w-100 tab-pane room-tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
               <div class="col-lg-5 p-0">
-                {% include image.html name="redu-office.jpg" class="h-100 img-fluid img-cover" %}
+                  {% if room.image %}
+                  {% assign room_img = room.image %}
+                  {% include image.html name=room_img class="h-100 img-fluid img-cover" %}
+                {% elsif floor.floor == 3 %}
+                  {% include image.html name="office-floor-3.jpg" class="h-100 img-fluid img-cover" %}
+                {% else %}
+                  {% include image.html name="redu-office.jpg" class="h-100 img-fluid img-cover" %}
+                {% endif %}
               </div>
               <div class="col row m-0 w-100 text-label bg-dark p-5">
                 <div class="col-lg-4 font-weight-bold text-uppercase">
@@ -410,7 +422,14 @@
             {% for room in floor.rooms.north.top %}
               <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
                 <div class="col-lg-5 p-0">
-                  {% include image.html name="redu-office.jpg" class="h-100 img-fluid img-cover" %}
+                    {% if room.image %}
+                    {% assign room_img = room.image %}
+                    {% include image.html name=room_img class="h-100 img-fluid img-cover" %}
+                  {% elsif floor.floor == 3 %}
+                    {% include image.html name="office-floor-3.jpg" class="h-100 img-fluid img-cover" %}
+                  {% else %}
+                    {% include image.html name="redu-office.jpg" class="h-100 img-fluid img-cover" %}
+                  {% endif %}
                 </div>
                 <div class="col row m-0 w-100 text-label bg-dark p-5">
                   <div class="col-lg-4 font-weight-bold text-uppercase">
@@ -454,7 +473,14 @@
             {% for room in floor.rooms.north.bottom %}
               <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
                 <div class="col-lg-5 p-0">
-                  {% include image.html name="redu-office.jpg" class="h-100 img-fluid img-cover" %}
+                  {% if room.image %}
+                    {% assign room_img = room.image %}
+                    {% include image.html name=room_img class="h-100 img-fluid img-cover" %}
+                  {% elsif floor.floor == 3 %}
+                    {% include image.html name="office-floor-3.jpg" class="h-100 img-fluid img-cover" %}
+                  {% else %}
+                    {% include image.html name="redu-office.jpg" class="h-100 img-fluid img-cover" %}
+                  {% endif %}
                 </div>
                 <div class="col row m-0 w-100 text-label bg-dark p-5">
                   <div class="col-lg-4 font-weight-bold text-uppercase">
@@ -496,6 +522,14 @@
             {% endfor %}
           {% endif %}
         </div>
+
+        {% unless floor.floor == 3 %}
+          {% assign offices_pictures = site.data.floorplan-images %}
+        {% else %}
+          {% assign offices_pictures = site.data.floorplan-images-floor-3 %}
+        {% endunless %}
+        {% include offices-grid.html
+          pictures=offices_pictures %}
       </div>
     {% endfor %}
   </div>

@@ -1,4 +1,4 @@
-<div class="card p-3 fixed-bottom w-100 bg-dark text-light cookie-banner appear js">
+<div class="card p-3 fixed-bottom w-100 bg-dark text-light cookie-banner d-none js">
     <div class="card-body container d-flex flex-column flex-md-row justify-content-between align-items-center">
         <p class="card-text m-0">Imbue uses cookies to enhance your experience while browsing this site. We assume you agree to the use of these cookies.</p>
         <a class="btn btn-primary align-self-stretch" id="Cookie-Acknowledge">OK</a>
@@ -9,7 +9,9 @@
   window.addEventListener('DOMContentLoaded', function() {
     // if there is a cookies_acknowledged cookie then hide cookie banner
     if (Cookies.get('cookies_acknowledged')) {
-      $('.cookie-banner').css('display', 'none');
+      return
+    } else {
+      $('.cookie-banner').removeClass('d-none').addClass('appear');
     }
     
     // this cookie expires in a year if it does not already exist

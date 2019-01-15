@@ -122,11 +122,10 @@ floors:
         fullWing: true
         title: South Wing
         description: |
-          Perfect for any business, regardless of its experience and revenue, the whole Left Wing of the second floor is currently available. Equalling 1,065sq.m (11,467sq.ft), the following terms are available:
-          <ul><li>1 year lease at £10.75 per sq. foot</li><li>2 years lease at £9.25 per sq. foot</li><li>3 years lease at £8.75 per sq. foot</li><li>5 years lease at £8.25 per sq. foot</li></ul>
+          Perfect for any business, regardless of its experience and revenue, the whole Left Wing of the second floor is currently available equalling 1,065sq.m (11,467sq.ft).
 
   - floor: 3
-    isAvailable: false
+    isAvailable: true
     totalSpace: 23312
     availableSpace: 0
     rooms:
@@ -134,9 +133,96 @@ floors:
         fullWing: true
         isAvailable: false
         description: This floor is currently occupied by Andrew James UK.
-        room_number: 2
+        room_number: 13
       south:
-        fullWing: true
-        isAvailable: false
-        description: This floor is currently occupied by Andrew James UK.
-        room_number: 1
+        fullWing: false
+        isAvailable: true
+        top:
+          - room_number: 1
+            title: S3A
+            isAvailable: true
+            image: board-room-1.jpg
+            description: |
+              The entire South Wing of the third floor is currently available to let and incorporates everything Imbue stands for: Instilling inspiration and quality.
+
+              Stylish, spacious and modern, the available space is a practical working area that allows businesses and individual employees to thrive. A large open office space like this makes staff want to work hard for their company. 
+
+              The South Wing is easily accessible through the building’s double lift system and communal stairwell. It comes complete with a shared lobby and reception area on the ground floor and also has its own locking system. As well as toilets, a kitchen area and a fire escape, you will also be getting the prestigious honour of working in a modern office setting. Imbue will provide you for the perfect environment for your business to grow.  
+
+          - room_number: 2
+            title: S3B
+            isAvailable: true
+            image: board-room-2.jpg
+            description: |
+              The entire South Wing of the third floor is currently available to let and incorporates everything Imbue stands for: Instilling inspiration and quality.
+
+              Stylish, spacious and modern, the available space is a practical working area that allows businesses and individual employees to thrive. A large open office space like this makes staff want to work hard for their company. 
+
+              The South Wing is easily accessible through the building’s double lift system and communal stairwell. It comes complete with a shared lobby and reception area on the ground floor and also has its own locking system. As well as toilets, a kitchen area and a fire escape, you will also be getting the prestigious honour of working in a modern office setting. Imbue will provide you for the perfect environment for your business to grow.  
+
+        bottom:
+          - room_number: 7
+            title: S3G
+            isAvailable: true
+            image: managers-office.jpg
+            description: |
+              The entire South Wing of the third floor is currently available to let and incorporates everything Imbue stands for: Instilling inspiration and quality.
+
+              Stylish, spacious and modern, the available space is a practical working area that allows businesses and individual employees to thrive. A large open office space like this makes staff want to work hard for their company. 
+
+              The South Wing is easily accessible through the building’s double lift system and communal stairwell. It comes complete with a shared lobby and reception area on the ground floor and also has its own locking system. As well as toilets, a kitchen area and a fire escape, you will also be getting the prestigious honour of working in a modern office setting. Imbue will provide you for the perfect environment for your business to grow.  
+
+          - room_number: 8
+            title: S3H
+            isAvailable: true
+            image: assistants-office.jpg
+            description: |
+              The entire South Wing of the third floor is currently available to let and incorporates everything Imbue stands for: Instilling inspiration and quality.
+
+              Stylish, spacious and modern, the available space is a practical working area that allows businesses and individual employees to thrive. A large open office space like this makes staff want to work hard for their company. 
+
+              The South Wing is easily accessible through the building’s double lift system and communal stairwell. It comes complete with a shared lobby and reception area on the ground floor and also has its own locking system. As well as toilets, a kitchen area and a fire escape, you will also be getting the prestigious honour of working in a modern office setting. Imbue will provide you for the perfect environment for your business to grow.  
+
+          - room_number: 9
+            title: S3I
+            isAvailable: true
+            image: individual-office-floor-3.jpg
+            description: |
+              The entire South Wing of the third floor is currently available to let and incorporates everything Imbue stands for: Instilling inspiration and quality.
+
+              Stylish, spacious and modern, the available space is a practical working area that allows businesses and individual employees to thrive. A large open office space like this makes staff want to work hard for their company. 
+
+              The South Wing is easily accessible through the building’s double lift system and communal stairwell. It comes complete with a shared lobby and reception area on the ground floor and also has its own locking system. As well as toilets, a kitchen area and a fire escape, you will also be getting the prestigious honour of working in a modern office setting. Imbue will provide you for the perfect environment for your business to grow.  
+
+          - room_number: 10
+            title: S3J
+            isAvailable: true
+            image: individual-office-floor-3.jpg
+            description: |
+              The entire South Wing of the third floor is currently available to let and incorporates everything Imbue stands for: Instilling inspiration and quality.
+
+              Stylish, spacious and modern, the available space is a practical working area that allows businesses and individual employees to thrive. A large open office space like this makes staff want to work hard for their company. 
+
+              The South Wing is easily accessible through the building’s double lift system and communal stairwell. It comes complete with a shared lobby and reception area on the ground floor and also has its own locking system. As well as toilets, a kitchen area and a fire escape, you will also be getting the prestigious honour of working in a modern office setting. Imbue will provide you for the perfect environment for your business to grow.  
+
+          - room_number: 11
+            title: S3K
+            isAvailable: true
+            image: individual-office-floor-3.jpg
+            description: |
+              The entire South Wing of the third floor is currently available to let and incorporates everything Imbue stands for: Instilling inspiration and quality.
+
+              Stylish, spacious and modern, the available space is a practical working area that allows businesses and individual employees to thrive. A large open office space like this makes staff want to work hard for their company. 
+
+              The South Wing is easily accessible through the building’s double lift system and communal stairwell. It comes complete with a shared lobby and reception area on the ground floor and also has its own locking system. As well as toilets, a kitchen area and a fire escape, you will also be getting the prestigious honour of working in a modern office setting. Imbue will provide you for the perfect environment for your business to grow.  
+
+          - room_number: 12
+            title: S3L
+            isAvailable: true
+            image: individual-office-floor-3.jpg
+            description: |
+              The entire South Wing of the third floor is currently available to let and incorporates everything Imbue stands for: Instilling inspiration and quality.
+
+              Stylish, spacious and modern, the available space is a practical working area that allows businesses and individual employees to thrive. A large open office space like this makes staff want to work hard for their company. 
+
+              The South Wing is easily accessible through the building’s double lift system and communal stairwell. It comes complete with a shared lobby and reception area on the ground floor and also has its own locking system. As well as toilets, a kitchen area and a fire escape, you will also be getting the prestigious honour of working in a modern office setting. Imbue will provide you for the perfect environment for your business to grow.  
