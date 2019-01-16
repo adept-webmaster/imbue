@@ -90,21 +90,33 @@
                   <div class="row col w-100 m-0 p-0">
                     <div class="row w-100 m-0">
                       {% for room in floor.rooms.south.top %}
-                        <li class="nav-item floorplan__room">
-                          <a
-                          class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}{% if forloop.first %}active{% endif %}"
-                          id="{{ floor.floor }}-{{ room.room_number }}"
-                          data-toggle="tab"
-                          href="#content-{{ floor.floor }}-{{ room.room_number }}"
-                          role="tab"
-                          aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
-                          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-                          title="{{ room.title }}"
-                          data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
-                          data-placement="top">
-                          <span class="floorplan__room--label text-center text-light position-absolute floorplan__">{{ room.title }}</span>
-                          </a>
-                        </li>
+                        {% if room.room_number == 'open_area' %}
+                            <li class="nav-item floorplan__open-area">
+                              <a
+                              class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}"
+                              title="{{ room.title }}"
+                              data-content="Open Area Available"
+                              data-placement="top">
+                              <span class="floorplan__wing--label text-center text-light position-absolute">{{ room.title }}</span>
+                              </a>
+                            </li>
+                        {% else %}
+                          <li class="nav-item floorplan__room">
+                            <a
+                            class="border-0 p-0 w-100 h-100 nav-link d-flex align-items-end justify-content-center  {% unless forloop.first or forloop.last %}col px-0 {% endunless %} {% if room.isAvailable == false %}bg-muted {% else %}bg-primary {% endif %}{% if forloop.first %}active{% endif %}"
+                            id="{{ floor.floor }}-{{ room.room_number }}"
+                            data-toggle="tab"
+                            href="#content-{{ floor.floor }}-{{ room.room_number }}"
+                            role="tab"
+                            aria-controls="content-{{ floor.floor }}-{{ room.room_number }}"
+                            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                            title="{{ room.title }}"
+                            data-content="Available: {% if room.isAvailable %}Yes{% else %}No{% endif %}"
+                            data-placement="top">
+                            <span class="floorplan__room--label text-center text-light position-absolute floorplan__">{{ room.title }}</span>
+                            </a>
+                          </li>
+                        {% endif %}
                       {% endfor %}
                     </div>
 
@@ -280,6 +292,17 @@
                   <div class="row w-100">
                     <div class="col p-4">
                       <p>{{ room.description | markdownify | newline_to_br }}</p>
+                      {% if floor.floor == 1 %}
+                        Imbue's facilities include:
+                        <ul>
+                          <li>Onsite Parking Available</li>
+                          <li>CCTV in Operation</li>
+                          <li>Reception</li>
+                          <li>Fully Adjustable Air Conditioning</li>
+                          <li>Meetings and Boardrooms Available</li>
+                          <li>LED Lighting System</li>
+                        </ul>
+                      {% endif %}
                       <a href="{{ '/contact' | absolute_url }}" class="btn btn-primary" role="button">Contact Us</a>
                     </div>
                   </div>
@@ -420,7 +443,7 @@
             {% for room in floor.rooms.north.top %}
               <div class="col-12 row m-0 px-1 w-100 room-tab-pane tab-pane" id="content-{{ floor.floor }}-{{ room.room_number }}" role="tabpanel" aria-labelledby="{{ floor.floor }}-{{ room.room_number }}">
                 <div class="col-lg-5 p-0">
-                    {% if room.image %}
+                  {% if room.image %}
                     {% assign room_img = room.image %}
                     {% include image.html name=room_img class="h-100 img-fluid img-cover" %}
                   {% elsif floor.floor == 3 %}
@@ -578,7 +601,7 @@
 
     // force Bootstrap tabs to toggle active classes and accessibility attributes
     // for rooms
-    $('.floorplan__floor-wrapper.nav-tabs li a').click(function (e) {
+    $('.floorplan__floor-wrapper.nav-tabs li.floorplan__room a, .floorplan__floor-wrapper.nav-tabs li.floorplan__wing a').click(function (e) {
       $('.floorplan__floor-wrapper.nav-tabs li a.active').removeClass('show active').attr("aria-selected", "false");
       $(this).parent('a').addClass('show active').attr("aria-selected", "true");
 

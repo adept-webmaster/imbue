@@ -127,7 +127,7 @@ floors:
   - floor: 3
     isAvailable: true
     totalSpace: 23312
-    availableSpace: 0
+    availableSpace: 10667
     rooms:
       north:
         fullWing: true
@@ -159,6 +159,9 @@ floors:
               Stylish, spacious and modern, the available space is a practical working area that allows businesses and individual employees to thrive. A large open office space like this makes staff want to work hard for their company. 
 
               The South Wing is easily accessible through the building’s double lift system and communal stairwell. It comes complete with a shared lobby and reception area on the ground floor and also has its own locking system. As well as toilets, a kitchen area and a fire escape, you will also be getting the prestigious honour of working in a modern office setting. Imbue will provide you for the perfect environment for your business to grow.  
+          - room_number: open_area
+            title: Open Area
+            isAvailable: true
 
         bottom:
           - room_number: 7
