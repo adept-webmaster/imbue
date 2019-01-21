@@ -10,7 +10,14 @@ floors:
           fullWing: true
           isAvailable: false
           description: |
-            This is the south wing of floor 1.
+            Equalling 323.15sq.m (3,500sq.ft), the first floor includes:
+            The option to separate the entire floor into 2 units
+            * Fully Adjustable Air Conditioning
+            * Meeting rooms and Boardrooms Available
+            * LED Lighting Systems
+            * Communal kitchen facilities
+            * Communal WC facilities
+
         north:
           top:
             - room_number: 1
@@ -122,7 +129,13 @@ floors:
         fullWing: true
         title: South Wing
         description: |
-          Perfect for any business, regardless of its experience and revenue, the whole Left Wing of the second floor is currently available equalling 1,065sq.m (11,467sq.ft).
+          Equalling 323.15sq.m (3,500sq.ft), the second floor includes:
+          * The option to separate the entire floor into 2 units
+          * Fully Adjustable Air Conditioning
+          * Meeting rooms and Boardrooms Available
+          * LED Lighting Systems
+          * Communal kitchen facilities
+          * Communal WC facilities
 
   - floor: 3
     isAvailable: true
