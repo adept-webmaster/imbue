@@ -291,8 +291,10 @@
 
                   <div class="row w-100">
                     <div class="col p-4">
-                      <p>{{ room.description | markdownify | newline_to_br }}</p>
-                      {% if floor.floor == 1 %}
+                      {% if floor.rooms.south.fullWing %}
+                        {{ room.description | markdownify }}
+                      {% elsif floor.floor == 1 %}
+                        <p>{{ room.description | markdownify | newline_to_br }}</p>
                         Imbue's facilities include:
                         <ul>
                           <li>Onsite Parking Available</li>
