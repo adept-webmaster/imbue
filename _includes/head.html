@@ -17,14 +17,15 @@
 
   {% include third-party-tags.html %}
 
-  <script async src="{{ "/assets/scripts/lazysizes.min.js" | absolute_url }}"></script>
+  <script async src="{{ '/assets/scripts/lazysizes.min.js' | absolute_url }}"></script>
 
-  <link rel="preload" href="{{ site.img_dir | absolute_url }}imbue-logo.png" as="style">
-  <link rel="preload" href="{{ "assets/stylesheets/main.css" | absolute_url }}" as="style">
+  <link rel="preload" href="{{ site.img_dir | absolute_url }}imbue-logo.png" as="image">
+  {% comment %}Cache-busting using site.time!{% endcomment %}
+  <link rel="preload" href="{{ 'assets/stylesheets/main.css' | absolute_url }}?{{ site.time | date: '%s%N' }}" as="style">
 
   <link
     rel="stylesheet"
-    href="{{ "assets/stylesheets/main.css" | absolute_url }}"
+    href="{{ 'assets/stylesheets/main.css' | absolute_url }}?{{ site.time | date: '%s%N' }}"
   >
 
   {%- include scripts.html -%}
