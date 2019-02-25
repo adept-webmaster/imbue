@@ -21,6 +21,7 @@ Gemfile.lock
 # Folders
 /vendor
 /vendor/bundle
+/vendor/bundle/bin
 bbin/
 bin/
 coverage

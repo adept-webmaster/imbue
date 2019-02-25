@@ -11,10 +11,10 @@ source "https://rubygems.org"
 gem "jekyll", '~> 3.7.4'
 
 # Bootstrap
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 
 # Vendor stuff
-gem 'hamburgers', "~> 0.9.3"
+gem 'hamburgers', "~> 1.1.3"
 gem 'jekyll-redirect-from'
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
