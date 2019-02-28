@@ -1,7 +1,7 @@
 <img
   data-sizes="auto"
   src="{{ site.baseurl }}{{ site.img_dir }}spinner.svg"
-  data-src="{{ site.img_dir | absolute_url }}{{ include.name }}"
+  data-src="{{ site.img_dir | relative_url }}{{ include.name }}"
   {% if include.alt %} alt="{{ include.alt }}"{% endif %}
   {% if include.id %} id="{{ include.id }}"{% endif %}
   class="{% if include.class %}{{ include.class }} {% endif %}lazyload js"

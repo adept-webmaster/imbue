@@ -1,5 +1,5 @@
 <img
-  src="{{ site.img_dir | absolute_url }}{{ include.name }}"
+  src="{{ site.img_dir | relative_url }}{{ include.name }}"
   {% if include.alt %} alt="{{ include.alt }}"{% endif %}
   {% if include.id %} id="{{ include.id }}"{% endif %}
   class="{% if include.class %}{{ include.class }} {% endif %}"
