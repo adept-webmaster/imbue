@@ -31,4 +31,4 @@ plugins:
 whitelist:
   - jekyll-redirect-from
 github: [metadata]
-repository: liam-cooper/imbue
+repository: adept-webmaster/imbue
