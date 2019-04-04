@@ -1,0 +1,10 @@
+---
+layout: post
+title: Testing images
+date: 2019-04-04 15:00:00 +0000
+thumb: "/Lighthouse Building_Rooms.svg"
+
+---
+![](/seaham-restaurants.jpg)
+
+HEY
