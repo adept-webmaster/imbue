@@ -7,4 +7,4 @@ thumb: "/Lighthouse Building_Rooms.svg"
 ---
 ![](/seaham-restaurants.jpg)
 
-HEY
+HEYs
