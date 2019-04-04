@@ -1,0 +1,35 @@
+---
+label: News
+hide_body: false
+fields:
+- type: textarea
+  label: Title
+  name: title
+  description: Title of post
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+- type: datetime
+  name: date
+  label: Date
+  description: Date of the post
+  config:
+    date_format: YYYY-MM-DD
+    time_format: HH:mm:ss
+    display_utc: true
+    required: true
+- type: file
+  name: thumb
+  label: Thumbnail
+  description: Thumbnail of post. Recommended size is 768x768
+  config:
+    maxSize: '5'
+- type: text
+  name: layout
+  label: Layout
+  hidden: true
+  config:
+    required: true
+  description: Layout of post. Recommended is post
