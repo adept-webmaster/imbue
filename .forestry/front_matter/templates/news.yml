@@ -34,3 +34,5 @@ fields:
     required: true
   description: Layout of post. Recommended is post
   default: post
+pages:
+- _posts/post-title.md
