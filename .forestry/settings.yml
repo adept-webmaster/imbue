@@ -9,7 +9,7 @@ sections:
   create: all
   match: "**/*"
 - type: directory
-  path: _uploads
+  path: uploads
   label: Uploads
   create: all
   match: "**/*"
