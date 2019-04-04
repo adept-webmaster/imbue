@@ -1,6 +1,7 @@
 ---
 label: News
 hide_body: false
+display_field: title
 fields:
 - type: textarea
   label: Title
@@ -20,12 +21,12 @@ fields:
     time_format: HH:mm:ss
     display_utc: true
     required: true
-- type: file
+- type: text
   name: thumb
-  label: Thumbnail
-  description: Thumbnail of post. Recommended size is 768x768
+  label: Thumbnail Filename
+  description: Filename of the thumbnail you want to use (include file extension)
   config:
-    maxSize: '5'
+    required: true
 - type: text
   name: layout
   label: Layout
