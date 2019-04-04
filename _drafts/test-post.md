@@ -5,4 +5,4 @@ thumb: "/aj-desks-floor-3.jpg"
 layout: ''
 
 ---
-This is a test post
+This is a test post with test layout
