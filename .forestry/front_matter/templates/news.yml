@@ -33,3 +33,5 @@ fields:
   config:
     required: true
   description: Layout of post. Recommended is post
+pages:
+- _posts/test-post.md
