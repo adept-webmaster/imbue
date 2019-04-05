@@ -7,7 +7,6 @@ sections:
 - type: document
   path: _data/navigation.yml
   label: Navigation
-  match: "**/*"
 - type: document
   path: _config.yml
   label: Site Config
