@@ -7,7 +7,6 @@ sections:
 - type: document
   path: _data/floors.yml
   label: Floor plan
-  match: "**/*"
 - type: jekyll-posts
   label: Posts
   create: all
