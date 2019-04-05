@@ -18,7 +18,8 @@ fields:
   name: permalink
   label: URL
   description: Do not change this unless you know what you are doing. If this changes,
-    you must change the link in the navbar (YML file)/any other pages or add a redirect
+    you must change the link in the navigation and any other pages or alternatively
+    add a redirect
   config:
     required: false
 - type: text
