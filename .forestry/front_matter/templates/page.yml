@@ -1,4 +1,37 @@
 ---
 label: Page
 hide_body: false
-fields: []
+display_field: title
+fields:
+- type: text
+  name: title
+  label: SEO Title
+  config:
+    required: true
+  description: Title to be displayed on search engines (hidden visually)
+- type: text
+  name: description
+  label: SEO Description (optional)
+  description: Description for SEO purposes
+  config:
+    required: false
+- type: text
+  name: permalink
+  label: URL
+  description: Do not change this unless you know what you are doing. If this changes,
+    you must change the link in the navbar (YML file)/any other pages or add a redirect
+  config:
+    required: true
+- type: text
+  name: layout
+  label: Layout
+  description: Layout for page
+  hidden: true
+  config:
+    required: true
+  default: static-page
+- type: boolean
+  name: show
+  label: Show on nav?
+  hidden: true
+  default: true
