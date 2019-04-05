@@ -9,12 +9,12 @@ sections:
   create: all
   templates:
   - page
-- type: document
-  path: _data/floors.yml
-  label: Floor plan
 - type: jekyll-posts
   label: Posts
   create: all
+- type: document
+  path: _data/floors.yml
+  label: Floor plan
 upload_dir: _uploads
 public_path: "/uploads"
 front_matter_path: ''
