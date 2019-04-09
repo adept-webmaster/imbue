@@ -1,6 +1,7 @@
 ---
 label: Floors
 hide_body: true
+display_field: floors
 fields:
 - type: field_group_list
   name: floors
