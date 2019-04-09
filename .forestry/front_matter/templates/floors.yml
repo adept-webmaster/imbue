@@ -9,7 +9,7 @@ fields:
   - type: text
     name: floor_label
     label: Floor label
-    hidden: false
+    hidden: true
     config:
       required: true
   - type: number
@@ -32,7 +32,7 @@ fields:
     fields:
     - type: field_group
       name: south
-      label: south
+      label: South
       fields:
       - type: text
         name: title
@@ -51,7 +51,7 @@ fields:
         label: description
     - type: field_group
       name: north
-      label: north
+      label: North
       fields:
       - type: field_group_list
         name: top
