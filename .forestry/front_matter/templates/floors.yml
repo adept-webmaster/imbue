@@ -10,6 +10,8 @@ fields:
   - type: number
     name: floor
     label: floor
+    config:
+      required: true
   - type: boolean
     name: isAvailable
     label: isAvailable
