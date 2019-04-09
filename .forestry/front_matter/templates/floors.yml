@@ -68,12 +68,12 @@ fields:
         name: bottom
         label: bottom
         fields:
-        - type: number
-          name: room_number
-          label: room_number
         - type: text
           name: title
           label: title
+        - type: number
+          name: room_number
+          label: room_number
         - type: boolean
           name: isAvailable
           label: isAvailable
