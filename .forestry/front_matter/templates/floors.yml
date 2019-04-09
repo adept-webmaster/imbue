@@ -1,0 +1,85 @@
+---
+label: Floors
+hide_body: true
+fields:
+- type: field_group_list
+  name: floors
+  label: floors
+  fields:
+  - type: number
+    name: floor
+    label: floor
+  - type: boolean
+    name: isAvailable
+    label: isAvailable
+  - type: number
+    name: totalSpace
+    label: totalSpace
+  - type: number
+    name: availableSpace
+    label: availableSpace
+  - type: field_group
+    name: rooms
+    label: rooms
+    fields:
+    - type: field_group
+      name: south
+      label: south
+      fields:
+      - type: text
+        name: title
+        label: title
+      - type: number
+        name: room_number
+        label: room_number
+      - type: boolean
+        name: fullWing
+        label: fullWing
+      - type: boolean
+        name: isAvailable
+        label: isAvailable
+      - type: textarea
+        name: description
+        label: description
+    - type: field_group
+      name: north
+      label: north
+      fields:
+      - type: field_group_list
+        name: top
+        label: top
+        fields:
+        - type: number
+          name: room_number
+          label: room_number
+        - type: text
+          name: title
+          label: title
+        - type: boolean
+          name: isAvailable
+          label: isAvailable
+        - type: text
+          name: description
+          label: description
+        - type: text
+          name: area
+          label: area
+      - type: field_group_list
+        name: bottom
+        label: bottom
+        fields:
+        - type: number
+          name: room_number
+          label: room_number
+        - type: text
+          name: title
+          label: title
+        - type: boolean
+          name: isAvailable
+          label: isAvailable
+        - type: text
+          name: description
+          label: description
+        - type: text
+          name: area
+          label: area
