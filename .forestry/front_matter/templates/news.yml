@@ -1,7 +1,6 @@
 ---
 label: News
 hide_body: false
-display_field: title
 fields:
 - type: textarea
   label: Title
@@ -35,3 +34,8 @@ fields:
     required: true
   description: Layout of post. Recommended is post
   default: post
+- type: boolean
+  name: top_story
+  label: Top Story
+  description: Mark this news post as a top story? Please disable this on any other
+    news posts if they are marked as a top story
