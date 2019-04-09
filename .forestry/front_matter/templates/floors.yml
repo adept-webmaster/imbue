@@ -7,6 +7,12 @@ fields:
   name: floors
   label: floors
   fields:
+  - type: text
+    name: floor_label
+    label: Floor label
+    hidden: false
+    config:
+      required: true
   - type: number
     name: floor
     label: floor
@@ -86,11 +92,5 @@ fields:
         - type: text
           name: area
           label: area
-  - type: text
-    name: floor_label
-    label: Floor label
-    hidden: false
-    config:
-      required: true
 pages:
 - _data/floors.yml
