@@ -1,11 +1,10 @@
 ---
 label: Floors
 hide_body: true
-display_field: floors
 fields:
 - type: field_group_list
   name: floors
-  label: floors
+  label: Floors
   fields:
   - type: text
     name: floor_label
@@ -29,7 +28,7 @@ fields:
     label: availableSpace
   - type: field_group
     name: rooms
-    label: rooms
+    label: Rooms
     fields:
     - type: field_group
       name: south
