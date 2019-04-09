@@ -83,3 +83,5 @@ fields:
         - type: text
           name: area
           label: area
+pages:
+- _data/floors.yml
