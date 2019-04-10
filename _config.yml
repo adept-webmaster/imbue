@@ -12,7 +12,7 @@ collections:
     title: News
     output: true
 baseurl:
-url:
+url: https://www.imbueoffices.co.uk
 markdown: kramdown
 phone: "0191 389 7062"
 email: "info@imbueoffices.co.uk"
@@ -31,4 +31,4 @@ plugins:
 whitelist:
   - jekyll-redirect-from
 github: [metadata]
-repository: liam-cooper/imbue
+repository: adept-webmaster/imbue
