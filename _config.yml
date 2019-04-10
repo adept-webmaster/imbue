@@ -1,7 +1,8 @@
 ---
-title: Imbue | Inspirational Office Space
-description: We are Imbue - fully serviced office space and room hire available for everyone.
-logo: /uploads/imbue-logo.png
+title: Inspirational Office Space in Seaham | Imbue
+description: Inspirational office space to boost your business' potential. Discover
+  more opportunities for your business and employees today.
+logo: "/uploads/imbue-logo.png"
 lang: en_GB
 timezone: UTC
 collections:
@@ -11,24 +12,25 @@ collections:
   posts:
     title: News
     output: true
-baseurl:
+baseurl: 
 url: https://www.imbueoffices.co.uk
 markdown: kramdown
-phone: "0191 389 7062"
-email: "info@imbueoffices.co.uk"
+phone: '0191 389 7062'
+email: info@imbueoffices.co.uk
 img_dir: "/uploads/"
 linkedin: https://www.linkedin.com/company/imbue-offices/
 exclude:
-  - vendor
+- vendor
 sass:
   sass_dir: _sass
   style: compressed
 plugins:
-  - jekyll-feed
-  - github-pages
-  - jekyll-redirect-from
-  - jekyll-seo-tag
+- jekyll-feed
+- github-pages
+- jekyll-redirect-from
+- jekyll-seo-tag
 whitelist:
-  - jekyll-redirect-from
-github: [metadata]
+- jekyll-redirect-from
+github:
+- metadata
 repository: adept-webmaster/imbue
