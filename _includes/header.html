@@ -28,6 +28,9 @@
           <div class="flex-column align-items-start collapse navbar-collapse d-lg-flex justify-content-end"
             id="navbarSupportedContent">
             <ul class="navbar-nav pt-4 px-2 px-lg-0 pb-lg-0 pt-lg-2 align-self-end">
+              <li class="nav-link text-white font-weight-bold">
+                Call us on <a href="tel:{{ site.phone | remove: ' ' }}">{{ site.phone }}</a>
+              </li>
               {% assign top-links = site.data.navigation-2 %}
               {% for link in top-links %}
                 <li class="nav-item top-nav-item
