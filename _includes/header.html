@@ -28,9 +28,6 @@
           <div class="flex-column align-items-start collapse navbar-collapse d-lg-flex justify-content-end"
             id="navbarSupportedContent">
             <ul class="navbar-nav pt-4 px-2 px-lg-0 pb-lg-0 pt-lg-2 align-self-end">
-              <li class="nav-link text-white font-weight-bold">
-                Call us on <a href="tel:{{ site.phone | remove: ' ' }}">{{ site.phone }}</a>
-              </li>
               {% assign top-links = site.data.navigation-2 %}
               {% for link in top-links %}
                 <li class="nav-item top-nav-item
@@ -45,7 +42,7 @@
                 </li>
               {% endfor %}
             </ul>
-            <ul class="navbar-nav py-4 px-2 px-lg-0 pt-lg-0 pb-lg-2">
+            <ul class="navbar-nav py-4 px-2 px-lg-0 pt-lg-0 pb-lg-2 w-100">
               {% assign links = site.data.navigation %}
                 {% for link in links %}
                 {% if link.sublinks %}
@@ -87,6 +84,9 @@
                   </li>
                 {% endif %}
               {% endfor %}
+              <li class="nav-link text-white font-weight-bold ml-auto">
+                  Call us on <a href="tel:{{ site.phone | remove: ' ' }}">{{ site.phone }}</a>
+                </li>
             </ul>
           </div>
         </div>
