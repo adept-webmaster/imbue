@@ -1,6 +1,5 @@
 ---
 layout: home
-
 ---
     {::comment}
       If you are looking to edit the SEO of the homepage/default 
