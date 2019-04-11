@@ -8,12 +8,10 @@ fields:
   config:
     required: false
   description: Title to be displayed on search engines (hidden visually)
-- type: text
+- type: textarea
   name: description
-  label: SEO Description (optional)
+  label: SEO Description (Optional)
   description: Description for SEO purposes
-  config:
-    required: false
 - type: text
   name: permalink
   label: URL
